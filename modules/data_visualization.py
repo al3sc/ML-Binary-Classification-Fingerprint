@@ -44,7 +44,6 @@ def compute_statistics(D, L, logger=None):
     std = D.std(1)
     
     if logger:
-        logger.log_title("Dataset statistics")
         logger.log_paragraph("Means of the features:")
         for i, m in enumerate(mu):
             logger.log(f"Feature {i+1}: {m[0]:.3f}")

@@ -4,7 +4,7 @@ import scipy.linalg
 import utils.plot as P
 
 from .data_visualization import compute_mu_C
-from .data_management import vcol, split_classes
+from .data_management import vcol, vrow, split_classes
 
 
 ### PCA - Principal Component Analysis ###
@@ -47,7 +47,7 @@ def compute_lda_JointDiag(D, L, m):
     Sb, Sw = compute_Sb_Sw(D, L)
 
     U, s, _ = numpy.linalg.svd(Sw)
-    P = numpy.dot(U * pm.vrow(1.0/(s**0.5)), U.T)
+    P = numpy.dot(U * vrow(1.0/(s**0.5)), U.T)
 
     Sb2 = numpy.dot(P, numpy.dot(Sb, P.T))
 
@@ -66,13 +66,13 @@ def execute_PCA(D, m, logger=None):
     D_PCA = apply_pca(P, D)
 
     if logger:
-        logger.log(f"Compute statistic on dataset:")
+        logger.log_paragraph(f"Compute statistic on dataset")
         logger.log("mu")
         logger.log(mu)
         logger.log("Covariance matrix = ")
         logger.log(C)
         logger.log()
-        logger.log(f"Compute PCA, with m = {m}, P = ")
+        logger.log_paragraph(f"Compute PCA, with m = {m}, P = ")
         logger.log(P)
         logger.log("Apply PCA. D_PCA = ")
         logger.log(D_PCA)
@@ -82,6 +82,7 @@ def execute_PCA(D, m, logger=None):
 def visualize_data_PCA(D, L, m, args):
     D0, D1 = split_classes(D, L, 2)
 
+    # Plot histograms
     for dIdx in range(m):
         save_disk = args.save_plots
         output_dir = f"{args.output}/L3_dimensionality_reduction"
@@ -89,3 +90,46 @@ def visualize_data_PCA(D, L, m, args):
         xlabel = f"Direction {dIdx+1}"
         ylabel = 'Relative Frequency'
         P.plot_hist(D0[dIdx, :], D1[dIdx, :], "PCA", xlabel, ylabel, save_disk=save_disk, output_dir=output_dir, output_name=output_name)
+    
+    # Plot pair-wise scatter plots
+    for dIdx1 in range(m):
+        for dIdx2 in range(m):
+            if dIdx1 != dIdx2:
+                F0 = [D0[dIdx1, :], D0[dIdx2, :]]
+                F1 = [D1[dIdx1, :], D1[dIdx2, :]]
+                P.plot_scatter_2_classes(
+                    F0, F1, "Data visualization", f"Direction {dIdx1+1}", f"Direction {dIdx2+1}", 
+                    "Fake", "Genuine", save_disk=args.save_plots, 
+                    output_dir=f'{args.output}/L3_dimensionality_reduction', 
+                    output_name=f"PCA_scatter_{dIdx1+1}_{dIdx2+1}"
+                )
+
+
+def execute_LDA(D, L, logger=None):
+    U = compute_lda_geig(D, L, m = 1)
+    V = compute_lda_JointDiag(D, L, m = 1)
+
+    DU = apply_lda(-U, D)
+
+    if logger:
+        logger.log_paragraph("Computing LDA using the eigenvalues approach.")
+        logger.log("U:")
+        logger.log(V)
+        logger.log_paragraph("Computing LDA using the joint diagonalization approach.")
+        logger.log("V:")
+        logger.log(V)
+        logger.log_paragraph("Apply LDA:")
+        logger.log(DU)
+
+    return DU
+
+def visualize_data_LDA(D, L, args):
+    D0, D1 = split_classes(D, L, 2)
+
+    # Plot histogram
+    save_disk = args.save_plots
+    output_dir = f"{args.output}/L3_dimensionality_reduction"
+    output_name = "LDA_hist"
+    xlabel = "LDA Direction"
+    ylabel = 'Relative Frequency'
+    P.plot_hist(D0[0], D1[0], "LDA", xlabel, ylabel, save_disk=save_disk, output_dir=output_dir, output_name=output_name)
