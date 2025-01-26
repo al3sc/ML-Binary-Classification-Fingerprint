@@ -6,6 +6,6 @@ The dataset consists of labeled samples corresponding to the genuine (True, labe
 
 The main objectives include:
 
-- Data visualization: understand the features distributions of the samples
-- Dimensionality Reduction: exploring dimensionality reduction techniques like PCA and LDA.
+- **Data visualization**: understand the features distributions of the samples
+- **Dimensionality Reduction**: exploring dimensionality reduction techniques like PCA and LDA.
 
