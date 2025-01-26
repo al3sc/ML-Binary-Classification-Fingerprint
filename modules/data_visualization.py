@@ -2,7 +2,7 @@ import numpy
 
 import utils.plot as P
 
-from data_management import vcol
+from .data_management import vcol
 
 
 def compute_mu_C(D):
