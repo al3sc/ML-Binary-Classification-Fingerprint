@@ -23,7 +23,7 @@ def visualize_data(D, L, features, save_plots):
             D0[dIdx, :], D1[dIdx, :], "Data visualization", feature_name, 
             "Relative frequency", "Fake", "Genuine", 
             save_disk=save_plots, output_dir='./assets/outputs/L2_data_visualization', 
-            output_name=f"hist_{dIdx}"
+            output_name=f"hist_{dIdx+1}"
         )
 
     # Plot pair-wise scatter plots
