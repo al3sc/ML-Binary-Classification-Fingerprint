@@ -27,6 +27,12 @@ def load(fname):
 
     return numpy.hstack(DList), numpy.array(labelsList, dtype=numpy.int32)
 
+def split_classes(D, L, n_classes):
+    D_split = []
+    for cls in range(n_classes):
+        D_split.append(D[:, L==cls])
+    return D_split
+
 def split_db_2to1(D, L, seed=0):
     nTrain = int(D.shape[1]*2.0/3.0)
     numpy.random.seed(seed)

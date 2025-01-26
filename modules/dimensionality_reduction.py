@@ -1,8 +1,10 @@
 import numpy
 import scipy.linalg
 
-from data_visualization import compute_mu_C
-from data_management import vcol
+import utils.plot as P
+
+from .data_visualization import compute_mu_C
+from .data_management import vcol, split_classes
 
 
 ### PCA - Principal Component Analysis ###
@@ -57,3 +59,33 @@ def compute_lda_JointDiag(D, L, m):
 def apply_lda(U, D):
     return U.T @ D
 
+
+def execute_PCA(D, m, logger=None):
+    mu, C = compute_mu_C(D)
+    P = compute_pca(D, m)
+    D_PCA = apply_pca(P, D)
+
+    if logger:
+        logger.log(f"Compute statistic on dataset:")
+        logger.log("mu")
+        logger.log(mu)
+        logger.log("Covariance matrix = ")
+        logger.log(C)
+        logger.log()
+        logger.log(f"Compute PCA, with m = {m}, P = ")
+        logger.log(P)
+        logger.log("Apply PCA. D_PCA = ")
+        logger.log(D_PCA)
+    
+    return D_PCA
+
+def visualize_data_PCA(D, L, m, args):
+    D0, D1 = split_classes(D, L, 2)
+
+    for dIdx in range(m):
+        save_disk = args.save_plots
+        output_dir = f"{args.output}/L3_dimensionality_reduction"
+        output_name = f"PCA_hist_{dIdx+1}"
+        xlabel = f"Direction {dIdx+1}"
+        ylabel = 'Relative Frequency'
+        P.plot_hist(D0[dIdx, :], D1[dIdx, :], "PCA", xlabel, ylabel, save_disk=save_disk, output_dir=output_dir, output_name=output_name)

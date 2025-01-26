@@ -2,7 +2,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy
 
-def plot_hist(D0, D1, title, xlabel, ylabel, class0, class1, nBins=50, save_disk = False, output_dir="./outputs", output_name=None):
+def plot_hist(D0, D1, title, xlabel, ylabel, class0="Fake", class1="Genuine", nBins=50, save_disk = False, output_dir="./outputs", output_name=None):
     # Change default font size - comment to use default values
     plt.rc('font', size=16)
     plt.rc('xtick', labelsize=16)
@@ -24,16 +24,7 @@ def plot_hist(D0, D1, title, xlabel, ylabel, class0, class1, nBins=50, save_disk
     # plt.show()
     plt.close()
     
-
-def plot_hist_DR(D0, D1, m, method, class0="Fake", class1="Genuine", nBins=50, save_disk = False, output_dir="./outputs/L3"):
-
-    for dIdx in range(m):
-        output_name = f"{method}_hist_{dIdx}"
-        xlabel = f"Direction {dIdx+1}"
-        ylabel = 'Relative Frequency'
-        plot_hist(D0[dIdx, :], D1[dIdx, :], method, xlabel, ylabel, class0, class1, nBins, save_disk, output_dir, output_name)
-
-
+    
 def plot_scatter_2_classes(D0, D1, title, xlabel, ylabel, class0, class1, save_disk=False, output_dir="./outputs", output_name=None):
     # Change default font size - comment to use default values
     plt.rc('font', size=16)

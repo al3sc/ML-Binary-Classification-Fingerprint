@@ -2,7 +2,7 @@ import numpy
 
 import utils.plot as P
 
-from .data_management import vcol
+from .data_management import vcol, split_classes
 
 
 def compute_mu_C(D):
@@ -13,16 +13,15 @@ def compute_mu_C(D):
     return mu, C
 
 
-def visualize_data(D, L, features, save_plots):
-    D0 = D[:, L == 0]
-    D1 = D[:, L == 1]
+def visualize_data(D, L, features, args):
+    D0, D1 = split_classes(D, L, 2)
     
     # Plot histograms
     for dIdx, feature_name in features.items():
         P.plot_hist(
             D0[dIdx, :], D1[dIdx, :], "Data visualization", feature_name, 
             "Relative frequency", "Fake", "Genuine", 
-            save_disk=save_plots, output_dir='./assets/outputs/L2_data_visualization', 
+            save_disk=args.save_plots, output_dir=f'{args.output}/L2_data_visualization', 
             output_name=f"hist_{dIdx+1}"
         )
 
@@ -34,8 +33,8 @@ def visualize_data(D, L, features, save_plots):
                 F1 = [D1[dIdx1, :], D1[dIdx2, :]]
                 P.plot_scatter_2_classes(
                     F0, F1, "Data visualization", f1, f2, 
-                    "Fake", "Genuine", save_disk=save_plots, 
-                    output_dir='./assets/outputs/L2_data_visualization', 
+                    "Fake", "Genuine", save_disk=args.save_plots, 
+                    output_dir=f'{args.output}/L2_data_visualization', 
                     output_name=f"scatter_{dIdx1+1}_{dIdx2+1}"
                 )
 
