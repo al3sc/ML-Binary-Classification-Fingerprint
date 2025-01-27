@@ -29,6 +29,11 @@ def arg_parse():
         help="Active the logger for logging the computational steps in a specific log file.",
     )
     parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume the logger file, when it already exists.",
+    )
+    parser.add_argument(
         "--save_plots",
         action="store_true",
         help="Save plots on the disk.",

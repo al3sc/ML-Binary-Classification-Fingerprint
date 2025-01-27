@@ -60,24 +60,18 @@ def apply_lda(U, D):
     return U.T @ D
 
 
-def execute_PCA(D, m, logger=None):
-    mu, C = compute_mu_C(D)
+def execute_PCA(D, m, logger=None, DVAL=None):
     P = compute_pca(D, m)
     D_PCA = apply_pca(P, D)
+    if DVAL is not None:
+        DVAL_PCA = apply_pca(P, DVAL)
 
     if logger:
-        logger.log_paragraph(f"Compute statistic on dataset")
-        logger.log("mu")
-        logger.log(mu)
-        logger.log("Covariance matrix = ")
-        logger.log(C)
-        logger.log()
-        logger.log_paragraph(f"Compute PCA, with m = {m}, P = ")
-        logger.log(P)
-        logger.log("Apply PCA. D_PCA = ")
-        logger.log(D_PCA)
+        logger.log_paragraph(f"Compute PCA, with m = {m}")
+        logger.log(f"P:\n{P}\n")
+        logger.log(f"Apply PCA. D_PCA:\n{D_PCA}\n")
     
-    return D_PCA
+    return D_PCA, DVAL_PCA if DVAL is not None else None
 
 def visualize_data_PCA(D, L, m, args):
     D0, D1 = split_classes(D, L, 2)
@@ -113,23 +107,80 @@ def execute_LDA(D, L, logger=None):
 
     if logger:
         logger.log_paragraph("Computing LDA using the eigenvalues approach.")
-        logger.log("U:")
-        logger.log(V)
+        logger.log(f"U:\n{U}")
         logger.log_paragraph("Computing LDA using the joint diagonalization approach.")
-        logger.log("V:")
-        logger.log(V)
+        logger.log(f"V:\n{V}")
         logger.log_paragraph("Apply LDA:")
-        logger.log(DU)
+        logger.log(f"{DU}\n")
 
     return DU
 
-def visualize_data_LDA(D, L, args):
+def visualize_data_LDA(D, L, args, title="LDA"):
     D0, D1 = split_classes(D, L, 2)
 
     # Plot histogram
     save_disk = args.save_plots
     output_dir = f"{args.output}/L3_dimensionality_reduction"
-    output_name = "LDA_hist"
+    output_name = f"{title.replace(" ", "_")}_hist"
     xlabel = "LDA Direction"
     ylabel = 'Relative Frequency'
-    P.plot_hist(D0[0], D1[0], "LDA", xlabel, ylabel, save_disk=save_disk, output_dir=output_dir, output_name=output_name)
+    P.plot_hist(D0[0], D1[0], title, xlabel, ylabel, save_disk=save_disk, output_dir=output_dir, output_name=output_name)
+
+
+def execute_LDA_TrVal(DTR, LTR, DVAL, logger=None):
+    U = compute_lda_geig(DTR, LTR, m=1)     # train the model (on the training data)
+    
+    DTR_LDA = apply_lda(U, DTR)
+
+    if logger:
+        logger.log_paragraph("Computing LDA using the eigenvalues approach.")
+        logger.log(f"U:\n{U}\n")
+        logger.log(f"Apply LDA:\n{DTR_LDA}\n")
+
+    # Check if the Fake class samples are, on average, on the right of the Genuine samples on the training set. If not, we reverse ULDA and re-apply the transformation.
+    if DTR_LDA[0, LTR==0].mean() > DTR_LDA[0, LTR==1].mean():
+        U = -U
+        DTR_LDA = apply_lda(U, DTR)
+
+        if logger:
+            logger.log("Reverse U and re-apply LDA on training data.\nThe Fake class samples are not, on average, on the right of the Genuine samples.")
+            logger.log(f"New Fake class means:\n{DTR_LDA[0, LTR==0].mean()}\n")
+            logger.log(f"New Genuine class means:\n{DTR_LDA[0, LTR==1].mean()}\n")
+            
+    DVAL_LDA = apply_lda(U, DVAL)
+
+    if logger:
+        logger.log(f"Apply LDA on validation data:\n{DVAL_LDA}\n")
+
+    return DTR_LDA, DVAL_LDA
+
+def classify_LDA(DTR, LTR, DVAL, LVAL, logger=None):
+    threshold = (DTR[0,LTR==0].mean() + DTR[0,LTR==1].mean()) / 2.0 # Projected samples have only 1 dimension
+    PVAL = numpy.zeros(shape=LVAL.shape, dtype=numpy.int32)
+    PVAL[DVAL[0] >= threshold] = 1
+    PVAL[DVAL[0] < threshold] = 0
+    
+    if logger:
+        logger.log(f"Computed threshold (1-D): {threshold}\n")
+        logger.log(f'Labels:      {LVAL}')
+        logger.log(f'Predictions: {PVAL}')
+        logger.log(f'Number of erros: {(PVAL != LVAL).sum()} (out of {LVAL.size} samples)')
+        logger.log(f'Error rate: {( (PVAL != LVAL).sum() / float(LVAL.size) *100 ):.2f}%')
+        logger.log(f'Accuracy: {( (PVAL == LVAL).sum() / float(LVAL.size) *100 ):.2f}%')
+
+    return PVAL
+
+def classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, directions, logger=None):
+    PVALs = []
+
+    for m in range(directions):
+        if logger:
+            logger.log_paragraph(f"Pre processing features with {m+1} PCA directions.")
+        
+        DTR_PCA, DVAL_PCA = execute_PCA(DTR, m+1, DVAL=DVAL)
+        DTR_LDA, DVAL_LDA = execute_LDA_TrVal(DTR_PCA, LTR, DVAL_PCA)
+
+        PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger)
+        PVALs.append(PVAL)
+    
+    return PVALs

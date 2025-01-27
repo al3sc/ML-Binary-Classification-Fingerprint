@@ -44,24 +44,14 @@ def compute_statistics(D, L, logger=None):
     std = D.std(1)
     
     if logger:
-        logger.log_paragraph("Means of the features:")
-        for i, m in enumerate(mu):
-            logger.log(f"Feature {i+1}: {m[0]:.3f}")
-        logger.log()
-
-        logger.log_paragraph("Covariance matrix:")
-        logger.log_matrix(C)
-        logger.log()
-
-        logger.log_paragraph("Variances of the features:")
-        for i, v in enumerate(var):
-            logger.log(f"Feature {i+1}: {v:.3f}")
-        logger.log()
-
-        logger.log_paragraph("Standard deviation of the features:")
-        for i, s in enumerate(std):
-            logger.log(f"Feature {i+1}: {s:.3f}")
-        logger.log()
+        logger.log_paragraph(f"Means of the features:")
+        logger.log(f"{mu}\n")
+        logger.log_paragraph(f"Covariance matrix:")
+        logger.log(f"{C}\n")
+        logger.log_paragraph(f"Variances of the features:")
+        logger.log(f"{var}\n")    
+        logger.log_paragraph(f"Standard deviation of the features:")
+        logger.log(f"{std}\n")
     
     # Per-class statistics
     for cls in [0, 1]:
@@ -77,22 +67,12 @@ def compute_class_statistics(D, L, cls, logger=None):
     
     if logger:
         logger.log_title(f"Statistics for class {cls}")
-        logger.log_paragraph("Means of the features:")
-        for i, m in enumerate(mu):
-            logger.log(f"Feature {i+1}: {m[0]:.3f}")
-        logger.log()
-
-        logger.log_paragraph("Covariance matrix:")
-        logger.log_matrix(C)
-        logger.log()
-
-        logger.log_paragraph("Variances of the features:")
-        for i, v in enumerate(var):
-            logger.log(f"Feature {i+1}: {v:.3f}")
-        logger.log()
-
-        logger.log_paragraph("Standard deviation of the features:")
-        for i, s in enumerate(std):
-            logger.log(f"Feature {i+1}: {s:.3f}")
-        logger.log()
+        logger.log_paragraph(f"Means of the features:")
+        logger.log(f"{mu}\n")
+        logger.log_paragraph(f"Covariance matrix:")
+        logger.log(f"{C}\n")
+        logger.log_paragraph(f"Variances of the features:")
+        logger.log(f"{var}\n")
+        logger.log_paragraph(f"Standard deviation of the features:")
+        logger.log(f"{std}\n")
 
