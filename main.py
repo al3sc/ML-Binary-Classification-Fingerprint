@@ -4,7 +4,7 @@ from utils.args_utils import arg_parse, validate_args, should_execute
 from modules.data_management import load, split_db_2to1
 from modules.data_visualization import visualize_data, compute_statistics
 from modules.dimensionality_reduction import execute_PCA, visualize_data_PCA, execute_LDA, visualize_data_LDA, \
-        execute_LDA_TrVal, classify_LDA, classify_LDA_prePCA
+        execute_LDA_TrVal, classify_LDA, classify_LDA_manyThresholds, classify_LDA_prePCA
 
 
 def main():
@@ -22,6 +22,7 @@ def main():
     (DTR, LTR), (DVAL, LVAL) = split_db_2to1(D, L)
 
 
+
     ###################################################################################################
     # 2) Data visualization
 
@@ -30,7 +31,7 @@ def main():
 
         # Initialize logger
         if args.log:
-            logger = Logger("Data_Visualization", resume=args.resume)
+            logger = Logger("data_visualization", resume=args.resume)
 
         hFea = {
                 0: 'Feature 1',
@@ -55,6 +56,7 @@ def main():
             logger.__close__()
 
 
+   
     ###################################################################################################
     # 3) Dimensionality Reduction
 
@@ -63,7 +65,7 @@ def main():
 
         # Initialize logger
         if args.log:
-            logger = Logger("Dimensionality_reduction", resume=args.resume)
+            logger = Logger("dimensionality_reduction", resume=args.resume)
 
 
         ### PCA - Principal Component Analysis
@@ -107,10 +109,15 @@ def main():
         
         PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger if args.log else None)
 
+        if args.log:
+            logger.log_title("Perform classification exploring different thresholds.")
+        # change thresholds for classification
+        PVALs = classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger if args.log else None)
+
         # classification pre-processing the features with PCA
 
         if args.log:
-            logger.log_title("Perform classification task with LDA - PCA for pre-processing.")
+            logger.log_title("Perform classification task - PCA for pre-processing.")
         
         PVALs = classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, m, logger if args.log else None)
 
@@ -118,7 +125,24 @@ def main():
 
         if args.log:
             logger.__close__()
+    
 
+
+    ###################################################################################################
+    # 4) Gaussian Density Estimation
+
+    if should_execute(4, args.modules):
+        print("4 Gaussian Density Estimation...")
+
+        # Initialize logger
+        if args.log:
+            logger = Logger("gaussian_density_estimation", resume=args.resume)
+
+
+
+        if args.log:
+            logger.__close__()
+    
 
 
 if __name__ == "__main__":

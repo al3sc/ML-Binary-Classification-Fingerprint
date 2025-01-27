@@ -1,8 +1,8 @@
-INFO - 2025-01-27 11:24:09 - Logger initialized
+INFO - 2025-01-27 11:54:10 - Logger initialized
 
 ====================================================================================================
 
-INFO - 2025-01-27 11:24:09 - ANALYZING THE EFFECTS OF PCA ON THE FEATURES. ######
+INFO - 2025-01-27 11:54:10 - ANALYZING THE EFFECTS OF PCA ON THE FEATURES. ######
 
 
 --------------------------------------------------
@@ -34,7 +34,7 @@ Apply PCA. D_PCA:
 
 ====================================================================================================
 
-INFO - 2025-01-27 11:24:15 - ANALYZING THE EFFECTS OF LDA ON THE FEATURES. ######
+INFO - 2025-01-27 11:54:16 - ANALYZING THE EFFECTS OF LDA ON THE FEATURES. ######
 
 
 --------------------------------------------------
@@ -71,7 +71,7 @@ V:
 
 ====================================================================================================
 
-INFO - 2025-01-27 11:24:15 - APPLYING LDA AS A CLASSIFIER. ######
+INFO - 2025-01-27 11:54:16 - APPLYING LDA AS A CLASSIFIER. ######
 
 
 --------------------------------------------------
@@ -102,7 +102,7 @@ Apply LDA on validation data:
 
 ====================================================================================================
 
-INFO - 2025-01-27 11:24:15 - PERFORM CLASSIFICATION TASK WITH LDA. ######
+INFO - 2025-01-27 11:54:17 - PERFORM CLASSIFICATION TASK WITH LDA. ######
 
 Computed threshold (1-D): -0.018534376786207063
 
@@ -114,7 +114,84 @@ Accuracy: 90.70%
 
 ====================================================================================================
 
-INFO - 2025-01-27 11:24:15 - PERFORM CLASSIFICATION TASK WITH LDA - PCA FOR PRE-PROCESSING. ######
+INFO - 2025-01-27 11:54:17 - PERFORM CLASSIFICATION EXPLORING DIFFERENT THRESHOLDS. ######
+
+
+--------------------------------------------------
+
+#### THRESHOLD OFFSET: -0.2 ####
+
+Computed threshold (1-D): -0.21853437678620707
+
+Labels:      [0 0 1 ... 0 0 0]
+Predictions: [0 0 1 ... 0 0 0]
+Number of erros: 192 (out of 2000 samples)
+Error rate: 9.60%
+Accuracy: 90.40%
+
+--------------------------------------------------
+
+#### THRESHOLD OFFSET: -0.1 ####
+
+Computed threshold (1-D): -0.11853437678620707
+
+Labels:      [0 0 1 ... 0 0 0]
+Predictions: [0 0 1 ... 0 0 0]
+Number of erros: 184 (out of 2000 samples)
+Error rate: 9.20%
+Accuracy: 90.80%
+
+--------------------------------------------------
+
+#### THRESHOLD OFFSET: -0.05 ####
+
+Computed threshold (1-D): -0.06853437678620707
+
+Labels:      [0 0 1 ... 0 0 0]
+Predictions: [0 0 1 ... 0 0 0]
+Number of erros: 185 (out of 2000 samples)
+Error rate: 9.25%
+Accuracy: 90.75%
+
+--------------------------------------------------
+
+#### THRESHOLD OFFSET: 0.05 ####
+
+Computed threshold (1-D): 0.03146562321379294
+
+Labels:      [0 0 1 ... 0 0 0]
+Predictions: [0 0 1 ... 0 0 0]
+Number of erros: 190 (out of 2000 samples)
+Error rate: 9.50%
+Accuracy: 90.50%
+
+--------------------------------------------------
+
+#### THRESHOLD OFFSET: 0.1 ####
+
+Computed threshold (1-D): 0.08146562321379294
+
+Labels:      [0 0 1 ... 0 0 0]
+Predictions: [0 0 1 ... 0 0 0]
+Number of erros: 190 (out of 2000 samples)
+Error rate: 9.50%
+Accuracy: 90.50%
+
+--------------------------------------------------
+
+#### THRESHOLD OFFSET: 0.2 ####
+
+Computed threshold (1-D): 0.18146562321379295
+
+Labels:      [0 0 1 ... 0 0 0]
+Predictions: [0 0 1 ... 0 0 0]
+Number of erros: 192 (out of 2000 samples)
+Error rate: 9.60%
+Accuracy: 90.40%
+
+====================================================================================================
+
+INFO - 2025-01-27 11:54:17 - PERFORM CLASSIFICATION TASK - PCA FOR PRE-PROCESSING. ######
 
 
 --------------------------------------------------
@@ -191,8 +268,8 @@ Accuracy: 90.70%
 
 ====================================================================================================
 
-INFO - 2025-01-27 11:24:15 - Logger closed correctly!
+INFO - 2025-01-27 11:54:17 - Logger closed correctly!
 
 ====================================================================================================
 
-INFO - 2025-01-27 11:24:15 - Logger closed correctly!
+INFO - 2025-01-27 11:54:17 - Logger closed correctly!

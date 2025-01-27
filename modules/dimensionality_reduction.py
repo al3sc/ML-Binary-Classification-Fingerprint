@@ -60,6 +60,8 @@ def apply_lda(U, D):
     return U.T @ D
 
 
+# Apply PCA and visualize directions histograms
+
 def execute_PCA(D, m, logger=None, DVAL=None):
     P = compute_pca(D, m)
     D_PCA = apply_pca(P, D)
@@ -98,6 +100,7 @@ def visualize_data_PCA(D, L, m, args):
                     output_name=f"PCA_scatter_{dIdx1+1}_{dIdx2+1}"
                 )
 
+# Apply LDA and visualize histograms
 
 def execute_LDA(D, L, logger=None):
     U = compute_lda_geig(D, L, m = 1)
@@ -127,6 +130,7 @@ def visualize_data_LDA(D, L, args, title="LDA"):
     P.plot_hist(D0[0], D1[0], title, xlabel, ylabel, save_disk=save_disk, output_dir=output_dir, output_name=output_name)
 
 
+# Apply LDA on training and validation set
 def execute_LDA_TrVal(DTR, LTR, DVAL, logger=None):
     U = compute_lda_geig(DTR, LTR, m=1)     # train the model (on the training data)
     
@@ -154,8 +158,12 @@ def execute_LDA_TrVal(DTR, LTR, DVAL, logger=None):
 
     return DTR_LDA, DVAL_LDA
 
-def classify_LDA(DTR, LTR, DVAL, LVAL, logger=None):
+
+# Apply LDA as a classifier
+def classify_LDA(DTR, LTR, DVAL, LVAL, logger=None, offset=None):
     threshold = (DTR[0,LTR==0].mean() + DTR[0,LTR==1].mean()) / 2.0 # Projected samples have only 1 dimension
+    if offset:
+        threshold += offset
     PVAL = numpy.zeros(shape=LVAL.shape, dtype=numpy.int32)
     PVAL[DVAL[0] >= threshold] = 1
     PVAL[DVAL[0] < threshold] = 0
@@ -170,6 +178,20 @@ def classify_LDA(DTR, LTR, DVAL, LVAL, logger=None):
 
     return PVAL
 
+def classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger=None):
+    th_offsets = [-0.2, -0.1, -0.05, +0.05, +0.1, +0.2]
+    PVALs = []
+    
+    DTR_LDA, DVAL_LDA = execute_LDA_TrVal(DTR, LTR, DVAL)
+    for o in th_offsets:
+        if logger:
+            logger.log_paragraph(f"Threshold offset: {o}")
+        PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger, o)
+        PVALs.append(PVAL)
+    return PVALs
+
+
+# Pre-process features with PCA before applying LDA as a classifier
 def classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, directions, logger=None):
     PVALs = []
 
