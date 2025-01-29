@@ -5,6 +5,7 @@ from modules.data_management import load, split_db_2to1
 from modules.data_visualization import visualize_data, compute_statistics
 from modules.dimensionality_reduction import execute_PCA, visualize_data_PCA, execute_LDA, visualize_data_LDA, \
         execute_LDA_TrVal, classify_LDA, classify_LDA_manyThresholds, classify_LDA_prePCA
+from modules.gaussian_density_estimation import fit_univariate_Gaussian_toFeatures
 
 
 def main():
@@ -109,9 +110,10 @@ def main():
         
         PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger if args.log else None)
 
+        # change thresholds for classification
+        
         if args.log:
             logger.log_title("Perform classification exploring different thresholds.")
-        # change thresholds for classification
         PVALs = classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger if args.log else None)
 
         # classification pre-processing the features with PCA
@@ -119,9 +121,7 @@ def main():
         if args.log:
             logger.log_title("Perform classification task - PCA for pre-processing.")
         
-        PVALs = classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, m, logger if args.log else None)
-
-        
+        PVALs = classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, m, logger if args.log else None)        
 
         if args.log:
             logger.__close__()
@@ -138,6 +138,22 @@ def main():
         if args.log:
             logger = Logger("gaussian_density_estimation", resume=args.resume)
 
+        fit_univariate_Gaussian_toFeatures(D, L, args.save_plots, logger if args.log else None)
+
+
+        if args.log:
+            logger.__close__()
+    
+
+    ###################################################################################################
+    # 5) Generative models
+
+    if should_execute(4, args.modules):
+        print("5 Generative models...")
+
+        # Initialize logger
+        if args.log:
+            logger = Logger("generative_models", resume=args.resume)
 
 
         if args.log:

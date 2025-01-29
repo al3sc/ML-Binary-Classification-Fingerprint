@@ -2,7 +2,7 @@ import os
 import matplotlib.pyplot as plt
 import numpy
 
-def plot_hist(D0, D1, title, xlabel, ylabel, class0="Fake", class1="Genuine", nBins=50, save_disk = False, output_dir="./outputs", output_name=None):
+def plot_hist(D0, D1, title, xlabel, ylabel, class0="Fake", class1="Genuine", nBins=50, save_disk = False, output_dir="./assets/outputs", output_name=None):
     # Change default font size - comment to use default values
     plt.rc('font', size=16)
     plt.rc('xtick', labelsize=16)
@@ -25,7 +25,7 @@ def plot_hist(D0, D1, title, xlabel, ylabel, class0="Fake", class1="Genuine", nB
     plt.close()
     
     
-def plot_scatter_2_classes(D0, D1, title, xlabel, ylabel, class0, class1, save_disk=False, output_dir="./outputs", output_name=None):
+def plot_scatter_2_classes(D0, D1, title, xlabel, ylabel, class0, class1, save_disk=False, output_dir="./assets/outputs", output_name=None):
     # Change default font size - comment to use default values
     plt.rc('font', size=16)
     plt.rc('xtick', labelsize=16)
@@ -48,7 +48,7 @@ def plot_scatter_2_classes(D0, D1, title, xlabel, ylabel, class0, class1, save_d
     # plt.show()
     plt.close()
 
-def plot_scatter_PCA(D0, D1, m, class0="Fake", class1="Genuine", save_disk=False, output_dir="./outputs/L3"):
+def plot_scatter_PCA(D0, D1, m, class0="Fake", class1="Genuine", save_disk=False, output_dir="./assets/outputs"):
   for dIdx1 in range(m):
     for dIdx2 in range(m):
         if dIdx2 <= dIdx1:
@@ -61,7 +61,30 @@ def plot_scatter_PCA(D0, D1, m, class0="Fake", class1="Genuine", save_disk=False
         plot_scatter_2_classes(F0, F1, "PCA directions comparison", xlabel, ylabel, class0, class1, save_disk, output_dir, output_name)
 
 
-def plot_log(X, Y0, Y1=None, title="Log-scale plot", xlabel="X", ylabel="X", label0="False", label1="True", save_disk=False, output_dir="./outputs", output_name=None):
+def plot_Gaussian_density(D, X, pdf, title, xlabel, ylabel, classLabel, colorHist, colorPdf, nBins=50, save_disk = False, output_dir="./assets/outputs", output_name=None):
+    plt.rc('font', size=16)
+    plt.rc('xtick', labelsize=16)
+    plt.rc('ytick', labelsize=16)
+
+    plt.figure()
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.title(title)
+    
+    plt.plot(X, pdf, linewidth=3, color=colorPdf)           # Gaussian pdf
+    plt.hist(D[:], bins = nBins, density = True, alpha = 0.5, label = classLabel, color=colorHist)
+
+    plt.legend()
+    plt.tight_layout() # Use with non-default font size to keep axis label inside the figure
+    if save_disk:
+        os.makedirs(output_dir, exist_ok=True)
+        # plt.savefig(f"{output_dir}/{output_name if output_name else "hist"}.pdf")
+        plt.savefig(f"{output_dir}/{output_name if output_name else "hist_Gaussian"}.jpg")
+    # plt.show()
+    plt.close()
+
+
+def plot_log(X, Y0, Y1=None, title="Log-scale plot", xlabel="X", ylabel="Y", label0="False", label1="True", save_disk=False, output_dir="./assets/outputs", output_name=None):
     if Y1 and len(Y0) != len(Y1):
         raise ValueError("Non consistent sizes in Y0 and Y1")
     
