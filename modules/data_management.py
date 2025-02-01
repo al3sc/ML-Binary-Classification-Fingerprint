@@ -71,8 +71,11 @@ def save_csv(table, header, logger, output_file, output_dir="./assets/outputs"):
         output_file (str): The name of the output CSV file (without extension).
         output_dir (str, optional): The directory where the output file will be saved. Default is "./outputs".
     """
-        
-    n = len(header)
+    if isinstance(header[0], list):  
+        n = len(header[0])
+    else:  
+        n = len(header)
+    
     for r in table:
         if len(r) < n:
             logger and logger.error("Some elements are missing in the elements of the tables!")
@@ -81,15 +84,17 @@ def save_csv(table, header, logger, output_file, output_dir="./assets/outputs"):
             logger and logger.error("Some values are missing in the header!")
             raise ValueError("Some values are missing in the header!")
     
-    prefix = "./assets/outputs/"
-    output_dir = output_dir if output_dir.startswith(prefix) else prefix + output_dir
     os.makedirs(output_dir, exist_ok=True)
     
     file_path = f"{output_dir}/{output_file}{"" if output_file.endswith(".csv") else ".csv"}"
         
     with open(file_path, mode="w", newline="", encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(header)
+        if isinstance(header[0], list):  
+            for h in header:
+                writer.writerow(h)
+        else:
+            writer.writerow(header)
 
         for row in table:
             writer.writerow(row)

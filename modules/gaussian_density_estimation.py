@@ -13,7 +13,7 @@ def logpdf_GAU_ND(x, mu, C):
 def compute_ll(X, mu, C):
     return logpdf_GAU_ND(X, mu, C).sum()
 
-def fit_univariate_Gaussian_toFeatures(D, L, save_disk, logger):
+def fit_univariate_Gaussian_toFeatures(D, L, args, logger):
     D0 = D[:, L==0]
     D1 = D[:, L==1]
     m0_ML, C0_ML = compute_mu_C(D0)
@@ -40,8 +40,8 @@ def fit_univariate_Gaussian_toFeatures(D, L, save_disk, logger):
         pdf0 = numpy.exp(logpdf_GAU_ND(vrow(x0_vals), m0_feat, C0_feat))
         P.plot_Gaussian_density(
             feat0, x0_vals, pdf0, "Distribution density over histogram", f"Feature {f+1}",
-            "Relative Frequency", "Fake", "blue", "orange", nBins=50, save_disk = save_disk,
-            output_dir="./assets/outputs/L4_gaussian_density_estimation", output_name=f"hist_gaussian_Fake_{f+1}"
+            "Relative Frequency", "Fake", "blue", "orange", nBins=50, save_disk = args.save_plots,
+            output_dir=f"{args.output}/L4_gaussian_density_estimation", output_name=f"hist_gaussian_Fake_{f+1}"
         )
 
 
@@ -52,8 +52,8 @@ def fit_univariate_Gaussian_toFeatures(D, L, save_disk, logger):
         pdf1 = numpy.exp(logpdf_GAU_ND(vrow(x1_vals), m1_feat, C1_feat))
         P.plot_Gaussian_density(
             feat1, x1_vals, pdf1, "Distribution density over histogram", f"Feature {f+1}", 
-            "Relative Frequency", "Genuine", "orange", "blue", nBins=50, save_disk = save_disk,
-            output_dir="./assets/outputs/L4_gaussian_density_estimation", output_name=f"hist_gaussian_Genuine_{f+1}"
+            "Relative Frequency", "Genuine", "orange", "blue", nBins=50, save_disk = args.save_plots,
+            output_dir=f"{args.output}/L4_gaussian_density_estimation", output_name=f"hist_gaussian_Genuine_{f+1}"
         )
 
         if logger:

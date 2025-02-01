@@ -89,7 +89,7 @@ def binaryMVGModels(name, DTR, LTR, DVAL, LVAL, ML_func=Gau_MVG_ML_estimates, pr
     return predictions_class1
 
 
-def apply_all_binary_MVG(DTR, LTR, DVAL, LVAL, logger=None, save_tables=None):
+def apply_all_binary_MVG(DTR, LTR, DVAL, LVAL, args, logger=None):
 
     # MVG
     PVAL_MVG = binaryMVGModels("MVG", DTR, LTR, DVAL, LVAL, ML_func=Gau_MVG_ML_estimates, logger=logger)
@@ -100,12 +100,12 @@ def apply_all_binary_MVG(DTR, LTR, DVAL, LVAL, logger=None, save_tables=None):
     # MVG Naive Bayes
     PVAL_Naive = binaryMVGModels("Naive Bayes MVG", DTR, LTR, DVAL, LVAL, ML_func=Gau_Naive_ML_estimates, logger=logger)
 
-    if save_tables:
+    if args.save_tables:
         header = ["Models", "MVG", "Tied MVG", "Naive Bayes MVG"]
         PVALs = [PVAL_MVG, PVAL_Tied, PVAL_Naive]
         row = ["Error rates", *[format(x, ".2f") for x in compute_error_rates_multi(PVALs, LVAL)]]
 
-        save_csv([row], header, logger, "All_MVG", "L5_generative_models")
+        save_csv([row], header, logger, "All_MVG", f"{args.output}/L5_generative_models")
 
 def analyze_C_MVG_models(DTR, LTR, logger=None):
     funcs = [Gau_MVG_ML_estimates, Gau_Tied_ML_estimates, Gau_Naive_ML_estimates]
@@ -172,12 +172,12 @@ def analyze_MVG_trunc_features(DTR, LTR, DVAL, LVAL, logger=None):
             # MVG Naive Bayes
             PVAL_Naive = binaryMVGModels("Naive Bayes MVG", DT, LTR, DV, LVAL, ML_func=Gau_Naive_ML_estimates, logger=logger)
 
-def analyze_MVG_PCA(DTR, LTR, DVAL, LVAL, directions, logger=None, save_tables=None):
+def analyze_MVG_PCA(DTR, LTR, DVAL, LVAL, directions, args, logger=None):
     PVALs = []
     
     for m in range(directions):
         logger and logger.log_paragraph(f'PCA pre-processing - {m+1} directions\n')
-        DTR_pca, DVAL_pca = execute_PCA(DTR, m+1, logger, DVAL)
+        DTR_pca, DVAL_pca = execute_PCA(DTR, m+1, None, DVAL)
 
         # MVG
         PVAL_MVG = binaryMVGModels("MVG", DTR_pca, LTR, DVAL_pca, LVAL, ML_func=Gau_MVG_ML_estimates, logger=logger)
@@ -190,8 +190,8 @@ def analyze_MVG_PCA(DTR, LTR, DVAL, LVAL, directions, logger=None, save_tables=N
 
         PVALs.append([PVAL_MVG, PVAL_Tied, PVAL_Naive])
 
-    if save_tables:
+    if args.save_tables:
         header = ["PCA Directions", "MVG", "Tied MVG", "Naive Bayes MVG"]
-        rows = [ [f"Direction {d+1}", *[format(x, ".2f") for x in compute_error_rates_multi(row, LVAL)]] for d, row in enumerate(PVALs) ]
+        rows = [ [f"{d+1}", *[format(x, ".2f") for x in compute_error_rates_multi(row, LVAL)]] for d, row in enumerate(PVALs) ]
 
-        save_csv(rows, header, logger, "All_MVG_PCA", "L5_generative_models")
+        save_csv(rows, header, logger, "All_MVG_PCA", f"{args.output}/L5_generative_models")

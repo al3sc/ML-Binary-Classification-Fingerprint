@@ -147,5 +147,35 @@ def plot_density(X, pdf, title, xlabel, ylabel, save_disk = False, output_dir=".
         os.makedirs(output_dir, exist_ok=True)
         # plt.savefig(f"{output_dir}/{output_name if output_name else "hist"}.pdf")
         plt.savefig(f"{output_dir}/{output_name if output_name else "hist_Gaussian"}.jpg")
-    plt.show()
+    #plt.show()
+    plt.close()
+
+def plot_Bayes_error(X, actDCFs, minDCFs, classes, title="Bayes error", xlabel=r"$\tilde{p} = \log\frac{\tilde{\pi}}{1 - \tilde{\pi}}$", ylabel="DCF", save_disk = False, output_dir="./assets/outputs", output_name=None):
+    if len(actDCFs) != len(minDCFs):
+        raise ValueError("Non consistent sizes in DCF lists.")
+    
+    plt.rc('font', size=16)
+    plt.rc('xtick', labelsize=16)
+    plt.rc('ytick', labelsize=16)
+
+    colors = plt.cm.plasma(numpy.linspace(0, 1, len(actDCFs)))
+    
+    plt.figure(figsize=(8,6), tight_layout=True)
+    plt.title(title)
+    
+    for i, c in enumerate(classes):
+        plt.plot(X, actDCFs[c], label=f'actDCF ({c})', color=colors[i], linestyle='-', linewidth='0.9')
+        plt.plot(X, minDCFs[c], label=f'min DCF ({c})', color=colors[i], linestyle='--', linewidth='0.9')
+
+        plt.ylim([0, 1.1])
+        plt.xlim([-4, 4])
+        plt.legend(fontsize=10)
+        plt.xlabel(xlabel)
+        plt.ylabel(ylabel)
+
+    if save_disk:
+        plt.savefig(f"{output_dir}/{output_name}.jpg")
+        #plt.savefig(f"{output_dir}/{output_name}.jpg')
+    else:
+        plt.show()
     plt.close()
