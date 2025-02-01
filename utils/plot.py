@@ -125,3 +125,27 @@ def plot_log(X, Y0, Y1=None, title="Log-scale plot", xlabel="X", ylabel="Y", lab
         os.makedirs(output_dir, exist_ok=True)
         # plt.savefig(f"{output_dir}/{output_name}.pdf")
         plt.savefig(f"{output_dir}/{output_name}.jpg")
+
+
+def plot_density(X, pdf, title, xlabel, ylabel, save_disk = False, output_dir="./assets/outputs", output_name=None):
+    plt.rc('font', size=16)
+    plt.rc('xtick', labelsize=16)
+    plt.rc('ytick', labelsize=16)
+
+    plt.figure()
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.title(title)
+    
+
+    plt.plot(X, pdf, linewidth=2, color="blue")           # Gaussian pdf
+    #plt.hist(D[:], bins = nBins, density = True, alpha = 0.5, label = classLabel, color="red")
+
+    plt.legend()
+    plt.tight_layout() # Use with non-default font size to keep axis label inside the figure
+    if save_disk:
+        os.makedirs(output_dir, exist_ok=True)
+        # plt.savefig(f"{output_dir}/{output_name if output_name else "hist"}.pdf")
+        plt.savefig(f"{output_dir}/{output_name if output_name else "hist_Gaussian"}.jpg")
+    plt.show()
+    plt.close()

@@ -60,7 +60,7 @@ def reduce_db(D, L, fraction = 0.5, seed = 0):
         L_reduced = L[0:n]
     return (D_reduced, L_reduced)
 
-def save_csv(table, header, logger, output_file, output_dir="./outputs"):
+def save_csv(table, header, logger, output_file, output_dir="./assets/outputs"):
     """
     Save the table in a csv file.
     
@@ -75,12 +75,14 @@ def save_csv(table, header, logger, output_file, output_dir="./outputs"):
     n = len(header)
     for r in table:
         if len(r) < n:
-            logger.error("Some elements are missing in the elements of the tables!")
+            logger and logger.error("Some elements are missing in the elements of the tables!")
             raise ValueError("Some elements are missing in the elements of the tables!")
         elif len(r) > n:
-            logger.error("Some values are missing in the header!")
+            logger and logger.error("Some values are missing in the header!")
             raise ValueError("Some values are missing in the header!")
     
+    prefix = "./assets/outputs/"
+    output_dir = output_dir if output_dir.startswith(prefix) else prefix + output_dir
     os.makedirs(output_dir, exist_ok=True)
     
     file_path = f"{output_dir}/{output_file}{"" if output_file.endswith(".csv") else ".csv"}"
@@ -92,7 +94,10 @@ def save_csv(table, header, logger, output_file, output_dir="./outputs"):
         for row in table:
             writer.writerow(row)
     
-    logger.info(f"File '{output_file}' saved correctly!")
+    if logger:
+        logger.info(f"File '{output_file}' saved correctly!")
+    else:
+        print(f"File '{output_file}' saved correctly!")
 
 
 def center_data(DTR, DVAL=None):
@@ -111,3 +116,14 @@ def Z_normalization(DTR, DVAL):
 
 	return DTR_normalized, DVAL_normalized
 
+
+def compute_error_rate(PVAL, LVAL):
+    nErrors = (PVAL != LVAL).sum()
+    error_rate = nErrors / float(LVAL.size) * 100
+
+    return error_rate
+
+def compute_error_rates_multi(PVALs, LVAL):
+    error_rates = [compute_error_rate(p, LVAL) for p in PVALs]
+    return error_rates
+        

@@ -6,6 +6,9 @@ from modules.data_visualization import visualize_data, compute_statistics
 from modules.dimensionality_reduction import execute_PCA, visualize_data_PCA, execute_LDA, visualize_data_LDA, \
         execute_LDA_TrVal, classify_LDA, classify_LDA_manyThresholds, classify_LDA_prePCA
 from modules.gaussian_density_estimation import fit_univariate_Gaussian_toFeatures
+from modules.generative_models import apply_all_binary_MVG, analyze_C_MVG_models, compute_Pearson_correlation, \
+        analyze_MVG_trunc_features, analyze_MVG_PCA
+from modules.GMM import train_evaluate_GMM
 
 
 def main():
@@ -114,14 +117,15 @@ def main():
         
         if args.log:
             logger.log_title("Perform classification exploring different thresholds.")
-        PVALs = classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger if args.log else None)
+        PVALs = classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger if args.log else None, save_tables=args.save_tables)
+
 
         # classification pre-processing the features with PCA
 
         if args.log:
             logger.log_title("Perform classification task - PCA for pre-processing.")
         
-        PVALs = classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, m, logger if args.log else None)        
+        PVALs = classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, m, logger if args.log else None, save_tables=args.save_tables)        
 
         if args.log:
             logger.__close__()
@@ -148,12 +152,53 @@ def main():
     ###################################################################################################
     # 5) Generative models
 
-    if should_execute(4, args.modules):
+    if should_execute(5, args.modules):
         print("5 Generative models...")
 
         # Initialize logger
         if args.log:
             logger = Logger("generative_models", resume=args.resume)
+
+        # Apply MVG, Tied MVG and Naive Bayes MVG models
+        logger and logger.log_title("MVG models application")
+        apply_all_binary_MVG(DTR, LTR, DVAL, LVAL, logger if args.log else None, args.save_tables)
+
+        # Analyze results in light of characteristics
+        logger and logger.log_title("MVG models results analysis")
+        analyze_C_MVG_models(DTR, LTR, logger if args.log else None)
+
+        # Compute Pearson correlation to better visualize the strength of covariances w.r.t. variances
+        logger and logger.log_title("MVG models Pearson correlations")
+        compute_Pearson_correlation(DTR, LTR, logger if args.log else None)
+
+        # Trunc the dataset and analyze the MVG models w.r.t different features
+        logger and logger.log_title("MVG models on different sets of features")
+        analyze_MVG_trunc_features(DTR, LTR, DVAL, LVAL, logger if args.log else None)
+
+        # Analyze the MVG models w.r.t PCA directions
+        logger and logger.log_title("MVG models on different PCA directions")
+        m = 6
+        analyze_MVG_PCA(DTR, LTR, DVAL, LVAL, m, logger if args.log else None, args.save_tables)
+
+
+        if args.log:
+            logger.__close__()
+    
+
+
+    ###################################################################################################
+    # 10) Gaussian Mixture Models
+
+    if should_execute(10, args.modules):
+        print("10 Gaussian Mixture Models...")
+
+        # Initialize logger
+        if args.log:
+            logger = Logger("gaussian_mixture_models", resume=args.resume)
+
+        nComponents = [ 2**i for i in range(6) ]
+        #nComponents = [2]
+        train_evaluate_GMM(DTR, LTR, DVAL, LVAL, nComponents, logger if args.log else None)
 
 
         if args.log:

@@ -4,7 +4,7 @@ import scipy.linalg
 import utils.plot as P
 
 from .data_visualization import compute_mu_C
-from .data_management import vcol, vrow, split_classes
+from .data_management import vcol, vrow, split_classes, save_csv, compute_error_rates_multi
 
 
 ### PCA - Principal Component Analysis ###
@@ -178,7 +178,7 @@ def classify_LDA(DTR, LTR, DVAL, LVAL, logger=None, offset=None):
 
     return PVAL
 
-def classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger=None):
+def classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger=None, save_tables=None):
     th_offsets = [-0.2, -0.1, -0.05, +0.05, +0.1, +0.2]
     PVALs = []
     
@@ -188,11 +188,18 @@ def classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger=None):
             logger.log_paragraph(f"Threshold offset: {o}")
         PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger, o)
         PVALs.append(PVAL)
+
+    if save_tables:
+        header = ["Thresholds", "-0.2", "-0.1", "-0.05", "+0.05", "+0.1", "+0.2"]
+        row = ["Error rates", *[format(x, ".2f") for x in compute_error_rates_multi(PVALs, LVAL)]]
+        save_csv([row], header, logger, "LDA_manyThresholds", "L3_dimensionality_reduction")
+
+
     return PVALs
 
 
 # Pre-process features with PCA before applying LDA as a classifier
-def classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, directions, logger=None):
+def classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, directions, logger=None, save_tables=None):
     PVALs = []
 
     for m in range(directions):
@@ -204,5 +211,11 @@ def classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, directions, logger=None):
 
         PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger)
         PVALs.append(PVAL)
+    
+    if save_tables:
+        header = ["PCA Directions", *[f"{m+1}" for m in range(directions)]]
+        row = ["Error rates", *[format(x, ".2f") for x in compute_error_rates_multi(PVALs, LVAL)]]
+        save_csv([row], header, logger, "LDA_prePCA", "L3_dimensionality_reduction")
+
     
     return PVALs

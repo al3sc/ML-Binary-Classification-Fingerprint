@@ -1,0 +1,917 @@
+INFO - 2025-02-01 15:37:58 - Logger initialized
+
+====================================================================================================
+
+INFO - 2025-02-01 15:37:58 - MVG MODELS APPLICATION ######
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1860
+Number of wrong predictions: 140
+Accuracy: 93.00%
+Error rate: 7.00%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1814
+Number of wrong predictions: 186
+Accuracy: 90.70%
+Error rate: 9.30%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1856
+Number of wrong predictions: 144
+Accuracy: 92.80%
+Error rate: 7.20%
+
+INFO - 2025-02-01 15:37:58 - File 'All_MVG' saved correctly!
+
+====================================================================================================
+
+INFO - 2025-02-01 15:37:58 - MVG MODELS RESULTS ANALYSIS ######
+
+
+--------------------------------------------------
+
+#### MVG RESULTS ANALYSIS ####
+
+INFO - 2025-02-01 15:37:58 - Class Fake
+
+Feature 1 variance: 0.6009565063742803.
+
+	Covariance with feature 2: 5.158665171145649e-05 	(Variance - Covariance: 0.601)
+	Covariance with feature 3: 0.01905891448976418 	(Variance - Covariance: 0.582)
+	Covariance with feature 4: 0.019252987552578038 	(Variance - Covariance: 0.582)
+	Covariance with feature 5: 0.012803940239193384 	(Variance - Covariance: 0.588)
+	Covariance with feature 6: -0.013472159793695327 	(Variance - Covariance: 0.614)
+
+Feature 2 variance: 1.4472254272925504.
+
+	Covariance with feature 1: 5.158665171145649e-05 	(Variance - Covariance: 1.447)
+	Covariance with feature 3: -0.016134010951526962 	(Variance - Covariance: 1.463)
+	Covariance with feature 4: -0.015856147392157894 	(Variance - Covariance: 1.463)
+	Covariance with feature 5: -0.026452914117622562 	(Variance - Covariance: 1.474)
+	Covariance with feature 6: 0.022913983275498137 	(Variance - Covariance: 1.424)
+
+Feature 3 variance: 0.5653489011392431.
+
+	Covariance with feature 1: 0.01905891448976418 	(Variance - Covariance: 0.546)
+	Covariance with feature 2: -0.016134010951526962 	(Variance - Covariance: 0.581)
+	Covariance with feature 4: -0.0018434443520603252 	(Variance - Covariance: 0.567)
+	Covariance with feature 5: -0.006914462774895378 	(Variance - Covariance: 0.572)
+	Covariance with feature 6: 0.016892832159975633 	(Variance - Covariance: 0.548)
+
+Feature 4 variance: 0.5416152015143372.
+
+	Covariance with feature 1: 0.019252987552578038 	(Variance - Covariance: 0.522)
+	Covariance with feature 2: -0.015856147392157894 	(Variance - Covariance: 0.557)
+	Covariance with feature 3: -0.0018434443520603252 	(Variance - Covariance: 0.543)
+	Covariance with feature 5: 0.005251713747748153 	(Variance - Covariance: 0.536)
+	Covariance with feature 6: 0.013571777454355508 	(Variance - Covariance: 0.528)
+
+Feature 5 variance: 0.6960676413130412.
+
+	Covariance with feature 1: 0.012803940239193384 	(Variance - Covariance: 0.683)
+	Covariance with feature 2: -0.026452914117622562 	(Variance - Covariance: 0.723)
+	Covariance with feature 3: -0.006914462774895378 	(Variance - Covariance: 0.703)
+	Covariance with feature 4: 0.005251713747748153 	(Variance - Covariance: 0.691)
+	Covariance with feature 6: 0.01584383987307943 	(Variance - Covariance: 0.680)
+
+Feature 6 variance: 0.6865197101792836.
+
+	Covariance with feature 1: -0.013472159793695327 	(Variance - Covariance: 0.700)
+	Covariance with feature 2: 0.022913983275498137 	(Variance - Covariance: 0.664)
+	Covariance with feature 3: 0.016892832159975633 	(Variance - Covariance: 0.670)
+	Covariance with feature 4: 0.013571777454355508 	(Variance - Covariance: 0.673)
+	Covariance with feature 5: 0.01584383987307943 	(Variance - Covariance: 0.671)
+
+INFO - 2025-02-01 15:37:58 - Class Genuine
+
+Feature 1 variance: 1.4480952651315968.
+
+	Covariance with feature 2: -0.014722243328396983 	(Variance - Covariance: 1.463)
+	Covariance with feature 3: 0.005570103005566303 	(Variance - Covariance: 1.443)
+	Covariance with feature 4: 0.01574158827246969 	(Variance - Covariance: 1.432)
+	Covariance with feature 5: 0.019497116307738226 	(Variance - Covariance: 1.429)
+	Covariance with feature 6: -0.00017668253949570457 	(Variance - Covariance: 1.448)
+
+Feature 2 variance: 0.5533907963148345.
+
+	Covariance with feature 1: -0.014722243328396983 	(Variance - Covariance: 0.568)
+	Covariance with feature 3: -0.011216868067157425 	(Variance - Covariance: 0.565)
+	Covariance with feature 4: -0.009064733593833429 	(Variance - Covariance: 0.562)
+	Covariance with feature 5: -0.014658990069187318 	(Variance - Covariance: 0.568)
+	Covariance with feature 6: 0.016349204829718463 	(Variance - Covariance: 0.537)
+
+Feature 3 variance: 0.5574802287006138.
+
+	Covariance with feature 1: 0.005570103005566303 	(Variance - Covariance: 0.552)
+	Covariance with feature 2: -0.011216868067157425 	(Variance - Covariance: 0.569)
+	Covariance with feature 4: 0.027560966325901916 	(Variance - Covariance: 0.530)
+	Covariance with feature 5: -0.003769664507982207 	(Variance - Covariance: 0.561)
+	Covariance with feature 6: -0.0145976943367627 	(Variance - Covariance: 0.572)
+
+Feature 4 variance: 0.5696570132972495.
+
+	Covariance with feature 1: 0.01574158827246969 	(Variance - Covariance: 0.554)
+	Covariance with feature 2: -0.009064733593833429 	(Variance - Covariance: 0.579)
+	Covariance with feature 3: 0.027560966325901916 	(Variance - Covariance: 0.542)
+	Covariance with feature 5: -0.011698340398559154 	(Variance - Covariance: 0.581)
+	Covariance with feature 6: 0.034993186259353874 	(Variance - Covariance: 0.535)
+
+Feature 5 variance: 1.342017674767238.
+
+	Covariance with feature 1: 0.019497116307738226 	(Variance - Covariance: 1.323)
+	Covariance with feature 2: -0.014658990069187318 	(Variance - Covariance: 1.357)
+	Covariance with feature 3: -0.003769664507982207 	(Variance - Covariance: 1.346)
+	Covariance with feature 4: -0.011698340398559154 	(Variance - Covariance: 1.354)
+	Covariance with feature 6: 0.016945409576266415 	(Variance - Covariance: 1.325)
+
+Feature 6 variance: 1.3037188044712757.
+
+	Covariance with feature 1: -0.00017668253949570457 	(Variance - Covariance: 1.304)
+	Covariance with feature 2: 0.016349204829718463 	(Variance - Covariance: 1.287)
+	Covariance with feature 3: -0.0145976943367627 	(Variance - Covariance: 1.318)
+	Covariance with feature 4: 0.034993186259353874 	(Variance - Covariance: 1.269)
+	Covariance with feature 5: 0.016945409576266415 	(Variance - Covariance: 1.287)
+
+
+--------------------------------------------------
+
+#### TIED MVG RESULTS ANALYSIS ####
+
+INFO - 2025-02-01 15:37:58 - Class Fake
+
+Feature 1 variance: 1.024949455132317.
+
+	Covariance with feature 2: -0.007342715253332817 	(Variance - Covariance: 1.032)
+	Covariance with feature 3: 0.012307764341923143 	(Variance - Covariance: 1.013)
+	Covariance with feature 4: 0.01749553221288381 	(Variance - Covariance: 1.007)
+	Covariance with feature 5: 0.016153874861500078 	(Variance - Covariance: 1.009)
+	Covariance with feature 6: -0.006817773427968416 	(Variance - Covariance: 1.032)
+
+Feature 2 variance: 0.9998611944882037.
+
+	Covariance with feature 1: -0.007342715253332817 	(Variance - Covariance: 1.007)
+	Covariance with feature 3: -0.013672980937900009 	(Variance - Covariance: 1.014)
+	Covariance with feature 4: -0.012457044786096499 	(Variance - Covariance: 1.012)
+	Covariance with feature 5: -0.020550055131380723 	(Variance - Covariance: 1.020)
+	Covariance with feature 6: 0.01962831166338541 	(Variance - Covariance: 0.980)
+
+Feature 3 variance: 0.5614106305837091.
+
+	Covariance with feature 1: 0.012307764341923143 	(Variance - Covariance: 0.549)
+	Covariance with feature 2: -0.013672980937900009 	(Variance - Covariance: 0.575)
+	Covariance with feature 4: 0.012873463192259776 	(Variance - Covariance: 0.549)
+	Covariance with feature 5: -0.005340491242305336 	(Variance - Covariance: 0.567)
+	Covariance with feature 6: 0.0011318236483580976 	(Variance - Covariance: 0.560)
+
+Feature 4 variance: 0.5556501283116847.
+
+	Covariance with feature 1: 0.01749553221288381 	(Variance - Covariance: 0.538)
+	Covariance with feature 2: -0.012457044786096499 	(Variance - Covariance: 0.568)
+	Covariance with feature 3: 0.012873463192259776 	(Variance - Covariance: 0.543)
+	Covariance with feature 5: -0.003231788352478654 	(Variance - Covariance: 0.559)
+	Covariance with feature 6: 0.024293192561257188 	(Variance - Covariance: 0.531)
+
+Feature 5 variance: 1.0193656330568668.
+
+	Covariance with feature 1: 0.016153874861500078 	(Variance - Covariance: 1.003)
+	Covariance with feature 2: -0.020550055131380723 	(Variance - Covariance: 1.040)
+	Covariance with feature 3: -0.005340491242305336 	(Variance - Covariance: 1.025)
+	Covariance with feature 4: -0.003231788352478654 	(Variance - Covariance: 1.023)
+	Covariance with feature 6: 0.016395175509524514 	(Variance - Covariance: 1.003)
+
+Feature 6 variance: 0.9954278568724257.
+
+	Covariance with feature 1: -0.006817773427968416 	(Variance - Covariance: 1.002)
+	Covariance with feature 2: 0.01962831166338541 	(Variance - Covariance: 0.976)
+	Covariance with feature 3: 0.0011318236483580976 	(Variance - Covariance: 0.994)
+	Covariance with feature 4: 0.024293192561257188 	(Variance - Covariance: 0.971)
+	Covariance with feature 5: 0.016395175509524514 	(Variance - Covariance: 0.979)
+
+INFO - 2025-02-01 15:37:58 - Class Genuine
+
+Feature 1 variance: 1.024949455132317.
+
+	Covariance with feature 2: -0.007342715253332817 	(Variance - Covariance: 1.032)
+	Covariance with feature 3: 0.012307764341923143 	(Variance - Covariance: 1.013)
+	Covariance with feature 4: 0.01749553221288381 	(Variance - Covariance: 1.007)
+	Covariance with feature 5: 0.016153874861500078 	(Variance - Covariance: 1.009)
+	Covariance with feature 6: -0.006817773427968416 	(Variance - Covariance: 1.032)
+
+Feature 2 variance: 0.9998611944882037.
+
+	Covariance with feature 1: -0.007342715253332817 	(Variance - Covariance: 1.007)
+	Covariance with feature 3: -0.013672980937900009 	(Variance - Covariance: 1.014)
+	Covariance with feature 4: -0.012457044786096499 	(Variance - Covariance: 1.012)
+	Covariance with feature 5: -0.020550055131380723 	(Variance - Covariance: 1.020)
+	Covariance with feature 6: 0.01962831166338541 	(Variance - Covariance: 0.980)
+
+Feature 3 variance: 0.5614106305837091.
+
+	Covariance with feature 1: 0.012307764341923143 	(Variance - Covariance: 0.549)
+	Covariance with feature 2: -0.013672980937900009 	(Variance - Covariance: 0.575)
+	Covariance with feature 4: 0.012873463192259776 	(Variance - Covariance: 0.549)
+	Covariance with feature 5: -0.005340491242305336 	(Variance - Covariance: 0.567)
+	Covariance with feature 6: 0.0011318236483580976 	(Variance - Covariance: 0.560)
+
+Feature 4 variance: 0.5556501283116847.
+
+	Covariance with feature 1: 0.01749553221288381 	(Variance - Covariance: 0.538)
+	Covariance with feature 2: -0.012457044786096499 	(Variance - Covariance: 0.568)
+	Covariance with feature 3: 0.012873463192259776 	(Variance - Covariance: 0.543)
+	Covariance with feature 5: -0.003231788352478654 	(Variance - Covariance: 0.559)
+	Covariance with feature 6: 0.024293192561257188 	(Variance - Covariance: 0.531)
+
+Feature 5 variance: 1.0193656330568668.
+
+	Covariance with feature 1: 0.016153874861500078 	(Variance - Covariance: 1.003)
+	Covariance with feature 2: -0.020550055131380723 	(Variance - Covariance: 1.040)
+	Covariance with feature 3: -0.005340491242305336 	(Variance - Covariance: 1.025)
+	Covariance with feature 4: -0.003231788352478654 	(Variance - Covariance: 1.023)
+	Covariance with feature 6: 0.016395175509524514 	(Variance - Covariance: 1.003)
+
+Feature 6 variance: 0.9954278568724257.
+
+	Covariance with feature 1: -0.006817773427968416 	(Variance - Covariance: 1.002)
+	Covariance with feature 2: 0.01962831166338541 	(Variance - Covariance: 0.976)
+	Covariance with feature 3: 0.0011318236483580976 	(Variance - Covariance: 0.994)
+	Covariance with feature 4: 0.024293192561257188 	(Variance - Covariance: 0.971)
+	Covariance with feature 5: 0.016395175509524514 	(Variance - Covariance: 0.979)
+
+
+--------------------------------------------------
+
+#### NAIVE BAYES MVG RESULTS ANALYSIS ####
+
+INFO - 2025-02-01 15:37:58 - Class Fake
+
+Feature 1 variance: 0.6009565063742803.
+
+	Covariance with feature 2: 0.0 	(Variance - Covariance: 0.601)
+	Covariance with feature 3: 0.0 	(Variance - Covariance: 0.601)
+	Covariance with feature 4: 0.0 	(Variance - Covariance: 0.601)
+	Covariance with feature 5: 0.0 	(Variance - Covariance: 0.601)
+	Covariance with feature 6: -0.0 	(Variance - Covariance: 0.601)
+
+Feature 2 variance: 1.4472254272925504.
+
+	Covariance with feature 1: 0.0 	(Variance - Covariance: 1.447)
+	Covariance with feature 3: -0.0 	(Variance - Covariance: 1.447)
+	Covariance with feature 4: -0.0 	(Variance - Covariance: 1.447)
+	Covariance with feature 5: -0.0 	(Variance - Covariance: 1.447)
+	Covariance with feature 6: 0.0 	(Variance - Covariance: 1.447)
+
+Feature 3 variance: 0.5653489011392431.
+
+	Covariance with feature 1: 0.0 	(Variance - Covariance: 0.565)
+	Covariance with feature 2: -0.0 	(Variance - Covariance: 0.565)
+	Covariance with feature 4: -0.0 	(Variance - Covariance: 0.565)
+	Covariance with feature 5: -0.0 	(Variance - Covariance: 0.565)
+	Covariance with feature 6: 0.0 	(Variance - Covariance: 0.565)
+
+Feature 4 variance: 0.5416152015143372.
+
+	Covariance with feature 1: 0.0 	(Variance - Covariance: 0.542)
+	Covariance with feature 2: -0.0 	(Variance - Covariance: 0.542)
+	Covariance with feature 3: -0.0 	(Variance - Covariance: 0.542)
+	Covariance with feature 5: 0.0 	(Variance - Covariance: 0.542)
+	Covariance with feature 6: 0.0 	(Variance - Covariance: 0.542)
+
+Feature 5 variance: 0.6960676413130412.
+
+	Covariance with feature 1: 0.0 	(Variance - Covariance: 0.696)
+	Covariance with feature 2: -0.0 	(Variance - Covariance: 0.696)
+	Covariance with feature 3: -0.0 	(Variance - Covariance: 0.696)
+	Covariance with feature 4: 0.0 	(Variance - Covariance: 0.696)
+	Covariance with feature 6: 0.0 	(Variance - Covariance: 0.696)
+
+Feature 6 variance: 0.6865197101792836.
+
+	Covariance with feature 1: -0.0 	(Variance - Covariance: 0.687)
+	Covariance with feature 2: 0.0 	(Variance - Covariance: 0.687)
+	Covariance with feature 3: 0.0 	(Variance - Covariance: 0.687)
+	Covariance with feature 4: 0.0 	(Variance - Covariance: 0.687)
+	Covariance with feature 5: 0.0 	(Variance - Covariance: 0.687)
+
+INFO - 2025-02-01 15:37:58 - Class Genuine
+
+Feature 1 variance: 1.4480952651315968.
+
+	Covariance with feature 2: -0.0 	(Variance - Covariance: 1.448)
+	Covariance with feature 3: 0.0 	(Variance - Covariance: 1.448)
+	Covariance with feature 4: 0.0 	(Variance - Covariance: 1.448)
+	Covariance with feature 5: 0.0 	(Variance - Covariance: 1.448)
+	Covariance with feature 6: -0.0 	(Variance - Covariance: 1.448)
+
+Feature 2 variance: 0.5533907963148345.
+
+	Covariance with feature 1: -0.0 	(Variance - Covariance: 0.553)
+	Covariance with feature 3: -0.0 	(Variance - Covariance: 0.553)
+	Covariance with feature 4: -0.0 	(Variance - Covariance: 0.553)
+	Covariance with feature 5: -0.0 	(Variance - Covariance: 0.553)
+	Covariance with feature 6: 0.0 	(Variance - Covariance: 0.553)
+
+Feature 3 variance: 0.5574802287006138.
+
+	Covariance with feature 1: 0.0 	(Variance - Covariance: 0.557)
+	Covariance with feature 2: -0.0 	(Variance - Covariance: 0.557)
+	Covariance with feature 4: 0.0 	(Variance - Covariance: 0.557)
+	Covariance with feature 5: -0.0 	(Variance - Covariance: 0.557)
+	Covariance with feature 6: -0.0 	(Variance - Covariance: 0.557)
+
+Feature 4 variance: 0.5696570132972495.
+
+	Covariance with feature 1: 0.0 	(Variance - Covariance: 0.570)
+	Covariance with feature 2: -0.0 	(Variance - Covariance: 0.570)
+	Covariance with feature 3: 0.0 	(Variance - Covariance: 0.570)
+	Covariance with feature 5: -0.0 	(Variance - Covariance: 0.570)
+	Covariance with feature 6: 0.0 	(Variance - Covariance: 0.570)
+
+Feature 5 variance: 1.342017674767238.
+
+	Covariance with feature 1: 0.0 	(Variance - Covariance: 1.342)
+	Covariance with feature 2: -0.0 	(Variance - Covariance: 1.342)
+	Covariance with feature 3: -0.0 	(Variance - Covariance: 1.342)
+	Covariance with feature 4: -0.0 	(Variance - Covariance: 1.342)
+	Covariance with feature 6: 0.0 	(Variance - Covariance: 1.342)
+
+Feature 6 variance: 1.3037188044712757.
+
+	Covariance with feature 1: -0.0 	(Variance - Covariance: 1.304)
+	Covariance with feature 2: 0.0 	(Variance - Covariance: 1.304)
+	Covariance with feature 3: -0.0 	(Variance - Covariance: 1.304)
+	Covariance with feature 4: 0.0 	(Variance - Covariance: 1.304)
+	Covariance with feature 5: 0.0 	(Variance - Covariance: 1.304)
+
+
+====================================================================================================
+
+INFO - 2025-02-01 15:37:58 - MVG MODELS PEARSON CORRELATIONS ######
+
+
+--------------------------------------------------
+
+#### MVG PEARSON CORRELATION ####
+
+INFO - 2025-02-01 15:37:58 - Class Fake
+Pearson correlation:
+[[ 1.     0.     0.033  0.034  0.02  -0.021]
+ [ 0.     1.    -0.018 -0.018 -0.026  0.023]
+ [ 0.033 -0.018  1.    -0.003 -0.011  0.027]
+ [ 0.034 -0.018 -0.003  1.     0.009  0.022]
+ [ 0.02  -0.026 -0.011  0.009  1.     0.023]
+ [-0.021  0.023  0.027  0.022  0.023  1.   ]]
+INFO - 2025-02-01 15:37:58 - Class Genuine
+Pearson correlation:
+[[ 1.    -0.016  0.006  0.017  0.014 -0.   ]
+ [-0.016  1.    -0.02  -0.016 -0.017  0.019]
+ [ 0.006 -0.02   1.     0.049 -0.004 -0.017]
+ [ 0.017 -0.016  0.049  1.    -0.013  0.041]
+ [ 0.014 -0.017 -0.004 -0.013  1.     0.013]
+ [-0.     0.019 -0.017  0.041  0.013  1.   ]]
+
+--------------------------------------------------
+
+#### TIED MVG PEARSON CORRELATION ####
+
+INFO - 2025-02-01 15:37:58 - Class Fake
+Pearson correlation:
+[[ 1.    -0.007  0.016  0.023  0.016 -0.007]
+ [-0.007  1.    -0.018 -0.017 -0.02   0.02 ]
+ [ 0.016 -0.018  1.     0.023 -0.007  0.002]
+ [ 0.023 -0.017  0.023  1.    -0.004  0.033]
+ [ 0.016 -0.02  -0.007 -0.004  1.     0.016]
+ [-0.007  0.02   0.002  0.033  0.016  1.   ]]
+INFO - 2025-02-01 15:37:58 - Class Genuine
+Pearson correlation:
+[[ 1.    -0.007  0.016  0.023  0.016 -0.007]
+ [-0.007  1.    -0.018 -0.017 -0.02   0.02 ]
+ [ 0.016 -0.018  1.     0.023 -0.007  0.002]
+ [ 0.023 -0.017  0.023  1.    -0.004  0.033]
+ [ 0.016 -0.02  -0.007 -0.004  1.     0.016]
+ [-0.007  0.02   0.002  0.033  0.016  1.   ]]
+
+--------------------------------------------------
+
+#### NAIVE BAYES MVG PEARSON CORRELATION ####
+
+INFO - 2025-02-01 15:37:58 - Class Fake
+Pearson correlation:
+[[ 1.  0.  0.  0.  0. -0.]
+ [ 0.  1. -0. -0. -0.  0.]
+ [ 0. -0.  1. -0. -0.  0.]
+ [ 0. -0. -0.  1.  0.  0.]
+ [ 0. -0. -0.  0.  1.  0.]
+ [-0.  0.  0.  0.  0.  1.]]
+INFO - 2025-02-01 15:37:58 - Class Genuine
+Pearson correlation:
+[[ 1. -0.  0.  0.  0. -0.]
+ [-0.  1. -0. -0. -0.  0.]
+ [ 0. -0.  1.  0. -0. -0.]
+ [ 0. -0.  0.  1. -0.  0.]
+ [ 0. -0. -0. -0.  1.  0.]
+ [-0.  0. -0.  0.  0.  1.]]
+
+====================================================================================================
+
+INFO - 2025-02-01 15:37:58 - MVG MODELS ON DIFFERENT SETS OF FEATURES ######
+
+
+--------------------------------------------------
+
+#### TRUNC DATASET: FIRST 4 FEATURES ####
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1841
+Number of wrong predictions: 159
+Accuracy: 92.05%
+Error rate: 7.95%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1810
+Number of wrong predictions: 190
+Accuracy: 90.50%
+Error rate: 9.50%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1847
+Number of wrong predictions: 153
+Accuracy: 92.35%
+Error rate: 7.65%
+
+
+--------------------------------------------------
+
+#### TRUNC DATASET: FEATURES 1-2 ####
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1270
+Number of wrong predictions: 730
+Accuracy: 63.50%
+Error rate: 36.50%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1011
+Number of wrong predictions: 989
+Accuracy: 50.55%
+Error rate: 49.45%
+
+
+--------------------------------------------------
+
+#### TRUNC DATASET: FEATURES 3-4 ####
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1811
+Number of wrong predictions: 189
+Accuracy: 90.55%
+Error rate: 9.45%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1812
+Number of wrong predictions: 188
+Accuracy: 90.60%
+Error rate: 9.40%
+
+
+====================================================================================================
+
+INFO - 2025-02-01 15:37:58 - MVG MODELS ON DIFFERENT PCA DIRECTIONS ######
+
+
+--------------------------------------------------
+
+#### PCA PRE-PROCESSING - 1 DIRECTIONS
+ ####
+
+
+--------------------------------------------------
+
+#### COMPUTE PCA, WITH M = 1 ####
+
+P:
+[[-8.99940019e-03]
+ [-2.58903998e-02]
+ [ 7.05479139e-01]
+ [-7.04772741e-01]
+ [-6.95928916e-02]
+ [ 3.09598000e-04]]
+
+Apply PCA. D_PCA:
+[[ 0.97600786 -0.21735014  0.03165688 ... -0.04804625 -1.01427784
+  -0.40054192]]
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1815
+Number of wrong predictions: 185
+Accuracy: 90.75%
+Error rate: 9.25%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1813
+Number of wrong predictions: 187
+Accuracy: 90.65%
+Error rate: 9.35%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1815
+Number of wrong predictions: 185
+Accuracy: 90.75%
+Error rate: 9.25%
+
+
+--------------------------------------------------
+
+#### PCA PRE-PROCESSING - 2 DIRECTIONS
+ ####
+
+
+--------------------------------------------------
+
+#### COMPUTE PCA, WITH M = 2 ####
+
+P:
+[[-8.99940019e-03 -6.47723761e-01]
+ [-2.58903998e-02  4.14384384e-01]
+ [ 7.05479139e-01 -5.30531527e-02]
+ [-7.04772741e-01  2.78575957e-03]
+ [-6.95928916e-02 -6.36280062e-01]
+ [ 3.09598000e-04  3.26312441e-02]]
+
+Apply PCA. D_PCA:
+[[ 0.97600786 -0.21735014  0.03165688 ... -0.04804625 -1.01427784
+  -0.40054192]
+ [ 1.89720333 -0.61277821  1.78801243 ... -2.31907937  0.00908286
+   0.03049843]]
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1824
+Number of wrong predictions: 176
+Accuracy: 91.20%
+Error rate: 8.80%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1815
+Number of wrong predictions: 185
+Accuracy: 90.75%
+Error rate: 9.25%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1823
+Number of wrong predictions: 177
+Accuracy: 91.15%
+Error rate: 8.85%
+
+
+--------------------------------------------------
+
+#### PCA PRE-PROCESSING - 3 DIRECTIONS
+ ####
+
+
+--------------------------------------------------
+
+#### COMPUTE PCA, WITH M = 3 ####
+
+P:
+[[-8.99940019e-03 -6.47723761e-01 -3.66379568e-01]
+ [-2.58903998e-02  4.14384384e-01  2.40155146e-01]
+ [ 7.05479139e-01 -5.30531527e-02  2.49851019e-02]
+ [-7.04772741e-01  2.78575957e-03 -3.44212071e-02]
+ [-6.95928916e-02 -6.36280062e-01  5.63012156e-01]
+ [ 3.09598000e-04  3.26312441e-02  6.99499646e-01]]
+
+Apply PCA. D_PCA:
+[[ 0.97600786 -0.21735014  0.03165688 ... -0.04804625 -1.01427784
+  -0.40054192]
+ [ 1.89720333 -0.61277821  1.78801243 ... -2.31907937  0.00908286
+   0.03049843]
+ [ 0.82020826  0.1946739  -0.3887548  ...  1.17215264 -1.51417938
+  -0.00399821]]
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1824
+Number of wrong predictions: 176
+Accuracy: 91.20%
+Error rate: 8.80%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1815
+Number of wrong predictions: 185
+Accuracy: 90.75%
+Error rate: 9.25%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1820
+Number of wrong predictions: 180
+Accuracy: 91.00%
+Error rate: 9.00%
+
+
+--------------------------------------------------
+
+#### PCA PRE-PROCESSING - 4 DIRECTIONS
+ ####
+
+
+--------------------------------------------------
+
+#### COMPUTE PCA, WITH M = 4 ####
+
+P:
+[[-8.99940019e-03 -6.47723761e-01 -3.66379568e-01  6.59031737e-01]
+ [-2.58903998e-02  4.14384384e-01  2.40155146e-01  6.33771248e-01]
+ [ 7.05479139e-01 -5.30531527e-02  2.49851019e-02  1.90114694e-02]
+ [-7.04772741e-01  2.78575957e-03 -3.44212071e-02  1.14796854e-02]
+ [-6.95928916e-02 -6.36280062e-01  5.63012156e-01 -2.43096825e-01]
+ [ 3.09598000e-04  3.26312441e-02  6.99499646e-01  3.23143759e-01]]
+
+Apply PCA. D_PCA:
+[[ 0.97600786 -0.21735014  0.03165688 ... -0.04804625 -1.01427784
+  -0.40054192]
+ [ 1.89720333 -0.61277821  1.78801243 ... -2.31907937  0.00908286
+   0.03049843]
+ [ 0.82020826  0.1946739  -0.3887548  ...  1.17215264 -1.51417938
+  -0.00399821]
+ [ 0.30761348  1.07347213  0.65054197 ...  1.5522267   0.81454376
+  -0.08356848]]
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1839
+Number of wrong predictions: 161
+Accuracy: 91.95%
+Error rate: 8.05%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1815
+Number of wrong predictions: 185
+Accuracy: 90.75%
+Error rate: 9.25%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1823
+Number of wrong predictions: 177
+Accuracy: 91.15%
+Error rate: 8.85%
+
+
+--------------------------------------------------
+
+#### PCA PRE-PROCESSING - 5 DIRECTIONS
+ ####
+
+
+--------------------------------------------------
+
+#### COMPUTE PCA, WITH M = 5 ####
+
+P:
+[[-8.99940019e-03 -6.47723761e-01 -3.66379568e-01  6.59031737e-01
+  -9.81939050e-02]
+ [-2.58903998e-02  4.14384384e-01  2.40155146e-01  6.33771248e-01
+   6.05204496e-01]
+ [ 7.05479139e-01 -5.30531527e-02  2.49851019e-02  1.90114694e-02
+  -1.55079402e-02]
+ [-7.04772741e-01  2.78575957e-03 -3.44212071e-02  1.14796854e-02
+  -8.24483919e-02]
+ [-6.95928916e-02 -6.36280062e-01  5.63012156e-01 -2.43096825e-01
+   4.62474974e-01]
+ [ 3.09598000e-04  3.26312441e-02  6.99499646e-01  3.23143759e-01
+  -6.34952076e-01]]
+
+Apply PCA. D_PCA:
+[[ 0.97600786 -0.21735014  0.03165688 ... -0.04804625 -1.01427784
+  -0.40054192]
+ [ 1.89720333 -0.61277821  1.78801243 ... -2.31907937  0.00908286
+   0.03049843]
+ [ 0.82020826  0.1946739  -0.3887548  ...  1.17215264 -1.51417938
+  -0.00399821]
+ [ 0.30761348  1.07347213  0.65054197 ...  1.5522267   0.81454376
+  -0.08356848]
+ [-0.48185907 -0.11526305  0.66722123 ... -0.66738301 -1.12523139
+   0.81909635]]
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1858
+Number of wrong predictions: 142
+Accuracy: 92.90%
+Error rate: 7.10%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1814
+Number of wrong predictions: 186
+Accuracy: 90.70%
+Error rate: 9.30%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1825
+Number of wrong predictions: 175
+Accuracy: 91.25%
+Error rate: 8.75%
+
+
+--------------------------------------------------
+
+#### PCA PRE-PROCESSING - 6 DIRECTIONS
+ ####
+
+
+--------------------------------------------------
+
+#### COMPUTE PCA, WITH M = 6 ####
+
+P:
+[[-8.99940019e-03 -6.47723761e-01 -3.66379568e-01  6.59031737e-01
+  -9.81939050e-02  4.66270270e-02]
+ [-2.58903998e-02  4.14384384e-01  2.40155146e-01  6.33771248e-01
+   6.05204496e-01 -4.47470491e-02]
+ [ 7.05479139e-01 -5.30531527e-02  2.49851019e-02  1.90114694e-02
+  -1.55079402e-02 -7.05874182e-01]
+ [-7.04772741e-01  2.78575957e-03 -3.44212071e-02  1.14796854e-02
+  -8.24483919e-02 -7.03685500e-01]
+ [-6.95928916e-02 -6.36280062e-01  5.63012156e-01 -2.43096825e-01
+   4.62474974e-01 -1.85109703e-02]
+ [ 3.09598000e-04  3.26312441e-02  6.99499646e-01  3.23143759e-01
+  -6.34952076e-01  4.52694430e-02]]
+
+Apply PCA. D_PCA:
+[[ 0.97600786 -0.21735014  0.03165688 ... -0.04804625 -1.01427784
+  -0.40054192]
+ [ 1.89720333 -0.61277821  1.78801243 ... -2.31907937  0.00908286
+   0.03049843]
+ [ 0.82020826  0.1946739  -0.3887548  ...  1.17215264 -1.51417938
+  -0.00399821]
+ [ 0.30761348  1.07347213  0.65054197 ...  1.5522267   0.81454376
+  -0.08356848]
+ [-0.48185907 -0.11526305  0.66722123 ... -0.66738301 -1.12523139
+   0.81909635]
+ [ 0.50654478 -0.67499732  1.00048507 ...  0.1913461  -0.8668838
+  -0.66752185]]
+
+
+--------------------------------------------------
+
+#### MODEL: MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1860
+Number of wrong predictions: 140
+Accuracy: 93.00%
+Error rate: 7.00%
+
+
+--------------------------------------------------
+
+#### MODEL: TIED MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1814
+Number of wrong predictions: 186
+Accuracy: 90.70%
+Error rate: 9.30%
+
+
+--------------------------------------------------
+
+#### MODEL: NAIVE BAYES MVG ####
+
+Total number of samples: 2000
+Number of correct predictions: 1822
+Number of wrong predictions: 178
+Accuracy: 91.10%
+Error rate: 8.90%
+
+INFO - 2025-02-01 15:37:58 - File 'All_MVG_PCA' saved correctly!
+
+====================================================================================================
+
+INFO - 2025-02-01 15:37:58 - Logger closed correctly!
+
+====================================================================================================
+
+INFO - 2025-02-01 15:37:58 - Logger closed correctly!
