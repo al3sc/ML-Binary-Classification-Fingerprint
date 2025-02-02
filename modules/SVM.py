@@ -109,7 +109,7 @@ def train_dual_SVM_kernel(DTR, LTR, C, kernelFunc, eps = 1.0, logger=None):
         H = vcol(alphaStar) * vcol(ZTR) * K                   # s(x_t)_i = alphaStar_i * z_i * k(x_i, x_t)
         return H.sum(0)                                             # s(x_t) = sum( s(x_t)_i )
 
-    return fScore # we directly return the function to score a matrix of test samples
+    return fScore, alphaStar # we directly return the function to score a matrix of test samples
 
 
 
@@ -162,6 +162,7 @@ def train_linear_SVM(DTR, LTR, DVAL, LVAL, C, args, prior=0.1, K=1, logger=None,
     actDCFs = []
     minDCFs = []
     error_rates = []
+    parameters = []
 
     # Table to be saved in a csv file if save_tables is true
     TABLE = [ [K, c] for c in C]
@@ -177,6 +178,13 @@ def train_linear_SVM(DTR, LTR, DVAL, LVAL, C, args, prior=0.1, K=1, logger=None,
         
         actDCFs, minDCFs, error_rates, TABLE[i] = update_local_DCF(LVAL, prior, scores, actDCFs, minDCFs, error_rates, TABLE[i], args, logger)
         
+        if args.save_models:
+            parameters.append({'C': c, 'parameters': numpy.hstack([w, b])})
+
+
+    if args.save_models:        
+        numpy.save(f'{args.output}/L9_SVM/models/L-SVM-{out_name}.npy', parameters)
+    
 
     # Plot results
     P.plot_log(
@@ -205,6 +213,7 @@ def train_polynomial_SVM(DTR, LTR, DVAL, LVAL, C, degree, args, prior=0.1, eps=0
     actDCFs = []
     minDCFs = []
     error_rates = []
+    parameters = []
 
     # Table to be saved in a csv file if save_tables is true
     TABLE = [ [eps, degree, c] for c in C]
@@ -213,11 +222,18 @@ def train_polynomial_SVM(DTR, LTR, DVAL, LVAL, C, degree, args, prior=0.1, eps=0
     for i, c in enumerate(C):
         logger and logger.log_paragraph(f"{i+1}. Training N-L SVM with C = {c:.3}")
         
-        fScore = train_dual_SVM_kernel(DTR, LTR, c, kernel, eps = eps)
+        fScore, alphaStar = train_dual_SVM_kernel(DTR, LTR, c, kernel, eps = eps)
         scores = fScore(DVAL)
         
         actDCFs, minDCFs, error_rates, TABLE[i] = update_local_DCF(LVAL, prior, scores, actDCFs, minDCFs, error_rates, TABLE[i], args, logger)
         
+        if args.save_models:
+            parameters.append({'C': c, 'parameters': alphaStar})
+
+
+    if args.save_models:        
+        numpy.save(f'{args.output}/L9_SVM/models/NL-SVM-poly_d{degree}.npy', parameters)
+    
 
     # Plot results
     P.plot_log(
@@ -248,6 +264,7 @@ def train_RBF_SVM(DTR, LTR, DVAL, LVAL, C, gammas, args, prior=0.1, eps=1, logge
     actDCFs = [[] for _ in range(len(kernels))]
     minDCFs = [[] for _ in range(len(kernels))]
     error_rates = [[] for _ in range(len(kernels))]
+    parameters = []
 
     # Table to be saved in a csv file if save_tables is true
     gammas_strings = [f"exp(-{n+1})" for n in range(4)]
@@ -258,14 +275,21 @@ def train_RBF_SVM(DTR, LTR, DVAL, LVAL, C, gammas, args, prior=0.1, eps=1, logge
         logger and logger.log_paragraph(f"{i+1}) {k_names[i]}")
         
         for j, c in enumerate(C):
-            logger and logger.log_paragraph(f"{i+1}. Training N-L SVM with C = {c:.3}")
+            logger and logger.log_paragraph(f"{j+1}. Training N-L SVM with C = {c:.3}")
             
-            fScore = train_dual_SVM_kernel(DTR, LTR, c, kernel, eps = eps)
+            fScore, alphaStar = train_dual_SVM_kernel(DTR, LTR, c, kernel, eps = eps)
             scores = fScore(DVAL)
             
             actDCFs[i], minDCFs[i], error_rates[i], TABLE[(i*len(C))+j] = update_local_DCF(LVAL, prior, scores, actDCFs[i], minDCFs[i], error_rates[i], TABLE[(i*len(C))+j], args, logger)
             
-            logger and log_train_results(actDCFs[i], minDCFs[i], error_rates[i], logger)
+            if args.save_models:
+                parameters.append({'C': c, 'parameters': alphaStar})
+
+
+        if args.save_models:        
+            numpy.save(f'{args.output}/L9_SVM/models/NL-SVM-RBF_exp(-{i}).npy', parameters)
+    
+        logger and log_train_results(actDCFs[i], minDCFs[i], error_rates[i], logger)
 
     # Plot results
     labels0 = [ f"actDCF (γ = {gamma})" for gamma in gammas_strings]

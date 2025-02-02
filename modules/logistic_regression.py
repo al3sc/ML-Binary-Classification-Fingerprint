@@ -183,7 +183,7 @@ def train_weighted_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, priors, args, lo
         logger and logger.log_paragraph(f"{i+1}) Training Weighted LogReg with π = {p}")
         
         for j, l in enumerate(lambdas):
-            logger and logger.log_paragraph(f"{i+1}. λ = {l}")
+            logger and logger.log_paragraph(f"{j+1}. λ = {l}")
             
             w, b = trainWeightedLogRegBinary(DTR, LTR, l, p)
             sVal = w.T @ DVAL + b # Compute validation scores
@@ -192,7 +192,7 @@ def train_weighted_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, priors, args, lo
             if args.save_models:
                 parameters.append({'lambda': l, 'parameters': numpy.hstack([w, b])})
 
-        logger and log_train_results(actDCFs, minDCFs, error_rates, logger)
+            logger and log_train_results(actDCFs[i], minDCFs[i], error_rates[i], logger)
      
         if args.save_models:        
             numpy.save(f'{args.output}/L8_LogReg/models/Weighted_P_0_{str(round(p,1)).replace('.','-')}.npy', parameters)
@@ -242,7 +242,7 @@ def train_PCA_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, p, args, m=6, logger=
         logger and logger.log_paragraph(f"{i+1}) Training LogReg with m = {i+1} PCA directions")
         
         for j, l in enumerate(lambdas):
-            logger and logger.log_paragraph(f"{i+1}. λ = {l}")
+            logger and logger.log_paragraph(f"{j+1}. λ = {l}")
             
             w, b = trainWeightedLogRegBinary(DTR_pca, LTR, l, p)
             sVal = w.T @ DVAL_pca + b # Compute validation scores
@@ -251,7 +251,7 @@ def train_PCA_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, p, args, m=6, logger=
             if args.save_models:
                 parameters.append({'lambda': l, 'parameters': numpy.hstack([w, b])})
 
-        logger and log_train_results(actDCFs, minDCFs, error_rates, logger)    
+            logger and log_train_results(actDCFs[i], minDCFs[i], error_rates[i], logger)    
      
         if args.save_models:        
             numpy.save(f'{args.output}/L8_LogReg/models/PCA_{i+1}.npy', parameters)

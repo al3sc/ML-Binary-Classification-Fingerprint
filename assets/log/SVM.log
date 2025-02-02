@@ -1,8 +1,8 @@
-INFO - 2025-01-25 15:20:02 - Logger initialized
+INFO - 2025-02-02 23:25:03 - Logger initialized
 
 ====================================================================================================
 
-INFO - 2025-01-25 15:21:05 - TRAING LINEAR SVM ######
+INFO - 2025-02-02 23:25:03 - TRAIN LINEAR SVM ######
 
 K = 1
 C = (15,)
@@ -12,15 +12,7 @@ C = (15,)
 
 #### 1. TRAINING LINEAR SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 15:21:06 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 15:21:06 - Training info
-w_hat: [0. 0. 0. 0. 0. 0. 0.]
-primal loss 4.000000e-02 - dual loss -0.000000e+00 - duality gap 4.000000e-02
-
-INFO - 2025-01-25 15:21:06 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:04 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
@@ -29,17 +21,7 @@ Error Rate: 50.4% - Accuracy: 49.6%
 
 #### 2. TRAINING LINEAR SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 15:21:06 - L_BFGS_B info
-Minimum position: [3.16227766e-05 3.16227766e-05 3.16227766e-05 ... 3.16227766e-05
- 3.16227766e-05 3.16227766e-05]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:21:06 - Training info
-w_hat: [ 0.00011436 -0.00160857  0.08411866 -0.08471657 -0.00376848  0.00242012
-  0.00012649]
-primal loss 1.193533e-01 - dual loss 1.193533e-01 - duality gap -4.163336e-17
-
-INFO - 2025-01-25 15:21:06 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:04 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.362
 Error Rate: 9.15% - Accuracy: 90.85%
@@ -48,16 +30,7 @@ Error Rate: 9.15% - Accuracy: 90.85%
 
 #### 3. TRAINING LINEAR SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 15:21:07 - L_BFGS_B info
-Minimum position: [0.0001 0.0001 0.0001 ... 0.0001 0.0001 0.0001]
-Number of fun calls: 24
-
-INFO - 2025-01-25 15:21:07 - Training info
-w_hat: [-0.00026753 -0.00333338  0.25828937 -0.26071636 -0.01153962  0.00724709
-  0.00034129]
-primal loss 3.290170e-01 - dual loss 3.290170e-01 - duality gap -1.110223e-16
-
-INFO - 2025-01-25 15:21:07 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:04 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.364
 Error Rate: 9.2% - Accuracy: 90.8%
@@ -66,16 +39,7 @@ Error Rate: 9.2% - Accuracy: 90.8%
 
 #### 4. TRAINING LINEAR SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 15:21:08 - L_BFGS_B info
-Minimum position: [0.00031623 0.00031623 0.00031623 ... 0.00031623 0.00031623 0.00031623]
-Number of fun calls: 71
-
-INFO - 2025-01-25 15:21:08 - Training info
-w_hat: [ 0.0038286  -0.01020429  0.46480015 -0.46523443 -0.01530671  0.01635288
-  0.00402489]
-primal loss 7.734636e-01 - dual loss 7.734636e-01 - duality gap 1.366644e-09
-
-INFO - 2025-01-25 15:21:08 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:05 - TRAINING RESULTS
 
 actDCF: 0.999 - minDCF: 0.362
 Error Rate: 9.25% - Accuracy: 90.75%
@@ -84,16 +48,7 @@ Error Rate: 9.25% - Accuracy: 90.75%
 
 #### 5. TRAINING LINEAR SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 15:21:12 - L_BFGS_B info
-Minimum position: [0.001 0.001 0.001 ... 0.001 0.    0.001]
-Number of fun calls: 235
-
-INFO - 2025-01-25 15:21:12 - Training info
-w_hat: [ 0.01350112 -0.0160013   0.67166188 -0.67483581 -0.01944158  0.02188128
-  0.01541532]
-primal loss 1.787902e+00 - dual loss 1.787902e+00 - duality gap 1.529848e-08
-
-INFO - 2025-01-25 15:21:12 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:07 - TRAINING RESULTS
 
 actDCF: 0.959 - minDCF: 0.362
 Error Rate: 9.3% - Accuracy: 90.7%
@@ -102,16 +57,7 @@ Error Rate: 9.3% - Accuracy: 90.7%
 
 #### 6. TRAINING LINEAR SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 15:21:16 - L_BFGS_B info
-Minimum position: [0.         0.00316228 0.00316228 ... 0.00316228 0.         0.00316228]
-Number of fun calls: 294
-
-INFO - 2025-01-25 15:21:16 - Training info
-w_hat: [-0.0117502  -0.02944519  0.92990305 -0.91972045 -0.03517247  0.0220648
-  0.01174436]
-primal loss 4.357345e+00 - dual loss 4.357345e+00 - duality gap 4.510833e-08
-
-INFO - 2025-01-25 15:21:16 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:10 - TRAINING RESULTS
 
 actDCF: 0.845 - minDCF: 0.365
 Error Rate: 9.35% - Accuracy: 90.64999999999999%
@@ -120,16 +66,7 @@ Error Rate: 9.35% - Accuracy: 90.64999999999999%
 
 #### 7. TRAINING LINEAR SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 15:21:21 - L_BFGS_B info
-Minimum position: [0.   0.01 0.01 ... 0.01 0.   0.01]
-Number of fun calls: 321
-
-INFO - 2025-01-25 15:21:21 - Training info
-w_hat: [-0.00168446 -0.02784334  1.1748076  -1.20659184 -0.05050262  0.05177868
-  0.0195873 ]
-primal loss 1.143261e+01 - dual loss 1.143259e+01 - duality gap 2.326049e-05
-
-INFO - 2025-01-25 15:21:21 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:13 - TRAINING RESULTS
 
 actDCF: 0.672 - minDCF: 0.362
 Error Rate: 9.25% - Accuracy: 90.75%
@@ -138,16 +75,7 @@ Error Rate: 9.25% - Accuracy: 90.75%
 
 #### 8. TRAINING LINEAR SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 15:21:28 - L_BFGS_B info
-Minimum position: [0.         0.03162278 0.03162278 ... 0.03162278 0.         0.03162278]
-Number of fun calls: 578
-
-INFO - 2025-01-25 15:21:28 - Training info
-w_hat: [ 0.02387146 -0.03916199  1.37305442 -1.41417104 -0.06041886  0.08018239
-  0.04714466]
-primal loss 3.263839e+01 - dual loss 3.263839e+01 - duality gap 5.776865e-07
-
-INFO - 2025-01-25 15:21:28 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:18 - TRAINING RESULTS
 
 actDCF: 0.579 - minDCF: 0.359
 Error Rate: 9.15% - Accuracy: 90.85%
@@ -156,16 +84,7 @@ Error Rate: 9.15% - Accuracy: 90.85%
 
 #### 9. TRAINING LINEAR SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 15:21:41 - L_BFGS_B info
-Minimum position: [0.  0.1 0.1 ... 0.1 0.  0.1]
-Number of fun calls: 978
-
-INFO - 2025-01-25 15:21:41 - Training info
-w_hat: [ 0.02970559 -0.03527322  1.52101468 -1.59279612 -0.04849137  0.05973379
-  0.06233694]
-primal loss 9.855104e+01 - dual loss 9.855104e+01 - duality gap 1.493584e-06
-
-INFO - 2025-01-25 15:21:41 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:27 - TRAINING RESULTS
 
 actDCF: 0.516 - minDCF: 0.358
 Error Rate: 9.15% - Accuracy: 90.85%
@@ -174,16 +93,7 @@ Error Rate: 9.15% - Accuracy: 90.85%
 
 #### 10. TRAINING LINEAR SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 15:22:01 - L_BFGS_B info
-Minimum position: [0.         0.31622777 0.31622777 ... 0.31622777 0.         0.31622777]
-Number of fun calls: 1803
-
-INFO - 2025-01-25 15:22:01 - Training info
-w_hat: [ 0.03253478 -0.02838998  1.57335083 -1.65178035 -0.05031093  0.05480921
-  0.0544787 ]
-primal loss 3.062134e+02 - dual loss 3.062134e+02 - duality gap 6.327150e-06
-
-INFO - 2025-01-25 15:22:01 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:42 - TRAINING RESULTS
 
 actDCF: 0.497 - minDCF: 0.358
 Error Rate: 9.1% - Accuracy: 90.9%
@@ -192,16 +102,7 @@ Error Rate: 9.1% - Accuracy: 90.9%
 
 #### 11. TRAINING LINEAR SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 15:22:19 - L_BFGS_B info
-Minimum position: [0. 1. 1. ... 1. 0. 1.]
-Number of fun calls: 1970
-
-INFO - 2025-01-25 15:22:19 - Training info
-w_hat: [ 0.03210738 -0.03292444  1.61852354 -1.69720681 -0.0583143   0.05086229
-  0.04407352]
-primal loss 9.626780e+02 - dual loss 9.625954e+02 - duality gap 8.260234e-02
-
-INFO - 2025-01-25 15:22:19 - TRAINING RESULTS
+INFO - 2025-02-02 23:25:58 - TRAINING RESULTS
 
 actDCF: 0.485 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -210,16 +111,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 12. TRAINING LINEAR SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 15:23:11 - L_BFGS_B info
-Minimum position: [0.         3.16227766 3.16227766 ... 3.16227766 0.         3.16227766]
-Number of fun calls: 5016
-
-INFO - 2025-01-25 15:23:11 - Training info
-w_hat: [ 0.03350708 -0.0320655   1.61316728 -1.69299384 -0.05399997  0.04984522
-  0.04668812]
-primal loss 3.038106e+03 - dual loss 3.038106e+03 - duality gap 2.728728e-04
-
-INFO - 2025-01-25 15:23:11 - TRAINING RESULTS
+INFO - 2025-02-02 23:26:40 - TRAINING RESULTS
 
 actDCF: 0.486 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -228,16 +120,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 13. TRAINING LINEAR SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 15:24:33 - L_BFGS_B info
-Minimum position: [ 0. 10. 10. ... 10.  0. 10.]
-Number of fun calls: 8340
-
-INFO - 2025-01-25 15:24:33 - Training info
-w_hat: [ 0.03350715 -0.03205562  1.61312205 -1.69295755 -0.05403549  0.04983557
-  0.04668037]
-primal loss 9.601412e+03 - dual loss 9.601411e+03 - duality gap 7.687805e-04
-
-INFO - 2025-01-25 15:24:33 - TRAINING RESULTS
+INFO - 2025-02-02 23:27:48 - TRAINING RESULTS
 
 actDCF: 0.486 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -246,16 +129,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 14. TRAINING LINEAR SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 15:26:57 - L_BFGS_B info
-Minimum position: [ 0.        31.6227766 31.6227766 ... 31.6227766  0.        31.6227766]
-Number of fun calls: 14407
-
-INFO - 2025-01-25 15:26:57 - Training info
-w_hat: [ 0.03333693 -0.03159632  1.61624591 -1.69433056 -0.05230597  0.05009847
-  0.04655866]
-primal loss 3.035641e+04 - dual loss 3.035640e+04 - duality gap 9.741234e-03
-
-INFO - 2025-01-25 15:26:57 - TRAINING RESULTS
+INFO - 2025-02-02 23:29:46 - TRAINING RESULTS
 
 actDCF: 0.486 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -264,16 +138,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 15. TRAINING LINEAR SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 15:29:07 - L_BFGS_B info
-Minimum position: [  0. 100. 100. ... 100.   0. 100.]
-Number of fun calls: 13137
-
-INFO - 2025-01-25 15:29:07 - Training info
-w_hat: [ 0.02712628 -0.03198849  1.61473092 -1.68677283 -0.05418394  0.05226253
-  0.04604724]
-primal loss 9.599357e+04 - dual loss 9.598928e+04 - duality gap 4.291749e+00
-
-INFO - 2025-01-25 15:29:07 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:32 - TRAINING RESULTS
 
 actDCF: 0.489 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -291,12 +156,12 @@ All losses obtained
 
 ==================================================
 
-Linear SVM training completed!
-INFO - 2025-01-25 15:29:07 - File 'L_SVM-original_data' saved correctly!
+Linear SVM (original_data) training completed!
+INFO - 2025-02-02 23:31:33 - File 'L_SVM-original_data' saved correctly!
 
 ====================================================================================================
 
-INFO - 2025-01-25 15:29:08 - TRAING LINEAR SVM - WITH CENTERED DATA ######
+INFO - 2025-02-02 23:31:33 - TRAIN LINEAR SVM - WITH CENTERED DATA ######
 
 K = 1
 C = (15,)
@@ -306,15 +171,7 @@ C = (15,)
 
 #### 1. TRAINING LINEAR SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 15:29:08 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 15:29:08 - Training info
-w_hat: [0. 0. 0. 0. 0. 0. 0.]
-primal loss 4.000000e-02 - dual loss -0.000000e+00 - duality gap 4.000000e-02
-
-INFO - 2025-01-25 15:29:08 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:33 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
@@ -323,17 +180,7 @@ Error Rate: 50.4% - Accuracy: 49.6%
 
 #### 2. TRAINING LINEAR SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 15:29:09 - L_BFGS_B info
-Minimum position: [3.16227766e-05 3.16227766e-05 3.16227766e-05 ... 3.16227766e-05
- 3.16227766e-05 3.16227766e-05]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:29:09 - Training info
-w_hat: [ 0.00011507 -0.00160899  0.08411972 -0.08471785 -0.00376669  0.00241938
-  0.00012649]
-primal loss 1.193532e-01 - dual loss 1.193532e-01 - duality gap -4.163336e-17
-
-INFO - 2025-01-25 15:29:09 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:33 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.362
 Error Rate: 9.2% - Accuracy: 90.8%
@@ -342,16 +189,7 @@ Error Rate: 9.2% - Accuracy: 90.8%
 
 #### 3. TRAINING LINEAR SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 15:29:09 - L_BFGS_B info
-Minimum position: [0.0001 0.0001 0.0001 ... 0.0001 0.0001 0.0001]
-Number of fun calls: 18
-
-INFO - 2025-01-25 15:29:09 - Training info
-w_hat: [-2.57700359e-04 -3.33749074e-03  2.58366867e-01 -2.60802715e-01
- -1.15385315e-02  7.26868866e-03  3.00000000e-04]
-primal loss 3.290156e-01 - dual loss 3.290156e-01 - duality gap -1.110223e-16
-
-INFO - 2025-01-25 15:29:09 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:34 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.364
 Error Rate: 9.2% - Accuracy: 90.8%
@@ -360,16 +198,7 @@ Error Rate: 9.2% - Accuracy: 90.8%
 
 #### 4. TRAINING LINEAR SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 15:29:10 - L_BFGS_B info
-Minimum position: [0.00031623 0.00031623 0.00031623 ... 0.00031623 0.00031623 0.00031623]
-Number of fun calls: 65
-
-INFO - 2025-01-25 15:29:10 - Training info
-w_hat: [ 0.00431506 -0.0094611   0.46500978 -0.46475923 -0.01452786  0.01602219
-  0.00120928]
-primal loss 7.734422e-01 - dual loss 7.734422e-01 - duality gap -2.220446e-16
-
-INFO - 2025-01-25 15:29:10 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:35 - TRAINING RESULTS
 
 actDCF: 0.999 - minDCF: 0.363
 Error Rate: 9.3% - Accuracy: 90.7%
@@ -378,16 +207,7 @@ Error Rate: 9.3% - Accuracy: 90.7%
 
 #### 5. TRAINING LINEAR SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 15:29:13 - L_BFGS_B info
-Minimum position: [0.001 0.001 0.001 ... 0.001 0.    0.001]
-Number of fun calls: 271
-
-INFO - 2025-01-25 15:29:13 - Training info
-w_hat: [ 0.01300909 -0.01611719  0.67104583 -0.67387378 -0.01885356  0.02300882
-  0.00665068]
-primal loss 1.787767e+00 - dual loss 1.787767e+00 - duality gap 4.671233e-09
-
-INFO - 2025-01-25 15:29:13 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:37 - TRAINING RESULTS
 
 actDCF: 0.959 - minDCF: 0.362
 Error Rate: 9.3% - Accuracy: 90.7%
@@ -396,16 +216,7 @@ Error Rate: 9.3% - Accuracy: 90.7%
 
 #### 6. TRAINING LINEAR SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 15:29:15 - L_BFGS_B info
-Minimum position: [0.         0.00316228 0.00316228 ... 0.00316228 0.         0.00316228]
-Number of fun calls: 225
-
-INFO - 2025-01-25 15:29:15 - Training info
-w_hat: [-0.01133273 -0.02943875  0.93005533 -0.91971665 -0.03536208  0.02158751
- -0.00381774]
-primal loss 4.357278e+00 - dual loss 4.357278e+00 - duality gap 3.570216e-08
-
-INFO - 2025-01-25 15:29:15 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:39 - TRAINING RESULTS
 
 actDCF: 0.845 - minDCF: 0.365
 Error Rate: 9.35% - Accuracy: 90.64999999999999%
@@ -414,16 +225,7 @@ Error Rate: 9.35% - Accuracy: 90.64999999999999%
 
 #### 7. TRAINING LINEAR SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 15:29:21 - L_BFGS_B info
-Minimum position: [0.   0.01 0.01 ... 0.01 0.   0.01]
-Number of fun calls: 475
-
-INFO - 2025-01-25 15:29:21 - Training info
-w_hat: [-3.19404351e-04 -2.75908254e-02  1.17590264e+00 -1.20835591e+00
- -5.05775444e-02  5.17807797e-02  4.98411871e-04]
-primal loss 1.143238e+01 - dual loss 1.143238e+01 - duality gap 9.639079e-08
-
-INFO - 2025-01-25 15:29:21 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:43 - TRAINING RESULTS
 
 actDCF: 0.672 - minDCF: 0.362
 Error Rate: 9.25% - Accuracy: 90.75%
@@ -432,16 +234,7 @@ Error Rate: 9.25% - Accuracy: 90.75%
 
 #### 8. TRAINING LINEAR SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 15:29:27 - L_BFGS_B info
-Minimum position: [0.         0.03162278 0.03162278 ... 0.03162278 0.         0.03162278]
-Number of fun calls: 626
-
-INFO - 2025-01-25 15:29:27 - Training info
-w_hat: [ 0.02638915 -0.03875827  1.3739243  -1.41538376 -0.05938131  0.08112004
-  0.02408801]
-primal loss 3.263752e+01 - dual loss 3.263752e+01 - duality gap 6.785639e-07
-
-INFO - 2025-01-25 15:29:27 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:48 - TRAINING RESULTS
 
 actDCF: 0.577 - minDCF: 0.359
 Error Rate: 9.2% - Accuracy: 90.8%
@@ -450,16 +243,7 @@ Error Rate: 9.2% - Accuracy: 90.8%
 
 #### 9. TRAINING LINEAR SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 15:29:37 - L_BFGS_B info
-Minimum position: [0.  0.1 0.1 ... 0.1 0.  0.1]
-Number of fun calls: 899
-
-INFO - 2025-01-25 15:29:37 - Training info
-w_hat: [ 0.02971223 -0.03526501  1.52101705 -1.592796   -0.04849277  0.05973275
-  0.03422519]
-primal loss 9.854968e+01 - dual loss 9.854968e+01 - duality gap 2.909740e-06
-
-INFO - 2025-01-25 15:29:37 - TRAINING RESULTS
+INFO - 2025-02-02 23:31:56 - TRAINING RESULTS
 
 actDCF: 0.516 - minDCF: 0.358
 Error Rate: 9.15% - Accuracy: 90.85%
@@ -468,16 +252,7 @@ Error Rate: 9.15% - Accuracy: 90.85%
 
 #### 10. TRAINING LINEAR SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 15:29:54 - L_BFGS_B info
-Minimum position: [0.         0.31622777 0.31622777 ... 0.31622777 0.         0.31622777]
-Number of fun calls: 1765
-
-INFO - 2025-01-25 15:29:54 - Training info
-w_hat: [ 0.03267074 -0.02836057  1.57293509 -1.65183754 -0.05017012  0.05490641
-  0.02569147]
-primal loss 3.062123e+02 - dual loss 3.062123e+02 - duality gap 5.089014e-06
-
-INFO - 2025-01-25 15:29:54 - TRAINING RESULTS
+INFO - 2025-02-02 23:32:10 - TRAINING RESULTS
 
 actDCF: 0.497 - minDCF: 0.358
 Error Rate: 9.1% - Accuracy: 90.9%
@@ -486,16 +261,7 @@ Error Rate: 9.1% - Accuracy: 90.9%
 
 #### 11. TRAINING LINEAR SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 15:30:23 - L_BFGS_B info
-Minimum position: [0. 1. 1. ... 1. 0. 1.]
-Number of fun calls: 2813
-
-INFO - 2025-01-25 15:30:23 - Training info
-w_hat: [ 0.03291137 -0.03349127  1.60439005 -1.68425931 -0.05529887  0.05065351
-  0.01884723]
-primal loss 9.625949e+02 - dual loss 9.625949e+02 - duality gap 2.382190e-05
-
-INFO - 2025-01-25 15:30:23 - TRAINING RESULTS
+INFO - 2025-02-02 23:32:34 - TRAINING RESULTS
 
 actDCF: 0.489 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -504,16 +270,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 12. TRAINING LINEAR SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 15:31:10 - L_BFGS_B info
-Minimum position: [0.         3.16227766 3.16227766 ... 3.16227766 0.         3.16227766]
-Number of fun calls: 4673
-
-INFO - 2025-01-25 15:31:10 - Training info
-w_hat: [ 0.03351252 -0.03209104  1.6131616  -1.69297804 -0.05403033  0.04983949
-  0.01678922]
-primal loss 3.038105e+03 - dual loss 3.038105e+03 - duality gap 1.463344e-04
-
-INFO - 2025-01-25 15:31:10 - TRAINING RESULTS
+INFO - 2025-02-02 23:33:12 - TRAINING RESULTS
 
 actDCF: 0.486 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -522,16 +279,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 13. TRAINING LINEAR SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 15:32:15 - L_BFGS_B info
-Minimum position: [ 0. 10. 10. ... 10.  0. 10.]
-Number of fun calls: 6881
-
-INFO - 2025-01-25 15:32:15 - Training info
-w_hat: [ 0.03350511 -0.03226748  1.612427   -1.69192808 -0.05427706  0.05140829
-  0.01749344]
-primal loss 9.601469e+03 - dual loss 9.601409e+03 - duality gap 5.944480e-02
-
-INFO - 2025-01-25 15:32:15 - TRAINING RESULTS
+INFO - 2025-02-02 23:34:06 - TRAINING RESULTS
 
 actDCF: 0.486 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -540,16 +288,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 14. TRAINING LINEAR SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 15:34:35 - L_BFGS_B info
-Minimum position: [ 0.        31.6227766 31.6227766 ... 31.6227766  0.        31.6227766]
-Number of fun calls: 14431
-
-INFO - 2025-01-25 15:34:35 - Training info
-w_hat: [ 0.03340119 -0.03163455  1.6162266  -1.69428511 -0.05232931  0.05008466
-  0.0166074 ]
-primal loss 3.035641e+04 - dual loss 3.035640e+04 - duality gap 9.640461e-03
-
-INFO - 2025-01-25 15:34:35 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:03 - TRAINING RESULTS
 
 actDCF: 0.486 - minDCF: 0.358
 Error Rate: 9.049999999999999% - Accuracy: 90.95%
@@ -558,17 +297,7 @@ Error Rate: 9.049999999999999% - Accuracy: 90.95%
 
 #### 15. TRAINING LINEAR SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 15:35:17 - L_BFGS_B info
-Minimum position: [  0.         100.         100.         ... 100.           0.
-  99.99871961]
-Number of fun calls: 4202
-
-INFO - 2025-01-25 15:35:17 - Training info
-w_hat: [-0.25947218 -0.09053228  1.93162509 -2.18026377 -0.04219539  0.00799531
-  0.11285176]
-primal loss 1.009370e+05 - dual loss 9.597060e+04 - duality gap 4.966348e+03
-
-INFO - 2025-01-25 15:35:17 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:37 - TRAINING RESULTS
 
 actDCF: 0.428 - minDCF: 0.385
 Error Rate: 9.4% - Accuracy: 90.60000000000001%
@@ -586,12 +315,12 @@ All losses obtained
 
 ==================================================
 
-Linear SVM training (with CENTERED DATA) completed!
-INFO - 2025-01-25 15:35:17 - File 'L_SVM-centered_data' saved correctly!
+Linear SVM (centered_data) training completed!
+INFO - 2025-02-02 23:36:37 - File 'L_SVM-centered_data' saved correctly!
 
 ====================================================================================================
 
-INFO - 2025-01-25 15:35:18 - TRAINING NON-LINEAR SVM - POLYNOMIAL KERNEL ######
+INFO - 2025-02-02 23:36:37 - TRAIN NON-LINEAR SVM - POLYNOMIAL (D=2) KERNEL ######
 
 C = (15,)
 [1e-05, 3.1622776601683795e-05, 0.0001, 0.00031622776601683794, 0.001, 0.0031622776601683794, 0.01, 0.03162277660168379, 0.1, 0.31622776601683794, 1.0, 3.1622776601683795, 10.0, 31.622776601683793, 100.0]
@@ -601,31 +330,16 @@ C = (15,)
 
 #### 1. TRAINING N-L SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 15:35:18 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 15:35:18 - Training info
-SVM (kernel) - C 1.000000e-05 - dual loss -0.000000e+00
-
-INFO - 2025-01-25 15:35:19 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:38 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
 
 --------------------------------------------------
 
-#### 2. TRAINING N-L SVM WITH C = 3.1622776601683795E-05 ####
+#### 2. TRAINING N-L SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 15:35:19 - L_BFGS_B info
-Minimum position: [3.16227766e-05 3.16227766e-05 3.16227766e-05 ... 3.16227766e-05
- 3.16227766e-05 3.16227766e-05]
-Number of fun calls: 16
-
-INFO - 2025-01-25 15:35:19 - Training info
-SVM (kernel) - C 3.162278e-05 - dual loss 1.076560e-01
-
-INFO - 2025-01-25 15:35:20 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:39 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.245
 Error Rate: 7.8% - Accuracy: 92.2%
@@ -634,30 +348,16 @@ Error Rate: 7.8% - Accuracy: 92.2%
 
 #### 3. TRAINING N-L SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 15:35:21 - L_BFGS_B info
-Minimum position: [0.0001 0.0001 0.0001 ... 0.0001 0.0001 0.0001]
-Number of fun calls: 141
-
-INFO - 2025-01-25 15:35:21 - Training info
-SVM (kernel) - C 1.000000e-04 - dual loss 2.544450e-01
-
-INFO - 2025-01-25 15:35:22 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:40 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.251
 Error Rate: 7.3999999999999995% - Accuracy: 92.60000000000001%
 
 --------------------------------------------------
 
-#### 4. TRAINING N-L SVM WITH C = 0.00031622776601683794 ####
+#### 4. TRAINING N-L SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 15:35:25 - L_BFGS_B info
-Minimum position: [0.         0.00031623 0.00031623 ... 0.         0.00031623 0.00031623]
-Number of fun calls: 181
-
-INFO - 2025-01-25 15:35:25 - Training info
-SVM (kernel) - C 3.162278e-04 - dual loss 5.636608e-01
-
-INFO - 2025-01-25 15:35:25 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:42 - TRAINING RESULTS
 
 actDCF: 0.994 - minDCF: 0.251
 Error Rate: 7.199999999999999% - Accuracy: 92.80000000000001%
@@ -666,30 +366,16 @@ Error Rate: 7.199999999999999% - Accuracy: 92.80000000000001%
 
 #### 5. TRAINING N-L SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 15:35:29 - L_BFGS_B info
-Minimum position: [0.    0.001 0.001 ... 0.    0.001 0.001]
-Number of fun calls: 271
-
-INFO - 2025-01-25 15:35:29 - Training info
-SVM (kernel) - C 1.000000e-03 - dual loss 1.280894e+00
-
-INFO - 2025-01-25 15:35:29 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:45 - TRAINING RESULTS
 
 actDCF: 0.92 - minDCF: 0.257
 Error Rate: 6.800000000000001% - Accuracy: 93.19999999999999%
 
 --------------------------------------------------
 
-#### 6. TRAINING N-L SVM WITH C = 0.0031622776601683794 ####
+#### 6. TRAINING N-L SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 15:35:35 - L_BFGS_B info
-Minimum position: [0.         0.00316228 0.00316228 ... 0.         0.         0.00316228]
-Number of fun calls: 518
-
-INFO - 2025-01-25 15:35:35 - Training info
-SVM (kernel) - C 3.162278e-03 - dual loss 3.081765e+00
-
-INFO - 2025-01-25 15:35:35 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:50 - TRAINING RESULTS
 
 actDCF: 0.751 - minDCF: 0.253
 Error Rate: 6.45% - Accuracy: 93.55%
@@ -698,30 +384,16 @@ Error Rate: 6.45% - Accuracy: 93.55%
 
 #### 7. TRAINING N-L SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 15:35:45 - L_BFGS_B info
-Minimum position: [0.   0.01 0.01 ... 0.   0.   0.  ]
-Number of fun calls: 792
-
-INFO - 2025-01-25 15:35:45 - Training info
-SVM (kernel) - C 1.000000e-02 - dual loss 7.932815e+00
-
-INFO - 2025-01-25 15:35:45 - TRAINING RESULTS
+INFO - 2025-02-02 23:36:57 - TRAINING RESULTS
 
 actDCF: 0.588 - minDCF: 0.253
 Error Rate: 6.05% - Accuracy: 93.95%
 
 --------------------------------------------------
 
-#### 8. TRAINING N-L SVM WITH C = 0.03162277660168379 ####
+#### 8. TRAINING N-L SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 15:35:58 - L_BFGS_B info
-Minimum position: [0.         0.         0.03162278 ... 0.         0.         0.        ]
-Number of fun calls: 1196
-
-INFO - 2025-01-25 15:35:58 - Training info
-SVM (kernel) - C 3.162278e-02 - dual loss 2.183764e+01
-
-INFO - 2025-01-25 15:35:58 - TRAINING RESULTS
+INFO - 2025-02-02 23:37:07 - TRAINING RESULTS
 
 actDCF: 0.467 - minDCF: 0.245
 Error Rate: 6.05% - Accuracy: 93.95%
@@ -730,30 +402,16 @@ Error Rate: 6.05% - Accuracy: 93.95%
 
 #### 9. TRAINING N-L SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 15:36:54 - L_BFGS_B info
-Minimum position: [0.  0.  0.1 ... 0.  0.  0. ]
-Number of fun calls: 5172
-
-INFO - 2025-01-25 15:36:54 - Training info
-SVM (kernel) - C 1.000000e-01 - dual loss 6.367641e+01
-
-INFO - 2025-01-25 15:36:54 - TRAINING RESULTS
+INFO - 2025-02-02 23:37:49 - TRAINING RESULTS
 
 actDCF: 0.411 - minDCF: 0.248
 Error Rate: 5.8500000000000005% - Accuracy: 94.15%
 
 --------------------------------------------------
 
-#### 10. TRAINING N-L SVM WITH C = 0.31622776601683794 ####
+#### 10. TRAINING N-L SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 15:37:27 - L_BFGS_B info
-Minimum position: [0.         0.         0.31622777 ... 0.         0.         0.        ]
-Number of fun calls: 3132
-
-INFO - 2025-01-25 15:37:27 - Training info
-SVM (kernel) - C 3.162278e-01 - dual loss 1.935007e+02
-
-INFO - 2025-01-25 15:37:27 - TRAINING RESULTS
+INFO - 2025-02-02 23:38:15 - TRAINING RESULTS
 
 actDCF: 0.39 - minDCF: 0.261
 Error Rate: 6.0% - Accuracy: 94.0%
@@ -762,30 +420,16 @@ Error Rate: 6.0% - Accuracy: 94.0%
 
 #### 11. TRAINING N-L SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 15:38:40 - L_BFGS_B info
-Minimum position: [0. 0. 1. ... 0. 0. 0.]
-Number of fun calls: 7568
-
-INFO - 2025-01-25 15:38:40 - Training info
-SVM (kernel) - C 1.000000e+00 - dual loss 6.025091e+02
-
-INFO - 2025-01-25 15:38:40 - TRAINING RESULTS
+INFO - 2025-02-02 23:39:20 - TRAINING RESULTS
 
 actDCF: 0.386 - minDCF: 0.258
 Error Rate: 6.05% - Accuracy: 93.95%
 
 --------------------------------------------------
 
-#### 12. TRAINING N-L SVM WITH C = 3.1622776601683795 ####
+#### 12. TRAINING N-L SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 15:40:30 - L_BFGS_B info
-Minimum position: [0.         0.         3.16227766 ... 0.         0.         0.        ]
-Number of fun calls: 10658
-
-INFO - 2025-01-25 15:40:30 - Training info
-SVM (kernel) - C 3.162278e+00 - dual loss 1.895173e+03
-
-INFO - 2025-01-25 15:40:31 - TRAINING RESULTS
+INFO - 2025-02-02 23:40:50 - TRAINING RESULTS
 
 actDCF: 0.382 - minDCF: 0.268
 Error Rate: 6.0% - Accuracy: 94.0%
@@ -794,46 +438,25 @@ Error Rate: 6.0% - Accuracy: 94.0%
 
 #### 13. TRAINING N-L SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 15:43:00 - L_BFGS_B info
-Minimum position: [ 0.  0. 10. ...  0.  0.  0.]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 15:43:00 - Training info
-SVM (kernel) - C 1.000000e+01 - dual loss 5.982668e+03
-
-INFO - 2025-01-25 15:43:00 - TRAINING RESULTS
+INFO - 2025-02-02 23:42:52 - TRAINING RESULTS
 
 actDCF: 0.38 - minDCF: 0.272
 Error Rate: 6.1% - Accuracy: 93.9%
 
 --------------------------------------------------
 
-#### 14. TRAINING N-L SVM WITH C = 31.622776601683793 ####
+#### 14. TRAINING N-L SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 15:45:34 - L_BFGS_B info
-Minimum position: [ 0.         0.        31.6227766 ...  0.         0.         0.       ]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 15:45:34 - Training info
-SVM (kernel) - C 3.162278e+01 - dual loss 1.890834e+04
-
-INFO - 2025-01-25 15:45:34 - TRAINING RESULTS
+INFO - 2025-02-02 23:44:55 - TRAINING RESULTS
 
 actDCF: 0.375 - minDCF: 0.271
 Error Rate: 6.15% - Accuracy: 93.85%
 
 --------------------------------------------------
 
-#### 15. TRAINING N-L SVM WITH C = 100.0 ####
+#### 15. TRAINING N-L SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 15:48:14 - L_BFGS_B info
-Minimum position: [  0.   0. 100. ...   0.   0.   0.]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 15:48:14 - Training info
-SVM (kernel) - C 1.000000e+02 - dual loss 5.978221e+04
-
-INFO - 2025-01-25 15:48:14 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:00 - TRAINING RESULTS
 
 actDCF: 0.372 - minDCF: 0.281
 Error Rate: 6.15% - Accuracy: 93.85%
@@ -849,12 +472,12 @@ All errors obtained:
 
 ==================================================
 
-Non-linear SVM training (with Polynomial d=2 kernel) completed!
-INFO - 2025-01-25 15:48:14 - File 'NL_SVM-poly_d2' saved correctly!
+Non-linear SVM (polynomial degree = 2) training completed!
+INFO - 2025-02-02 23:47:01 - File 'NL_SVM-poly_d2' saved correctly!
 
 ====================================================================================================
 
-INFO - 2025-01-25 15:48:15 - TRAINING NON-LINEAR SVM - RBF KERNELS ######
+INFO - 2025-02-02 23:47:01 - TRAIN NON-LINEAR SVM - RBF KERNELS ######
 
 C = (15,)
 [1e-05, 3.1622776601683795e-05, 0.0001, 0.00031622776601683794, 0.001, 0.0031622776601683794, 0.01, 0.03162277660168379, 0.1, 0.31622776601683794, 1.0, 3.1622776601683795, 10.0, 31.622776601683793, 100.0]
@@ -870,240 +493,259 @@ Kernels: ['RBF Kernel with γ = 0.368', 'RBF Kernel with γ = 0.135', 'RBF Kerne
 
 #### 1. TRAINING N-L SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 15:48:17 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 15:48:17 - Training info
-SVM (kernel) - C 1.000000e-05 - dual loss -0.000000e+00
-
-INFO - 2025-01-25 15:48:17 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:02 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
 
+==================================================
+
+All actDCF obtained:
+[1.0]
+All minDCF obtained:
+[1.0]
+All errors obtained:
+[50.4]
+
 --------------------------------------------------
 
-#### 2. TRAINING N-L SVM WITH C = 3.1622776601683795E-05 ####
+#### 1. TRAINING N-L SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 15:48:19 - L_BFGS_B info
-Minimum position: [3.16227766e-05 3.16227766e-05 3.16227766e-05 ... 3.16227766e-05
- 3.16227766e-05 3.16227766e-05]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:48:19 - Training info
-SVM (kernel) - C 3.162278e-05 - dual loss 1.262808e-01
-
-INFO - 2025-01-25 15:48:19 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:03 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.329
 Error Rate: 6.75% - Accuracy: 93.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206]
+All errors obtained:
+[50.4, 6.75]
+
 --------------------------------------------------
 
-#### 3. TRAINING N-L SVM WITH C = 0.0001 ####
+#### 1. TRAINING N-L SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 15:48:20 - L_BFGS_B info
-Minimum position: [0.0001 0.0001 0.0001 ... 0.0001 0.0001 0.0001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:48:20 - Training info
-SVM (kernel) - C 1.000000e-04 - dual loss 3.978970e-01
-
-INFO - 2025-01-25 15:48:20 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:04 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.329
 Error Rate: 6.75% - Accuracy: 93.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206]
+All errors obtained:
+[50.4, 6.75, 6.75]
+
 --------------------------------------------------
 
-#### 4. TRAINING N-L SVM WITH C = 0.00031622776601683794 ####
+#### 1. TRAINING N-L SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 15:48:21 - L_BFGS_B info
-Minimum position: [0.00031623 0.00031623 0.00031623 ... 0.00031623 0.00031623 0.00031623]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:48:21 - Training info
-SVM (kernel) - C 3.162278e-04 - dual loss 1.243881e+00
-
-INFO - 2025-01-25 15:48:22 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:04 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.329
 Error Rate: 6.75% - Accuracy: 93.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75]
+
 --------------------------------------------------
 
-#### 5. TRAINING N-L SVM WITH C = 0.001 ####
+#### 1. TRAINING N-L SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 15:48:23 - L_BFGS_B info
-Minimum position: [0.001 0.001 0.001 ... 0.001 0.001 0.001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:48:23 - Training info
-SVM (kernel) - C 1.000000e-03 - dual loss 3.789696e+00
-
-INFO - 2025-01-25 15:48:23 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:05 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.329
 Error Rate: 6.75% - Accuracy: 93.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75]
+
 --------------------------------------------------
 
-#### 6. TRAINING N-L SVM WITH C = 0.0031622776601683794 ####
+#### 1. TRAINING N-L SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 15:48:25 - L_BFGS_B info
-Minimum position: [0.00316228 0.00316228 0.00316228 ... 0.00316228 0.00316228 0.00316228]
-Number of fun calls: 55
-
-INFO - 2025-01-25 15:48:25 - Training info
-SVM (kernel) - C 3.162278e-03 - dual loss 1.054864e+01
-
-INFO - 2025-01-25 15:48:25 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:06 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.331
 Error Rate: 6.800000000000001% - Accuracy: 93.19999999999999%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001]
+
 --------------------------------------------------
 
-#### 7. TRAINING N-L SVM WITH C = 0.01 ####
+#### 1. TRAINING N-L SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 15:48:28 - L_BFGS_B info
-Minimum position: [0.01 0.01 0.01 ... 0.01 0.01 0.01]
-Number of fun calls: 180
-
-INFO - 2025-01-25 15:48:28 - Training info
-SVM (kernel) - C 1.000000e-02 - dual loss 2.373780e+01
-
-INFO - 2025-01-25 15:48:29 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:09 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.29
 Error Rate: 7.249999999999999% - Accuracy: 92.75%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999]
+
 --------------------------------------------------
 
-#### 8. TRAINING N-L SVM WITH C = 0.03162277660168379 ####
+#### 1. TRAINING N-L SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 15:48:33 - L_BFGS_B info
-Minimum position: [0.         0.03162278 0.03162278 ... 0.03162278 0.03162278 0.        ]
-Number of fun calls: 361
-
-INFO - 2025-01-25 15:48:33 - Training info
-SVM (kernel) - C 3.162278e-02 - dual loss 4.978202e+01
-
-INFO - 2025-01-25 15:48:33 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:13 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.272
 Error Rate: 6.3% - Accuracy: 93.7%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545, 0.2724174347158218]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999, 6.3]
+
 --------------------------------------------------
 
-#### 9. TRAINING N-L SVM WITH C = 0.1 ####
+#### 1. TRAINING N-L SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 15:48:39 - L_BFGS_B info
-Minimum position: [0.  0.  0.1 ... 0.  0.1 0. ]
-Number of fun calls: 435
-
-INFO - 2025-01-25 15:48:39 - Training info
-SVM (kernel) - C 1.000000e-01 - dual loss 1.066840e+02
-
-INFO - 2025-01-25 15:48:40 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:17 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.236
 Error Rate: 5.25% - Accuracy: 94.75%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545, 0.2724174347158218, 0.23641513056835636]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999, 6.3, 5.25]
+
 --------------------------------------------------
 
-#### 10. TRAINING N-L SVM WITH C = 0.31622776601683794 ####
+#### 1. TRAINING N-L SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 15:48:47 - L_BFGS_B info
-Minimum position: [0.         0.         0.31622777 ... 0.         0.         0.        ]
-Number of fun calls: 552
-
-INFO - 2025-01-25 15:48:47 - Training info
-SVM (kernel) - C 3.162278e-01 - dual loss 2.361053e+02
-
-INFO - 2025-01-25 15:48:48 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:22 - TRAINING RESULTS
 
 actDCF: 0.991 - minDCF: 0.202
 Error Rate: 4.45% - Accuracy: 95.55%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9910714285714286]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545, 0.2724174347158218, 0.23641513056835636, 0.20225294418842804]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999, 6.3, 5.25, 4.45]
+
 --------------------------------------------------
 
-#### 11. TRAINING N-L SVM WITH C = 1.0 ####
+#### 1. TRAINING N-L SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 15:48:57 - L_BFGS_B info
-Minimum position: [0. 0. 1. ... 0. 0. 0.]
-Number of fun calls: 744
-
-INFO - 2025-01-25 15:48:57 - Training info
-SVM (kernel) - C 1.000000e+00 - dual loss 5.374702e+02
-
-INFO - 2025-01-25 15:48:57 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:29 - TRAINING RESULTS
 
 actDCF: 0.901 - minDCF: 0.183
 Error Rate: 4.25% - Accuracy: 95.75%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9910714285714286, 0.9007936507936509]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545, 0.2724174347158218, 0.23641513056835636, 0.20225294418842804, 0.18325972862263187]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999, 6.3, 5.25, 4.45, 4.25]
+
 --------------------------------------------------
 
-#### 12. TRAINING N-L SVM WITH C = 3.1622776601683795 ####
+#### 1. TRAINING N-L SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 15:49:13 - L_BFGS_B info
-Minimum position: [0.         0.         1.18511376 ... 0.         0.         0.        ]
-Number of fun calls: 1289
-
-INFO - 2025-01-25 15:49:13 - Training info
-SVM (kernel) - C 3.162278e+00 - dual loss 1.210067e+03
-
-INFO - 2025-01-25 15:49:13 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:40 - TRAINING RESULTS
 
 actDCF: 0.715 - minDCF: 0.188
 Error Rate: 4.2% - Accuracy: 95.8%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9910714285714286, 0.9007936507936509, 0.7152777777777778]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545, 0.2724174347158218, 0.23641513056835636, 0.20225294418842804, 0.18325972862263187, 0.18751600102406554]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999, 6.3, 5.25, 4.45, 4.25, 4.2]
+
 --------------------------------------------------
 
-#### 13. TRAINING N-L SVM WITH C = 10.0 ####
+#### 1. TRAINING N-L SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 15:49:27 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1430
-
-INFO - 2025-01-25 15:49:27 - Training info
-SVM (kernel) - C 1.000000e+01 - dual loss 2.668706e+03
-
-INFO - 2025-01-25 15:49:27 - TRAINING RESULTS
+INFO - 2025-02-02 23:47:53 - TRAINING RESULTS
 
 actDCF: 0.537 - minDCF: 0.229
 Error Rate: 4.05% - Accuracy: 95.95%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9910714285714286, 0.9007936507936509, 0.7152777777777778, 0.5368503584229392]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545, 0.2724174347158218, 0.23641513056835636, 0.20225294418842804, 0.18325972862263187, 0.18751600102406554, 0.228910650281618]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999, 6.3, 5.25, 4.45, 4.25, 4.2, 4.05]
+
 --------------------------------------------------
 
-#### 14. TRAINING N-L SVM WITH C = 31.622776601683793 ####
+#### 1. TRAINING N-L SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 15:49:50 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 2539
-
-INFO - 2025-01-25 15:49:50 - Training info
-SVM (kernel) - C 3.162278e+01 - dual loss 5.632069e+03
-
-INFO - 2025-01-25 15:49:50 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:15 - TRAINING RESULTS
 
 actDCF: 0.411 - minDCF: 0.268
 Error Rate: 4.5% - Accuracy: 95.5%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9910714285714286, 0.9007936507936509, 0.7152777777777778, 0.5368503584229392, 0.4111463133640553]
+All minDCF obtained:
+[1.0, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.3292530721966206, 0.33123719918074757, 0.2904185867895545, 0.2724174347158218, 0.23641513056835636, 0.20225294418842804, 0.18325972862263187, 0.18751600102406554, 0.228910650281618, 0.26760112647209416]
+All errors obtained:
+[50.4, 6.75, 6.75, 6.75, 6.75, 6.800000000000001, 7.249999999999999, 6.3, 5.25, 4.45, 4.25, 4.2, 4.05, 4.5]
+
 --------------------------------------------------
 
-#### 15. TRAINING N-L SVM WITH C = 100.0 ####
+#### 1. TRAINING N-L SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 15:50:24 - L_BFGS_B info
-Minimum position: [ 0.         13.21899981  0.         ...  0.          0.
-  0.        ]
-Number of fun calls: 3262
-
-INFO - 2025-01-25 15:50:24 - Training info
-SVM (kernel) - C 1.000000e+02 - dual loss 1.066239e+04
-
-INFO - 2025-01-25 15:50:25 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:43 - TRAINING RESULTS
 
 actDCF: 0.375 - minDCF: 0.329
 Error Rate: 5.1% - Accuracy: 94.89999999999999%
@@ -1124,242 +766,261 @@ All errors obtained:
 
 --------------------------------------------------
 
-#### 1. TRAINING N-L SVM WITH C = 1E-05 ####
+#### 2. TRAINING N-L SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 15:50:26 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 15:50:26 - Training info
-SVM (kernel) - C 1.000000e-05 - dual loss -0.000000e+00
-
-INFO - 2025-01-25 15:50:26 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:44 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
 
+==================================================
+
+All actDCF obtained:
+[1.0]
+All minDCF obtained:
+[1.0]
+All errors obtained:
+[50.4]
+
 --------------------------------------------------
 
-#### 2. TRAINING N-L SVM WITH C = 3.1622776601683795E-05 ####
+#### 2. TRAINING N-L SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 15:50:27 - L_BFGS_B info
-Minimum position: [3.16227766e-05 3.16227766e-05 3.16227766e-05 ... 3.16227766e-05
- 3.16227766e-05 3.16227766e-05]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:50:27 - Training info
-SVM (kernel) - C 3.162278e-05 - dual loss 1.260640e-01
-
-INFO - 2025-01-25 15:50:27 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:44 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.327
 Error Rate: 8.799999999999999% - Accuracy: 91.2%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.326836917562724]
+All errors obtained:
+[50.4, 8.799999999999999]
+
 --------------------------------------------------
 
-#### 3. TRAINING N-L SVM WITH C = 0.0001 ####
+#### 2. TRAINING N-L SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 15:50:28 - L_BFGS_B info
-Minimum position: [0.0001 0.0001 0.0001 ... 0.0001 0.0001 0.0001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:50:28 - Training info
-SVM (kernel) - C 1.000000e-04 - dual loss 3.957293e-01
-
-INFO - 2025-01-25 15:50:28 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:45 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.327
 Error Rate: 8.799999999999999% - Accuracy: 91.2%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999]
+
 --------------------------------------------------
 
-#### 4. TRAINING N-L SVM WITH C = 0.00031622776601683794 ####
+#### 2. TRAINING N-L SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 15:50:29 - L_BFGS_B info
-Minimum position: [0.00031623 0.00031623 0.00031623 ... 0.00031623 0.00031623 0.00031623]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:50:29 - Training info
-SVM (kernel) - C 3.162278e-04 - dual loss 1.222204e+00
-
-INFO - 2025-01-25 15:50:29 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:46 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.327
 Error Rate: 8.799999999999999% - Accuracy: 91.2%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999]
+
 --------------------------------------------------
 
-#### 5. TRAINING N-L SVM WITH C = 0.001 ####
+#### 2. TRAINING N-L SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 15:50:30 - L_BFGS_B info
-Minimum position: [0.001 0.001 0.001 ... 0.001 0.001 0.001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:50:30 - Training info
-SVM (kernel) - C 1.000000e-03 - dual loss 3.572930e+00
-
-INFO - 2025-01-25 15:50:30 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:47 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.327
 Error Rate: 8.799999999999999% - Accuracy: 91.2%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999]
+
 --------------------------------------------------
 
-#### 6. TRAINING N-L SVM WITH C = 0.0031622776601683794 ####
+#### 2. TRAINING N-L SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 15:50:32 - L_BFGS_B info
-Minimum position: [0.00316228 0.00316228 0.00316228 ... 0.00316228 0.00316228 0.00316228]
-Number of fun calls: 135
-
-INFO - 2025-01-25 15:50:32 - Training info
-SVM (kernel) - C 3.162278e-03 - dual loss 8.634572e+00
-
-INFO - 2025-01-25 15:50:32 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:49 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.324
 Error Rate: 7.85% - Accuracy: 92.15%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85]
+
 --------------------------------------------------
 
-#### 7. TRAINING N-L SVM WITH C = 0.01 ####
+#### 2. TRAINING N-L SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 15:50:35 - L_BFGS_B info
-Minimum position: [0.01 0.01 0.01 ... 0.01 0.01 0.01]
-Number of fun calls: 176
-
-INFO - 2025-01-25 15:50:35 - Training info
-SVM (kernel) - C 1.000000e-02 - dual loss 1.844378e+01
-
-INFO - 2025-01-25 15:50:35 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:51 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.298
 Error Rate: 7.3% - Accuracy: 92.7%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3]
+
 --------------------------------------------------
 
-#### 8. TRAINING N-L SVM WITH C = 0.03162277660168379 ####
+#### 2. TRAINING N-L SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 15:50:41 - L_BFGS_B info
-Minimum position: [0.         0.03162278 0.03162278 ... 0.03162278 0.03162278 0.03162278]
-Number of fun calls: 445
-
-INFO - 2025-01-25 15:50:41 - Training info
-SVM (kernel) - C 3.162278e-02 - dual loss 4.070914e+01
-
-INFO - 2025-01-25 15:50:41 - TRAINING RESULTS
+INFO - 2025-02-02 23:48:56 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.276
 Error Rate: 6.8500000000000005% - Accuracy: 93.15%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233, 0.2763856886840758]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3, 6.8500000000000005]
+
 --------------------------------------------------
 
-#### 9. TRAINING N-L SVM WITH C = 0.1 ####
+#### 2. TRAINING N-L SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 15:50:46 - L_BFGS_B info
-Minimum position: [0.  0.1 0.1 ... 0.  0.1 0. ]
-Number of fun calls: 405
-
-INFO - 2025-01-25 15:50:46 - Training info
-SVM (kernel) - C 1.000000e-01 - dual loss 9.630519e+01
-
-INFO - 2025-01-25 15:50:47 - TRAINING RESULTS
+INFO - 2025-02-02 23:49:01 - TRAINING RESULTS
 
 actDCF: 0.984 - minDCF: 0.257
 Error Rate: 6.65% - Accuracy: 93.35%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9841269841269841]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233, 0.2763856886840758, 0.25710445468509985]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3, 6.8500000000000005, 6.65]
+
 --------------------------------------------------
 
-#### 10. TRAINING N-L SVM WITH C = 0.31622776601683794 ####
+#### 2. TRAINING N-L SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 15:50:58 - L_BFGS_B info
-Minimum position: [0.         0.         0.31622777 ... 0.         0.         0.        ]
-Number of fun calls: 1111
-
-INFO - 2025-01-25 15:50:58 - Training info
-SVM (kernel) - C 3.162278e-01 - dual loss 2.437712e+02
-
-INFO - 2025-01-25 15:50:59 - TRAINING RESULTS
+INFO - 2025-02-02 23:49:11 - TRAINING RESULTS
 
 actDCF: 0.798 - minDCF: 0.249
 Error Rate: 5.75% - Accuracy: 94.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9841269841269841, 0.7977630568356373]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233, 0.2763856886840758, 0.25710445468509985, 0.24931195596518177]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3, 6.8500000000000005, 6.65, 5.75]
+
 --------------------------------------------------
 
-#### 11. TRAINING N-L SVM WITH C = 1.0 ####
+#### 2. TRAINING N-L SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 15:51:13 - L_BFGS_B info
-Minimum position: [0. 0. 1. ... 0. 0. 0.]
-Number of fun calls: 1280
-
-INFO - 2025-01-25 15:51:13 - Training info
-SVM (kernel) - C 1.000000e+00 - dual loss 6.492773e+02
-
-INFO - 2025-01-25 15:51:14 - TRAINING RESULTS
+INFO - 2025-02-02 23:49:23 - TRAINING RESULTS
 
 actDCF: 0.675 - minDCF: 0.236
 Error Rate: 5.3% - Accuracy: 94.69999999999999%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9841269841269841, 0.7977630568356373, 0.6747471838197644]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233, 0.2763856886840758, 0.25710445468509985, 0.24931195596518177, 0.2359831029185868]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3, 6.8500000000000005, 6.65, 5.75, 5.3]
+
 --------------------------------------------------
 
-#### 12. TRAINING N-L SVM WITH C = 3.1622776601683795 ####
+#### 2. TRAINING N-L SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 15:51:35 - L_BFGS_B info
-Minimum position: [0.         0.         3.16227766 ... 0.         0.         0.        ]
-Number of fun calls: 2084
-
-INFO - 2025-01-25 15:51:35 - Training info
-SVM (kernel) - C 3.162278e+00 - dual loss 1.776067e+03
-
-INFO - 2025-01-25 15:51:35 - TRAINING RESULTS
+INFO - 2025-02-02 23:49:44 - TRAINING RESULTS
 
 actDCF: 0.6 - minDCF: 0.237
 Error Rate: 4.95% - Accuracy: 95.05%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9841269841269841, 0.7977630568356373, 0.6747471838197644, 0.6001984126984127]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233, 0.2763856886840758, 0.25710445468509985, 0.24931195596518177, 0.2359831029185868, 0.23683115719406042]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3, 6.8500000000000005, 6.65, 5.75, 5.3, 4.95]
+
 --------------------------------------------------
 
-#### 13. TRAINING N-L SVM WITH C = 10.0 ####
+#### 2. TRAINING N-L SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 15:52:16 - L_BFGS_B info
-Minimum position: [0.         0.         8.14743079 ... 0.         0.         0.        ]
-Number of fun calls: 3807
-
-INFO - 2025-01-25 15:52:16 - Training info
-SVM (kernel) - C 1.000000e+01 - dual loss 4.774612e+03
-
-INFO - 2025-01-25 15:52:17 - TRAINING RESULTS
+INFO - 2025-02-02 23:50:21 - TRAINING RESULTS
 
 actDCF: 0.501 - minDCF: 0.196
 Error Rate: 4.7% - Accuracy: 95.3%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9841269841269841, 0.7977630568356373, 0.6747471838197644, 0.6001984126984127, 0.5009920634920635]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233, 0.2763856886840758, 0.25710445468509985, 0.24931195596518177, 0.2359831029185868, 0.23683115719406042, 0.19615655401945725]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3, 6.8500000000000005, 6.65, 5.75, 5.3, 4.95, 4.7]
+
 --------------------------------------------------
 
-#### 14. TRAINING N-L SVM WITH C = 31.622776601683793 ####
+#### 2. TRAINING N-L SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 15:53:18 - L_BFGS_B info
-Minimum position: [ 0.          0.         17.06635091 ...  0.          0.
-  0.        ]
-Number of fun calls: 6129
-
-INFO - 2025-01-25 15:53:18 - Training info
-SVM (kernel) - C 3.162278e+01 - dual loss 1.209865e+04
-
-INFO - 2025-01-25 15:53:19 - TRAINING RESULTS
+INFO - 2025-02-02 23:51:17 - TRAINING RESULTS
 
 actDCF: 0.422 - minDCF: 0.175
 Error Rate: 4.5% - Accuracy: 95.5%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9841269841269841, 0.7977630568356373, 0.6747471838197644, 0.6001984126984127, 0.5009920634920635, 0.42162698412698413]
+All minDCF obtained:
+[1.0, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.326836917562724, 0.32400473630312343, 0.29849910394265233, 0.2763856886840758, 0.25710445468509985, 0.24931195596518177, 0.2359831029185868, 0.23683115719406042, 0.19615655401945725, 0.1754672299027138]
+All errors obtained:
+[50.4, 8.799999999999999, 8.799999999999999, 8.799999999999999, 8.799999999999999, 7.85, 7.3, 6.8500000000000005, 6.65, 5.75, 5.3, 4.95, 4.7, 4.5]
+
 --------------------------------------------------
 
-#### 15. TRAINING N-L SVM WITH C = 100.0 ####
+#### 2. TRAINING N-L SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 15:54:54 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 9846
-
-INFO - 2025-01-25 15:54:54 - Training info
-SVM (kernel) - C 1.000000e+02 - dual loss 2.966088e+04
-
-INFO - 2025-01-25 15:54:54 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:48 - TRAINING RESULTS
 
 actDCF: 0.321 - minDCF: 0.199
 Error Rate: 4.15% - Accuracy: 95.85000000000001%
@@ -1380,241 +1041,261 @@ All errors obtained:
 
 --------------------------------------------------
 
-#### 1. TRAINING N-L SVM WITH C = 1E-05 ####
+#### 3. TRAINING N-L SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 15:54:55 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 15:54:55 - Training info
-SVM (kernel) - C 1.000000e-05 - dual loss -0.000000e+00
-
-INFO - 2025-01-25 15:54:55 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:49 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
 
+==================================================
+
+All actDCF obtained:
+[1.0]
+All minDCF obtained:
+[1.0]
+All errors obtained:
+[50.4]
+
 --------------------------------------------------
 
-#### 2. TRAINING N-L SVM WITH C = 3.1622776601683795E-05 ####
+#### 3. TRAINING N-L SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 15:54:56 - L_BFGS_B info
-Minimum position: [3.16227766e-05 3.16227766e-05 3.16227766e-05 ... 3.16227766e-05
- 3.16227766e-05 3.16227766e-05]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:54:56 - Training info
-SVM (kernel) - C 3.162278e-05 - dual loss 1.261095e-01
-
-INFO - 2025-01-25 15:54:56 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:51 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.336
 Error Rate: 9.75% - Accuracy: 90.25%
+
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3359094982078853]
+All errors obtained:
+[50.4, 9.75]
 
 --------------------------------------------------
 
 #### 3. TRAINING N-L SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 15:54:57 - L_BFGS_B info
-Minimum position: [0.0001 0.0001 0.0001 ... 0.0001 0.0001 0.0001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:54:57 - Training info
-SVM (kernel) - C 1.000000e-04 - dual loss 3.961836e-01
-
-INFO - 2025-01-25 15:54:57 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:52 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.336
 Error Rate: 9.75% - Accuracy: 90.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853]
+All errors obtained:
+[50.4, 9.75, 9.75]
+
 --------------------------------------------------
 
-#### 4. TRAINING N-L SVM WITH C = 0.00031622776601683794 ####
+#### 3. TRAINING N-L SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 15:54:58 - L_BFGS_B info
-Minimum position: [0.00031623 0.00031623 0.00031623 ... 0.00031623 0.00031623 0.00031623]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:54:58 - Training info
-SVM (kernel) - C 3.162278e-04 - dual loss 1.226747e+00
-
-INFO - 2025-01-25 15:54:59 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:53 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.336
 Error Rate: 9.75% - Accuracy: 90.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75]
+
 --------------------------------------------------
 
-#### 5. TRAINING N-L SVM WITH C = 0.001 ####
+#### 3. TRAINING N-L SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 15:55:00 - L_BFGS_B info
-Minimum position: [0.001 0.001 0.001 ... 0.001 0.001 0.001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:55:00 - Training info
-SVM (kernel) - C 1.000000e-03 - dual loss 3.618361e+00
-
-INFO - 2025-01-25 15:55:00 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:54 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.336
 Error Rate: 9.75% - Accuracy: 90.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75]
+
 --------------------------------------------------
 
-#### 6. TRAINING N-L SVM WITH C = 0.0031622776601683794 ####
+#### 3. TRAINING N-L SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 15:55:02 - L_BFGS_B info
-Minimum position: [0.00316228 0.00316228 0.00316228 ... 0.00316228 0.00316228 0.00316228]
-Number of fun calls: 113
-
-INFO - 2025-01-25 15:55:02 - Training info
-SVM (kernel) - C 3.162278e-03 - dual loss 9.023844e+00
-
-INFO - 2025-01-25 15:55:02 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:56 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.334
 Error Rate: 8.15% - Accuracy: 91.85%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15]
+
 --------------------------------------------------
 
-#### 7. TRAINING N-L SVM WITH C = 0.01 ####
+#### 3. TRAINING N-L SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 15:55:05 - L_BFGS_B info
-Minimum position: [0.01 0.01 0.01 ... 0.01 0.01 0.01]
-Number of fun calls: 259
-
-INFO - 2025-01-25 15:55:05 - Training info
-SVM (kernel) - C 1.000000e-02 - dual loss 2.001693e+01
-
-INFO - 2025-01-25 15:55:06 - TRAINING RESULTS
+INFO - 2025-02-02 23:52:59 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.329
 Error Rate: 8.1% - Accuracy: 91.9%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1]
+
 --------------------------------------------------
 
-#### 8. TRAINING N-L SVM WITH C = 0.03162277660168379 ####
+#### 3. TRAINING N-L SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 15:55:12 - L_BFGS_B info
-Minimum position: [0.         0.03162278 0.03162278 ... 0.03162278 0.03162278 0.03162278]
-Number of fun calls: 526
-
-INFO - 2025-01-25 15:55:12 - Training info
-SVM (kernel) - C 3.162278e-02 - dual loss 4.556615e+01
-
-INFO - 2025-01-25 15:55:12 - TRAINING RESULTS
+INFO - 2025-02-02 23:53:05 - TRAINING RESULTS
 
 actDCF: 0.976 - minDCF: 0.313
 Error Rate: 7.6499999999999995% - Accuracy: 92.35%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9761904761904762]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206, 0.31267601126472094]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1, 7.6499999999999995]
+
 --------------------------------------------------
 
-#### 9. TRAINING N-L SVM WITH C = 0.1 ####
+#### 3. TRAINING N-L SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 15:55:21 - L_BFGS_B info
-Minimum position: [0.  0.1 0.1 ... 0.1 0.  0.1]
-Number of fun calls: 799
-
-INFO - 2025-01-25 15:55:21 - Training info
-SVM (kernel) - C 1.000000e-01 - dual loss 1.100713e+02
-
-INFO - 2025-01-25 15:55:22 - TRAINING RESULTS
+INFO - 2025-02-02 23:53:13 - TRAINING RESULTS
 
 actDCF: 0.836 - minDCF: 0.29
 Error Rate: 7.1% - Accuracy: 92.9%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9761904761904762, 0.8363095238095238]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206, 0.31267601126472094, 0.2895705325140809]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1, 7.6499999999999995, 7.1]
+
 --------------------------------------------------
 
-#### 10. TRAINING N-L SVM WITH C = 0.31622776601683794 ####
+#### 3. TRAINING N-L SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 15:55:30 - L_BFGS_B info
-Minimum position: [0.         0.31622777 0.31622777 ... 0.         0.         0.        ]
-Number of fun calls: 759
-
-INFO - 2025-01-25 15:55:30 - Training info
-SVM (kernel) - C 3.162278e-01 - dual loss 2.819115e+02
-
-INFO - 2025-01-25 15:55:30 - TRAINING RESULTS
+INFO - 2025-02-02 23:53:21 - TRAINING RESULTS
 
 actDCF: 0.678 - minDCF: 0.253
 Error Rate: 6.7% - Accuracy: 93.30000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9761904761904762, 0.8363095238095238, 0.6777233742959549]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206, 0.31267601126472094, 0.2895705325140809, 0.2531362007168459]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1, 7.6499999999999995, 7.1, 6.7]
+
 --------------------------------------------------
 
-#### 11. TRAINING N-L SVM WITH C = 1.0 ####
+#### 3. TRAINING N-L SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 15:55:53 - L_BFGS_B info
-Minimum position: [0. 0. 1. ... 0. 0. 0.]
-Number of fun calls: 2020
-
-INFO - 2025-01-25 15:55:53 - Training info
-SVM (kernel) - C 1.000000e+00 - dual loss 7.552835e+02
-
-INFO - 2025-01-25 15:55:53 - TRAINING RESULTS
+INFO - 2025-02-02 23:53:39 - TRAINING RESULTS
 
 actDCF: 0.55 - minDCF: 0.243
 Error Rate: 5.8999999999999995% - Accuracy: 94.10000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9761904761904762, 0.8363095238095238, 0.6777233742959549, 0.5497471838197645]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206, 0.31267601126472094, 0.2895705325140809, 0.2531362007168459, 0.24307155657962112]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1, 7.6499999999999995, 7.1, 6.7, 5.8999999999999995]
+
 --------------------------------------------------
 
-#### 12. TRAINING N-L SVM WITH C = 3.1622776601683795 ####
+#### 3. TRAINING N-L SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 15:56:22 - L_BFGS_B info
-Minimum position: [0.         0.         3.16227766 ... 0.         0.         0.        ]
-Number of fun calls: 2717
-
-INFO - 2025-01-25 15:56:22 - Training info
-SVM (kernel) - C 3.162278e+00 - dual loss 2.106924e+03
-
-INFO - 2025-01-25 15:56:22 - TRAINING RESULTS
+INFO - 2025-02-02 23:54:04 - TRAINING RESULTS
 
 actDCF: 0.467 - minDCF: 0.239
 Error Rate: 5.55% - Accuracy: 94.45%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9761904761904762, 0.8363095238095238, 0.6777233742959549, 0.5497471838197645, 0.4674059139784946]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206, 0.31267601126472094, 0.2895705325140809, 0.2531362007168459, 0.24307155657962112, 0.23895929339477726]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1, 7.6499999999999995, 7.1, 6.7, 5.8999999999999995, 5.55]
+
 --------------------------------------------------
 
-#### 13. TRAINING N-L SVM WITH C = 10.0 ####
+#### 3. TRAINING N-L SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 15:56:54 - L_BFGS_B info
-Minimum position: [ 0.  0. 10. ...  0.  0.  0.]
-Number of fun calls: 3349
-
-INFO - 2025-01-25 15:56:54 - Training info
-SVM (kernel) - C 1.000000e+01 - dual loss 6.082079e+03
-
-INFO - 2025-01-25 15:56:55 - TRAINING RESULTS
+INFO - 2025-02-02 23:54:33 - TRAINING RESULTS
 
 actDCF: 0.441 - minDCF: 0.241
 Error Rate: 5.5% - Accuracy: 94.5%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9761904761904762, 0.8363095238095238, 0.6777233742959549, 0.5497471838197645, 0.4674059139784946, 0.4406201996927804]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206, 0.31267601126472094, 0.2895705325140809, 0.2531362007168459, 0.24307155657962112, 0.23895929339477726, 0.24079941116231438]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1, 7.6499999999999995, 7.1, 6.7, 5.8999999999999995, 5.55, 5.5]
+
 --------------------------------------------------
 
-#### 14. TRAINING N-L SVM WITH C = 31.622776601683793 ####
+#### 3. TRAINING N-L SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 15:58:01 - L_BFGS_B info
-Minimum position: [0.         0.         8.41640497 ... 0.         0.         0.        ]
-Number of fun calls: 6645
-
-INFO - 2025-01-25 15:58:01 - Training info
-SVM (kernel) - C 3.162278e+01 - dual loss 1.791369e+04
-
-INFO - 2025-01-25 15:58:01 - TRAINING RESULTS
+INFO - 2025-02-02 23:55:27 - TRAINING RESULTS
 
 actDCF: 0.441 - minDCF: 0.243
 Error Rate: 5.55% - Accuracy: 94.45%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9761904761904762, 0.8363095238095238, 0.6777233742959549, 0.5497471838197645, 0.4674059139784946, 0.4406201996927804, 0.4406201996927804]
+All minDCF obtained:
+[1.0, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3359094982078853, 0.3339253712237583, 0.3292530721966206, 0.31267601126472094, 0.2895705325140809, 0.2531362007168459, 0.24307155657962112, 0.23895929339477726, 0.24079941116231438, 0.24292754736303124]
+All errors obtained:
+[50.4, 9.75, 9.75, 9.75, 9.75, 8.15, 8.1, 7.6499999999999995, 7.1, 6.7, 5.8999999999999995, 5.55, 5.5, 5.55]
+
 --------------------------------------------------
 
-#### 15. TRAINING N-L SVM WITH C = 100.0 ####
+#### 3. TRAINING N-L SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 15:59:43 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 10324
-
-INFO - 2025-01-25 15:59:43 - Training info
-SVM (kernel) - C 1.000000e+02 - dual loss 5.231736e+04
-
-INFO - 2025-01-25 15:59:44 - TRAINING RESULTS
+INFO - 2025-02-02 23:56:52 - TRAINING RESULTS
 
 actDCF: 0.433 - minDCF: 0.25
 Error Rate: 5.4% - Accuracy: 94.6%
@@ -1635,242 +1316,261 @@ All errors obtained:
 
 --------------------------------------------------
 
-#### 1. TRAINING N-L SVM WITH C = 1E-05 ####
+#### 4. TRAINING N-L SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 15:59:45 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 15:59:45 - Training info
-SVM (kernel) - C 1.000000e-05 - dual loss -0.000000e+00
-
-INFO - 2025-01-25 15:59:46 - TRAINING RESULTS
+INFO - 2025-02-02 23:56:53 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
 
+==================================================
+
+All actDCF obtained:
+[1.0]
+All minDCF obtained:
+[1.0]
+All errors obtained:
+[50.4]
+
 --------------------------------------------------
 
-#### 2. TRAINING N-L SVM WITH C = 3.1622776601683795E-05 ####
+#### 4. TRAINING N-L SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 15:59:47 - L_BFGS_B info
-Minimum position: [3.16227766e-05 3.16227766e-05 3.16227766e-05 ... 3.16227766e-05
- 3.16227766e-05 3.16227766e-05]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:59:47 - Training info
-SVM (kernel) - C 3.162278e-05 - dual loss 1.262854e-01
-
-INFO - 2025-01-25 15:59:47 - TRAINING RESULTS
+INFO - 2025-02-02 23:56:54 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.357
 Error Rate: 9.9% - Accuracy: 90.10000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3568868407578085]
+All errors obtained:
+[50.4, 9.9]
+
 --------------------------------------------------
 
-#### 3. TRAINING N-L SVM WITH C = 0.0001 ####
+#### 4. TRAINING N-L SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 15:59:49 - L_BFGS_B info
-Minimum position: [0.0001 0.0001 0.0001 ... 0.0001 0.0001 0.0001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:59:49 - Training info
-SVM (kernel) - C 1.000000e-04 - dual loss 3.979429e-01
-
-INFO - 2025-01-25 15:59:49 - TRAINING RESULTS
+INFO - 2025-02-02 23:56:55 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.357
 Error Rate: 9.9% - Accuracy: 90.10000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085]
+All errors obtained:
+[50.4, 9.9, 9.9]
+
 --------------------------------------------------
 
-#### 4. TRAINING N-L SVM WITH C = 0.00031622776601683794 ####
+#### 4. TRAINING N-L SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 15:59:50 - L_BFGS_B info
-Minimum position: [0.00031623 0.00031623 0.00031623 ... 0.00031623 0.00031623 0.00031623]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:59:50 - Training info
-SVM (kernel) - C 3.162278e-04 - dual loss 1.244340e+00
-
-INFO - 2025-01-25 15:59:50 - TRAINING RESULTS
+INFO - 2025-02-02 23:56:56 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.357
 Error Rate: 9.9% - Accuracy: 90.10000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9]
+
 --------------------------------------------------
 
-#### 5. TRAINING N-L SVM WITH C = 0.001 ####
+#### 4. TRAINING N-L SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 15:59:51 - L_BFGS_B info
-Minimum position: [0.001 0.001 0.001 ... 0.001 0.001 0.001]
-Number of fun calls: 2
-
-INFO - 2025-01-25 15:59:51 - Training info
-SVM (kernel) - C 1.000000e-03 - dual loss 3.794293e+00
-
-INFO - 2025-01-25 15:59:52 - TRAINING RESULTS
+INFO - 2025-02-02 23:56:57 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.357
 Error Rate: 9.9% - Accuracy: 90.10000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9]
+
 --------------------------------------------------
 
-#### 6. TRAINING N-L SVM WITH C = 0.0031622776601683794 ####
+#### 4. TRAINING N-L SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 15:59:53 - L_BFGS_B info
-Minimum position: [0.00316228 0.00316228 0.00316228 ... 0.00316228 0.00316228 0.00316228]
-Number of fun calls: 17
-
-INFO - 2025-01-25 15:59:53 - Training info
-SVM (kernel) - C 3.162278e-03 - dual loss 1.059295e+01
-
-INFO - 2025-01-25 15:59:54 - TRAINING RESULTS
+INFO - 2025-02-02 23:56:58 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.357
 Error Rate: 9.6% - Accuracy: 90.4%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6]
+
 --------------------------------------------------
 
-#### 7. TRAINING N-L SVM WITH C = 0.01 ####
+#### 4. TRAINING N-L SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 15:59:56 - L_BFGS_B info
-Minimum position: [0.01 0.01 0.01 ... 0.01 0.01 0.01]
-Number of fun calls: 161
-
-INFO - 2025-01-25 15:59:56 - Training info
-SVM (kernel) - C 1.000000e-02 - dual loss 2.472158e+01
-
-INFO - 2025-01-25 15:59:56 - TRAINING RESULTS
+INFO - 2025-02-02 23:57:00 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 0.346
 Error Rate: 8.85% - Accuracy: 91.14999999999999%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85]
+
 --------------------------------------------------
 
-#### 8. TRAINING N-L SVM WITH C = 0.03162277660168379 ####
+#### 4. TRAINING N-L SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 16:00:02 - L_BFGS_B info
-Minimum position: [0.03162278 0.03162278 0.03162278 ... 0.03162278 0.03162278 0.03162278]
-Number of fun calls: 501
-
-INFO - 2025-01-25 16:00:02 - Training info
-SVM (kernel) - C 3.162278e-02 - dual loss 5.625364e+01
-
-INFO - 2025-01-25 16:00:03 - TRAINING RESULTS
+INFO - 2025-02-02 23:57:05 - TRAINING RESULTS
 
 actDCF: 0.988 - minDCF: 0.337
 Error Rate: 8.35% - Accuracy: 91.64999999999999%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9880952380952381]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004, 0.33704557091653864]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85, 8.35]
+
 --------------------------------------------------
 
-#### 9. TRAINING N-L SVM WITH C = 0.1 ####
+#### 4. TRAINING N-L SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 16:00:11 - L_BFGS_B info
-Minimum position: [0.  0.1 0.1 ... 0.1 0.  0.1]
-Number of fun calls: 676
-
-INFO - 2025-01-25 16:00:11 - Training info
-SVM (kernel) - C 1.000000e-01 - dual loss 1.341382e+02
-
-INFO - 2025-01-25 16:00:11 - TRAINING RESULTS
+INFO - 2025-02-02 23:57:12 - TRAINING RESULTS
 
 actDCF: 0.882 - minDCF: 0.327
 Error Rate: 8.15% - Accuracy: 91.85%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9880952380952381, 0.8819444444444444]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004, 0.33704557091653864, 0.3271249359959037]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85, 8.35, 8.15]
+
 --------------------------------------------------
 
-#### 10. TRAINING N-L SVM WITH C = 0.31622776601683794 ####
+#### 4. TRAINING N-L SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 16:00:22 - L_BFGS_B info
-Minimum position: [0.         0.31622777 0.31622777 ... 0.31622777 0.         0.31622777]
-Number of fun calls: 877
-
-INFO - 2025-01-25 16:00:22 - Training info
-SVM (kernel) - C 3.162278e-01 - dual loss 3.404917e+02
-
-INFO - 2025-01-25 16:00:23 - TRAINING RESULTS
+INFO - 2025-02-02 23:57:21 - TRAINING RESULTS
 
 actDCF: 0.708 - minDCF: 0.315
 Error Rate: 7.9% - Accuracy: 92.10000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9880952380952381, 0.8819444444444444, 0.7084773425499231]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004, 0.33704557091653864, 0.3271249359959037, 0.31522017409114184]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85, 8.35, 8.15, 7.9]
+
 --------------------------------------------------
 
-#### 11. TRAINING N-L SVM WITH C = 1.0 ####
+#### 4. TRAINING N-L SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 16:00:39 - L_BFGS_B info
-Minimum position: [0. 1. 1. ... 0. 0. 0.]
-Number of fun calls: 1433
-
-INFO - 2025-01-25 16:00:39 - Training info
-SVM (kernel) - C 1.000000e+00 - dual loss 9.105622e+02
-
-INFO - 2025-01-25 16:00:39 - TRAINING RESULTS
+INFO - 2025-02-02 23:57:35 - TRAINING RESULTS
 
 actDCF: 0.595 - minDCF: 0.281
 Error Rate: 7.199999999999999% - Accuracy: 92.80000000000001%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9880952380952381, 0.8819444444444444, 0.7084773425499231, 0.5953821044546851]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004, 0.33704557091653864, 0.3271249359959037, 0.31522017409114184, 0.2809139784946237]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85, 8.35, 8.15, 7.9, 7.199999999999999]
+
 --------------------------------------------------
 
-#### 12. TRAINING N-L SVM WITH C = 3.1622776601683795 ####
+#### 4. TRAINING N-L SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 16:01:02 - L_BFGS_B info
-Minimum position: [0.         3.16227766 3.16227766 ... 0.         0.         0.        ]
-Number of fun calls: 2197
-
-INFO - 2025-01-25 16:01:02 - Training info
-SVM (kernel) - C 3.162278e+00 - dual loss 2.503384e+03
-
-INFO - 2025-01-25 16:01:02 - TRAINING RESULTS
+INFO - 2025-02-02 23:57:55 - TRAINING RESULTS
 
 actDCF: 0.527 - minDCF: 0.251
 Error Rate: 6.6000000000000005% - Accuracy: 93.39999999999999%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9880952380952381, 0.8819444444444444, 0.7084773425499231, 0.5953821044546851, 0.5269297235023043]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004, 0.33704557091653864, 0.3271249359959037, 0.31522017409114184, 0.2809139784946237, 0.2511520737327189]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85, 8.35, 8.15, 7.9, 7.199999999999999, 6.6000000000000005]
+
 --------------------------------------------------
 
-#### 13. TRAINING N-L SVM WITH C = 10.0 ####
+#### 4. TRAINING N-L SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 16:01:53 - L_BFGS_B info
-Minimum position: [ 0.  0. 10. ...  0.  0.  0.]
-Number of fun calls: 4555
-
-INFO - 2025-01-25 16:01:53 - Training info
-SVM (kernel) - C 1.000000e+01 - dual loss 7.007500e+03
-
-INFO - 2025-01-25 16:01:53 - TRAINING RESULTS
+INFO - 2025-02-02 23:58:35 - TRAINING RESULTS
 
 actDCF: 0.445 - minDCF: 0.23
 Error Rate: 6.0% - Accuracy: 94.0%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9880952380952381, 0.8819444444444444, 0.7084773425499231, 0.5953821044546851, 0.5269297235023043, 0.44458845366103433]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004, 0.33704557091653864, 0.3271249359959037, 0.31522017409114184, 0.2809139784946237, 0.2511520737327189, 0.23031874039938555]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85, 8.35, 8.15, 7.9, 7.199999999999999, 6.6000000000000005, 6.0]
+
 --------------------------------------------------
 
-#### 14. TRAINING N-L SVM WITH C = 31.622776601683793 ####
+#### 4. TRAINING N-L SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 16:03:18 - L_BFGS_B info
-Minimum position: [ 0.         0.        31.6227766 ...  0.         0.         0.       ]
-Number of fun calls: 7948
-
-INFO - 2025-01-25 16:03:18 - Training info
-SVM (kernel) - C 3.162278e+01 - dual loss 2.025285e+04
-
-INFO - 2025-01-25 16:03:18 - TRAINING RESULTS
+INFO - 2025-02-02 23:59:41 - TRAINING RESULTS
 
 actDCF: 0.413 - minDCF: 0.247
 Error Rate: 5.75% - Accuracy: 94.25%
 
+==================================================
+
+All actDCF obtained:
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.9880952380952381, 0.8819444444444444, 0.7084773425499231, 0.5953821044546851, 0.5269297235023043, 0.44458845366103433, 0.4128424219150026]
+All minDCF obtained:
+[1.0, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.3568868407578085, 0.34597414234511004, 0.33704557091653864, 0.3271249359959037, 0.31522017409114184, 0.2809139784946237, 0.2511520737327189, 0.23031874039938555, 0.24660778289810548]
+All errors obtained:
+[50.4, 9.9, 9.9, 9.9, 9.9, 9.6, 8.85, 8.35, 8.15, 7.9, 7.199999999999999, 6.6000000000000005, 6.0, 5.75]
+
 --------------------------------------------------
 
-#### 15. TRAINING N-L SVM WITH C = 100.0 ####
+#### 4. TRAINING N-L SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 16:05:10 - L_BFGS_B info
-Minimum position: [ 0.          0.         87.29319487 ...  0.          0.
-  0.        ]
-Number of fun calls: 10993
-
-INFO - 2025-01-25 16:05:10 - Training info
-SVM (kernel) - C 1.000000e+02 - dual loss 6.024831e+04
-
-INFO - 2025-01-25 16:05:10 - TRAINING RESULTS
+INFO - 2025-02-03 00:01:20 - TRAINING RESULTS
 
 actDCF: 0.399 - minDCF: 0.257
 Error Rate: 5.800000000000001% - Accuracy: 94.19999999999999%
@@ -1886,12 +1586,12 @@ All errors obtained:
 
 ==================================================
 
-Non-linear SVM training (with RBF kernel) completed!
-INFO - 2025-01-25 16:05:10 - File 'NL_SVM-RBF' saved correctly!
+Non-linear SVM (RBF) training completed!
+INFO - 2025-02-03 00:01:21 - File 'NL_SVM-RBF' saved correctly!
 
 ====================================================================================================
 
-INFO - 2025-01-25 16:05:11 - TRAINING NON-LINEAR SVM - POLYNOMIAL KERNEL ######
+INFO - 2025-02-03 00:01:21 - TRAIN NON-LINEAR SVM - POLYNOMIAL KERNEL ######
 
 C = (15,)
 [1e-05, 3.1622776601683795e-05, 0.0001, 0.00031622776601683794, 0.001, 0.0031622776601683794, 0.01, 0.03162277660168379, 0.1, 0.31622776601683794, 1.0, 3.1622776601683795, 10.0, 31.622776601683793, 100.0]
@@ -1901,31 +1601,16 @@ C = (15,)
 
 #### 1. TRAINING N-L SVM WITH C = 1E-05 ####
 
-INFO - 2025-01-25 16:05:12 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 1
-
-INFO - 2025-01-25 16:05:12 - Training info
-SVM (kernel) - C 1.000000e-05 - dual loss -0.000000e+00
-
-INFO - 2025-01-25 16:05:13 - TRAINING RESULTS
+INFO - 2025-02-03 00:01:22 - TRAINING RESULTS
 
 actDCF: 1.0 - minDCF: 1.0
 Error Rate: 50.4% - Accuracy: 49.6%
 
 --------------------------------------------------
 
-#### 2. TRAINING N-L SVM WITH C = 3.1622776601683795E-05 ####
+#### 2. TRAINING N-L SVM WITH C = 3.16E-05 ####
 
-INFO - 2025-01-25 16:05:17 - L_BFGS_B info
-Minimum position: [0.00000000e+00 3.16227766e-05 3.16227766e-05 ... 0.00000000e+00
- 0.00000000e+00 3.16227766e-05]
-Number of fun calls: 385
-
-INFO - 2025-01-25 16:05:17 - Training info
-SVM (kernel) - C 3.162278e-05 - dual loss 4.657339e-02
-
-INFO - 2025-01-25 16:05:18 - TRAINING RESULTS
+INFO - 2025-02-03 00:01:27 - TRAINING RESULTS
 
 actDCF: 0.806 - minDCF: 0.215
 Error Rate: 6.6000000000000005% - Accuracy: 93.39999999999999%
@@ -1934,30 +1619,16 @@ Error Rate: 6.6000000000000005% - Accuracy: 93.39999999999999%
 
 #### 3. TRAINING N-L SVM WITH C = 0.0001 ####
 
-INFO - 2025-01-25 16:05:26 - L_BFGS_B info
-Minimum position: [0.     0.0001 0.0001 ... 0.     0.     0.0001]
-Number of fun calls: 592
-
-INFO - 2025-01-25 16:05:26 - Training info
-SVM (kernel) - C 1.000000e-04 - dual loss 1.103275e-01
-
-INFO - 2025-01-25 16:05:26 - TRAINING RESULTS
+INFO - 2025-02-03 00:01:35 - TRAINING RESULTS
 
 actDCF: 0.655 - minDCF: 0.21
 Error Rate: 5.6000000000000005% - Accuracy: 94.39999999999999%
 
 --------------------------------------------------
 
-#### 4. TRAINING N-L SVM WITH C = 0.00031622776601683794 ####
+#### 4. TRAINING N-L SVM WITH C = 0.000316 ####
 
-INFO - 2025-01-25 16:05:38 - L_BFGS_B info
-Minimum position: [0.         0.00031623 0.00031623 ... 0.         0.         0.00031623]
-Number of fun calls: 857
-
-INFO - 2025-01-25 16:05:38 - Training info
-SVM (kernel) - C 3.162278e-04 - dual loss 2.624141e-01
-
-INFO - 2025-01-25 16:05:39 - TRAINING RESULTS
+INFO - 2025-02-03 00:01:44 - TRAINING RESULTS
 
 actDCF: 0.501 - minDCF: 0.187
 Error Rate: 5.0% - Accuracy: 95.0%
@@ -1966,30 +1637,16 @@ Error Rate: 5.0% - Accuracy: 95.0%
 
 #### 5. TRAINING N-L SVM WITH C = 0.001 ####
 
-INFO - 2025-01-25 16:06:02 - L_BFGS_B info
-Minimum position: [0.    0.001 0.001 ... 0.    0.    0.001]
-Number of fun calls: 1785
-
-INFO - 2025-01-25 16:06:02 - Training info
-SVM (kernel) - C 1.000000e-03 - dual loss 6.227688e-01
-
-INFO - 2025-01-25 16:06:02 - TRAINING RESULTS
+INFO - 2025-02-03 00:02:01 - TRAINING RESULTS
 
 actDCF: 0.399 - minDCF: 0.177
 Error Rate: 4.65% - Accuracy: 95.35%
 
 --------------------------------------------------
 
-#### 6. TRAINING N-L SVM WITH C = 0.0031622776601683794 ####
+#### 6. TRAINING N-L SVM WITH C = 0.00316 ####
 
-INFO - 2025-01-25 16:06:38 - L_BFGS_B info
-Minimum position: [0.         0.00316228 0.         ... 0.         0.         0.00316228]
-Number of fun calls: 3229
-
-INFO - 2025-01-25 16:06:38 - Training info
-SVM (kernel) - C 3.162278e-03 - dual loss 1.466941e+00
-
-INFO - 2025-01-25 16:06:39 - TRAINING RESULTS
+INFO - 2025-02-03 00:02:28 - TRAINING RESULTS
 
 actDCF: 0.32 - minDCF: 0.177
 Error Rate: 4.15% - Accuracy: 95.85000000000001%
@@ -1998,30 +1655,16 @@ Error Rate: 4.15% - Accuracy: 95.85000000000001%
 
 #### 7. TRAINING N-L SVM WITH C = 0.01 ####
 
-INFO - 2025-01-25 16:07:34 - L_BFGS_B info
-Minimum position: [0.         0.         0.00032899 ... 0.         0.         0.01      ]
-Number of fun calls: 5368
-
-INFO - 2025-01-25 16:07:34 - Training info
-SVM (kernel) - C 1.000000e-02 - dual loss 3.550093e+00
-
-INFO - 2025-01-25 16:07:35 - TRAINING RESULTS
+INFO - 2025-02-03 00:03:13 - TRAINING RESULTS
 
 actDCF: 0.279 - minDCF: 0.188
 Error Rate: 4.2% - Accuracy: 95.8%
 
 --------------------------------------------------
 
-#### 8. TRAINING N-L SVM WITH C = 0.03162277660168379 ####
+#### 8. TRAINING N-L SVM WITH C = 0.0316 ####
 
-INFO - 2025-01-25 16:09:03 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 10185
-
-INFO - 2025-01-25 16:09:03 - Training info
-SVM (kernel) - C 3.162278e-02 - dual loss 8.923122e+00
-
-INFO - 2025-01-25 16:09:03 - TRAINING RESULTS
+INFO - 2025-02-03 00:04:43 - TRAINING RESULTS
 
 actDCF: 0.258 - minDCF: 0.205
 Error Rate: 4.05% - Accuracy: 95.95%
@@ -2030,30 +1673,16 @@ Error Rate: 4.05% - Accuracy: 95.95%
 
 #### 9. TRAINING N-L SVM WITH C = 0.1 ####
 
-INFO - 2025-01-25 16:11:14 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 14516
-
-INFO - 2025-01-25 16:11:14 - Training info
-SVM (kernel) - C 1.000000e-01 - dual loss 2.373115e+01
-
-INFO - 2025-01-25 16:11:14 - TRAINING RESULTS
+INFO - 2025-02-03 00:06:45 - TRAINING RESULTS
 
 actDCF: 0.284 - minDCF: 0.226
 Error Rate: 4.5% - Accuracy: 95.5%
 
 --------------------------------------------------
 
-#### 10. TRAINING N-L SVM WITH C = 0.31622776601683794 ####
+#### 10. TRAINING N-L SVM WITH C = 0.316 ####
 
-INFO - 2025-01-25 16:13:48 - L_BFGS_B info
-Minimum position: [0.         0.         0.         ... 0.         0.         0.06547011]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 16:13:48 - Training info
-SVM (kernel) - C 3.162278e-01 - dual loss 6.690133e+01
-
-INFO - 2025-01-25 16:13:48 - TRAINING RESULTS
+INFO - 2025-02-03 00:08:58 - TRAINING RESULTS
 
 actDCF: 0.272 - minDCF: 0.258
 Error Rate: 4.3% - Accuracy: 95.7%
@@ -2062,30 +1691,16 @@ Error Rate: 4.3% - Accuracy: 95.7%
 
 #### 11. TRAINING N-L SVM WITH C = 1.0 ####
 
-INFO - 2025-01-25 16:16:24 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 16:16:24 - Training info
-SVM (kernel) - C 1.000000e+00 - dual loss 1.972925e+02
-
-INFO - 2025-01-25 16:16:24 - TRAINING RESULTS
+INFO - 2025-02-03 00:11:00 - TRAINING RESULTS
 
 actDCF: 0.302 - minDCF: 0.269
 Error Rate: 4.5% - Accuracy: 95.5%
 
 --------------------------------------------------
 
-#### 12. TRAINING N-L SVM WITH C = 3.1622776601683795 ####
+#### 12. TRAINING N-L SVM WITH C = 3.16 ####
 
-INFO - 2025-01-25 16:19:02 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 16:19:02 - Training info
-SVM (kernel) - C 3.162278e+00 - dual loss 6.034471e+02
-
-INFO - 2025-01-25 16:19:02 - TRAINING RESULTS
+INFO - 2025-02-03 00:13:06 - TRAINING RESULTS
 
 actDCF: 0.304 - minDCF: 0.282
 Error Rate: 4.95% - Accuracy: 95.05%
@@ -2094,46 +1709,25 @@ Error Rate: 4.95% - Accuracy: 95.05%
 
 #### 13. TRAINING N-L SVM WITH C = 10.0 ####
 
-INFO - 2025-01-25 16:21:50 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 16:21:50 - Training info
-SVM (kernel) - C 1.000000e+01 - dual loss 1.879472e+03
-
-INFO - 2025-01-25 16:21:50 - TRAINING RESULTS
+INFO - 2025-02-03 00:15:14 - TRAINING RESULTS
 
 actDCF: 0.305 - minDCF: 0.285
 Error Rate: 4.8500000000000005% - Accuracy: 95.15%
 
 --------------------------------------------------
 
-#### 14. TRAINING N-L SVM WITH C = 31.622776601683793 ####
+#### 14. TRAINING N-L SVM WITH C = 31.6 ####
 
-INFO - 2025-01-25 16:24:22 - L_BFGS_B info
-Minimum position: [0. 0. 0. ... 0. 0. 0.]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 16:24:22 - Training info
-SVM (kernel) - C 3.162278e+01 - dual loss 5.898288e+03
-
-INFO - 2025-01-25 16:24:23 - TRAINING RESULTS
+INFO - 2025-02-03 00:17:21 - TRAINING RESULTS
 
 actDCF: 0.316 - minDCF: 0.298
 Error Rate: 5.050000000000001% - Accuracy: 94.95%
 
 --------------------------------------------------
 
-#### 15. TRAINING N-L SVM WITH C = 100.0 ####
+#### 15. TRAINING N-L SVM WITH C = 1E+02 ####
 
-INFO - 2025-01-25 16:26:51 - L_BFGS_B info
-Minimum position: [0.        0.        0.        ... 0.        0.        7.6737765]
-Number of fun calls: 15001
-
-INFO - 2025-01-25 16:26:51 - Training info
-SVM (kernel) - C 1.000000e+02 - dual loss 1.847157e+04
-
-INFO - 2025-01-25 16:26:52 - TRAINING RESULTS
+INFO - 2025-02-03 00:19:28 - TRAINING RESULTS
 
 actDCF: 0.333 - minDCF: 0.323
 Error Rate: 4.9% - Accuracy: 95.1%
@@ -2149,13 +1743,13 @@ All errors obtained:
 
 ==================================================
 
-Non-linear SVM training (with Polynomial d=4 kernel) completed!
-INFO - 2025-01-25 16:26:52 - File 'NL_SVM-poly_d4' saved correctly!
+Non-linear SVM (polynomial degree = 4) training completed!
+INFO - 2025-02-03 00:19:29 - File 'NL_SVM-poly_d4' saved correctly!
 
 ====================================================================================================
 
-INFO - 2025-01-25 16:28:14 - Logger closed correctly!
+INFO - 2025-02-03 00:19:29 - Logger closed correctly!
 
 ====================================================================================================
 
-INFO - 2025-01-25 17:31:16 - Logger closed correctly!
+INFO - 2025-02-03 00:19:29 - Logger closed correctly!

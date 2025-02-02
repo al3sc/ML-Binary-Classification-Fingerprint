@@ -310,7 +310,7 @@ def main():
         # Train linear SVM with centered data
         logger and logger.log_title("Train Linear SVM - with CENTERED DATA")
         DTR_centered, DVAL_centered = center_data(DTR, DVAL)
-        train_linear_SVM(DTR_centered, LTR, DVAL_centered, LVAL, C, args, prior, K, logger)
+        train_linear_SVM(DTR_centered, LTR, DVAL_centered, LVAL, C, args, prior, K, logger, out_name="centered_data")
 
 
         # Train non-linear SVM - Polynomial (d=2) kernel
