@@ -9,6 +9,7 @@ MODULES = {
     8: ["8", "logistic_regression", "LR"],
     9: ["9", "support_vector_machines", "SVM"],
     10: ["10", "gaussian_mixture_models", "GMM"],
+    10.1: ["10.1", "best_models", "BM"],
     11: ["11", "calibration_fusion", "CF"],
 }
 
@@ -49,17 +50,23 @@ def arg_parse():
         default="./assets/outputs",
         help="Output disk directory where data will be saved, if argument is set."
     )
+    parser.add_argument(
+        "--save_models",
+        action="store_true",
+        help="Save the trained model parameters on the disk.",
+    )
     return parser.parse_args()
 
 # Function to check if the argument are correct
 def validate_args(args):
     # modules check
-    modules = args.modules.split(",")
-    valid_modules = [opt for sublist in MODULES.values() for opt in sublist]
-    
-    for m in modules:
-        if m not in valid_modules:
-            raise ValueError(f"Invalid module {m} specified. Valid options: {', '.join(valid_modules)}.")
+    if args.modules:
+        modules = args.modules.split(",")
+        valid_modules = [opt for sublist in MODULES.values() for opt in sublist]
+        
+        for m in modules:
+            if m not in valid_modules:
+                raise ValueError(f"Invalid module {m} specified. Valid options: {', '.join(valid_modules)}.")
 
 # Function to check if a specific module should run
 def should_execute(module_number, modules):

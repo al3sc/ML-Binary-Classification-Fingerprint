@@ -178,44 +178,42 @@ def classify_LDA(DTR, LTR, DVAL, LVAL, logger=None, offset=None):
 
     return PVAL
 
-def classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger=None, save_tables=None):
-    th_offsets = [-0.2, -0.1, -0.05, +0.05, +0.1, +0.2]
-    PVALs = []
-    
+
+def classify_LDA_with_PCA_and_Thresholds(DTR, LTR, DVAL, LVAL, args, directions=0, logger=None):
+    th_offsets = numpy.arange(-0.3, 0.35, 0.05).tolist()            # [-0.3, -0.25, -0.2, -0.15, -0.1, -0.05, 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3]
+    results = {}
+
+    def classify_LDA_manyThresholds(DTR_LDA, DVAL_LDA, description):
+        PVALs = []
+        for o in th_offsets:
+            if logger:
+                logger.log_paragraph(f"{description} - Threshold offset: {o}")
+            PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger, o)
+            PVALs.append(PVAL)
+        
+        return PVALs
+
+    # LDA without PCA
     DTR_LDA, DVAL_LDA = execute_LDA_TrVal(DTR, LTR, DVAL)
-    for o in th_offsets:
-        if logger:
-            logger.log_paragraph(f"Threshold offset: {o}")
-        PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger, o)
-        PVALs.append(PVAL)
+    results["LDA_(no_PCA)"] = classify_LDA_manyThresholds(DTR_LDA, DVAL_LDA, "LDA (No PCA)")
 
-    if save_tables:
-        header = ["Thresholds", "-0.2", "-0.1", "-0.05", "+0.05", "+0.1", "+0.2"]
-        row = ["Error rates", *[format(x, ".2f") for x in compute_error_rates_multi(PVALs, LVAL)]]
-        save_csv([row], header, logger, "LDA_manyThresholds", "L3_dimensionality_reduction")
-
-
-    return PVALs
-
-
-# Pre-process features with PCA before applying LDA as a classifier
-def classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, directions, logger=None, save_tables=None):
-    PVALs = []
-
+    # LDA with PCA
     for m in range(directions):
         if logger:
-            logger.log_paragraph(f"Pre processing features with {m+1} PCA directions.")
+            logger.log_paragraph(f"Pre-processing with PCA ({m+1} directions).")
         
         DTR_PCA, DVAL_PCA = execute_PCA(DTR, m+1, DVAL=DVAL)
         DTR_LDA, DVAL_LDA = execute_LDA_TrVal(DTR_PCA, LTR, DVAL_PCA)
 
-        PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger)
-        PVALs.append(PVAL)
-    
-    if save_tables:
-        header = ["PCA Directions", *[f"{m+1}" for m in range(directions)]]
-        row = ["Error rates", *[format(x, ".2f") for x in compute_error_rates_multi(PVALs, LVAL)]]
-        save_csv([row], header, logger, "LDA_prePCA", "L3_dimensionality_reduction")
+        results[f"LDA_(PCA,_{m+1}_directions)"] = classify_LDA_manyThresholds(DTR_LDA, DVAL_LDA, f"LDA (PCA, {m+1} directions)")
 
-    
-    return PVALs
+    # Salvataggio delle tabelle se richiesto
+    if args.save_tables:
+        rows = []
+        for key, PVALs in results.items():
+            header = ["Mode\Thresholds"] + [f"{t:+.2f}" for t in th_offsets]
+            rows.append([key.replace("_", " ")] + [format(x, ".2f") for x in compute_error_rates_multi(PVALs, LVAL)])
+        
+        save_csv(rows, header, logger, "LDA_error_rates", f"{args.output}/L3_dimensionality_reduction")
+
+    return results

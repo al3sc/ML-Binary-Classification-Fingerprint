@@ -172,6 +172,8 @@ def train_evaluate_GMM(DTR, LTR, DVAL, LVAL, nComponents, args, logger=None):
                 acc, err = numpy.mean(SVAL == LVAL), 1 - numpy.mean(SVAL == LVAL)
                 logger and logger.log(f"Error rate (nC_0: {nC_0}, nC_1: {nC_1}): {err*100}%")
                 _, actDCF, minDCF = compute_model_DCFs(SLLR, prior, Cfn, Cfp, LVAL)
+                # actDCF = compute_empirical_Bayes_risk_binary(SVAL, DVAL, prior, Cfn, Cfp, normalize=True)
+                # minDCF = compute_minDCF_binary_fast(SLLR, DVAL, prior, Cfn, Cfp, returnThreshold=False)
 
                 # best minDCF
                 if minDCF < best_results["minDCF"][0]:

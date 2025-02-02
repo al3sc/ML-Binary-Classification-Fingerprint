@@ -1,15 +1,18 @@
+import numpy
+
 from utils.logger import Logger
 from utils.args_utils import arg_parse, validate_args, should_execute
 
-from modules.data_management import load, split_db_2to1
+from modules.data_management import load, split_db_2to1, center_data, Z_normalization
 from modules.data_visualization import visualize_data, compute_statistics
 from modules.dimensionality_reduction import execute_PCA, visualize_data_PCA, execute_LDA, visualize_data_LDA, \
-        execute_LDA_TrVal, classify_LDA, classify_LDA_manyThresholds, classify_LDA_prePCA
+        execute_LDA_TrVal, classify_LDA, classify_LDA_with_PCA_and_Thresholds
 from modules.gaussian_density_estimation import fit_univariate_Gaussian_toFeatures
 from modules.generative_models import apply_all_binary_MVG, analyze_C_MVG_models, compute_Pearson_correlation, \
         analyze_MVG_trunc_features, analyze_MVG_PCA
 from modules.bayes_decisions_model_evaluation import analyze_applications, optimal_Bayes_decisions_effective_applications, \
         find_best_models_minDCF, find_best_calibrationLoss, visualize_Bayes_errors
+from modules.logistic_regression import train_basic_LogReg, train_weighted_LogReg, expand_features_quadratic, train_PCA_LogReg
 from modules.GMM import train_evaluate_GMM
 
 
@@ -27,6 +30,8 @@ def main():
     # DTR and LTR are model training data and labels
     # DVAL and LVAL are validation data and labels
     (DTR, LTR), (DVAL, LVAL) = split_db_2to1(D, L)
+
+    
 
 
     ###################################################################################################
@@ -112,16 +117,12 @@ def main():
         PVAL = classify_LDA(DTR_LDA, LTR, DVAL_LDA, LVAL, logger)
 
         # change thresholds for classification
-        
         logger and logger.log_title("Perform classification exploring different thresholds.")
-        PVALs = classify_LDA_manyThresholds(DTR, LTR, DVAL, LVAL, logger, save_tables=args.save_tables)
-
+        PVALs = classify_LDA_with_PCA_and_Thresholds(DTR, LTR, DVAL, LVAL, args, logger=None)       # directions = 0 -> no PCA
 
         # classification pre-processing the features with PCA
-
         logger and logger.log_title("Perform classification task - PCA for pre-processing.")
-        
-        PVALs = classify_LDA_prePCA(DTR, LTR, DVAL, LVAL, m, logger, save_tables=args.save_tables)        
+        PVALs = classify_LDA_with_PCA_and_Thresholds(DTR, LTR, DVAL, LVAL, args, directions=m, logger=None)
 
         if args.log:
             logger.__close__()
@@ -138,7 +139,7 @@ def main():
         if args.log:
             logger = Logger("gaussian_density_estimation", resume=args.resume)
 
-        fit_univariate_Gaussian_toFeatures(D, L, args.save_plots, logger)
+        fit_univariate_Gaussian_toFeatures(D, L, args, logger)
 
 
         if args.log:
@@ -228,6 +229,78 @@ def main():
     
     
 
+    ###################################################################################################
+    # 8) Logistic Regression
+
+    if should_execute(8, args.modules):
+        print("8 Logistic Regression...")
+
+        # Initialize logger
+        if args.log:
+            logger = Logger("logistic_regression", resume=args.resume)
+
+        lambdas = numpy.logspace(-4, 2, 13)
+        prior, Cfn, Cfp = 0.1, 1.0, 1.0
+        pEmp = (LTR == 1).sum() / LTR.size
+
+        # Train basic Logistic Regression
+        logger and logger.log_title("Training Logistic Regression - Basic version")
+        train_basic_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, pEmp, args, logger)
+
+        # Trunc the dataset and train Logistic Regression
+        logger and logger.log_title("Training Logistic Regression - Truncated dataset version")
+        DTR_trunc = DTR[:, ::50]
+        LTR_trunc = LTR[::50]
+        train_basic_LogReg(DTR_trunc, LTR_trunc, DVAL, LVAL, lambdas, prior, pEmp, args, logger, "Truncated")
+
+        # Train weighted Logistic Regression
+        logger and logger.log_title("Training Logistic Regression - Weighted dataset version")
+        priors = numpy.linspace(0.1, 0.9, 9)
+        train_weighted_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, priors, args, logger)
+
+        # Train quadratic Logistic Regression
+        logger and logger.log_title("Training Logistic Regression - Quadratic dataset version")
+        DTR_expanded = expand_features_quadratic(DTR)
+        DVAL_expanded = expand_features_quadratic(DVAL)
+        train_basic_LogReg(DTR_expanded, LTR, DVAL_expanded, LVAL, lambdas, prior, pEmp, args, logger, "Quadratic")
+
+        # Train Logistic Regression with pre-processed data
+        DTR_centered, DVAL_centered = center_data(DTR, DVAL)
+        DTR_normalized, DVAL_normalized = Z_normalization(DTR_centered, DVAL_centered)
+        logger and logger.log_title("Training Logistic Regression - Centered data")
+        train_basic_LogReg(DTR_centered, LTR, DVAL_centered, LVAL, lambdas, prior, pEmp, args, logger, "Centered_data")
+        logger and logger.log_title("Training Logistic Regression - Z-normalized data")
+        train_basic_LogReg(DTR_normalized, LTR, DVAL_normalized, LVAL, lambdas, prior, pEmp, args, logger, "Z-normalized_data")
+
+        # Train Logistic Regression with PCA
+        logger and logger.log_title("Training Logistic Regression - PCA processing on data")
+        m = 6
+        train_PCA_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, pEmp, args, m, logger)
+
+
+
+        if args.log:
+            logger.__close__()
+    
+
+
+
+    ###################################################################################################
+    # 9) Support Vector Machines
+
+    if should_execute(9, args.modules):
+        print("9 Support Vector Machines...")
+
+        # Initialize logger
+        if args.log:
+            logger = Logger("SVM", resume=args.resume)
+
+        
+
+        if args.log:
+            logger.__close__()
+
+    
 
     ###################################################################################################
     # 10) Gaussian Mixture Models
@@ -251,14 +324,24 @@ def main():
     ###################################################################################################
     # 10.1) Best perfomring models
 
-    if should_execute(10, args.modules):
+    if should_execute(10.1, args.modules):
         print("10.1 Best performing models...")
 
         # Initialize logger
         if args.log:
             logger = Logger("best_performing_models", resume=args.resume)
 
-        
+        MVG_res = [
+            "L5_generative_models/All_MVG_PCA",
+            "L5_generative_models/All_MVG",
+            "L7_bayes_decisions_model_evaluation/DCFs_MVG.csv"
+        ]
+
+        LR_res = [
+
+        ]
+
+
 
         if args.log:
             logger.__close__()

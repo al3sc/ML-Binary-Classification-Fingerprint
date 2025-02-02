@@ -158,14 +158,16 @@ def plot_Bayes_error(X, actDCFs, minDCFs, classes, title="Bayes error", xlabel=r
     plt.rc('xtick', labelsize=16)
     plt.rc('ytick', labelsize=16)
 
+    #rainbow
+    #turbo
     colors = plt.cm.plasma(numpy.linspace(0, 1, len(actDCFs)))
     
     plt.figure(figsize=(8,6), tight_layout=True)
     plt.title(title)
     
     for i, c in enumerate(classes):
-        plt.plot(X, actDCFs[c], label=f'actDCF ({c})', color=colors[i], linestyle='-', linewidth='0.9')
-        plt.plot(X, minDCFs[c], label=f'min DCF ({c})', color=colors[i], linestyle='--', linewidth='0.9')
+        plt.plot(X, actDCFs[c], label=f'actDCF ({c})', color=colors[i], linestyle='-', linewidth='1.5')
+        plt.plot(X, minDCFs[c], label=f'min DCF ({c})', color=colors[i], linestyle='--', linewidth='1.5')
 
         plt.ylim([0, 1.1])
         plt.xlim([-4, 4])

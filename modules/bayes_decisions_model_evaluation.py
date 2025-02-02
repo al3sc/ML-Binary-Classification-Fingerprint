@@ -152,6 +152,15 @@ def analyze_applications(DTR, LTR, DVAL, LVAL, applications, logger=None):
             logger.log(f"{confusion_matrix}\n")
 
 
+def getResults(DCFs):
+    models = ["MVG", "Tied MVG", "Naive Bayes MVG"]
+    results = []
+    for app_prior, modes in DCFs.items():
+        for mode, models in modes.items():
+            for model, dcfs in models.items():
+                results.append((app_prior, mode, model, dcfs[0], dcfs[1]))
+    return results
+
 def optimal_Bayes_decisions_effective_applications(DTR, LTR, DVAL, LVAL, applications, args, logger=None):
     DCFs = {}
     models = {'MVG': Gau_MVG_ML_estimates, 'Tied MVG': Gau_Tied_ML_estimates , 'Naive Bayes MVG':Gau_Naive_ML_estimates}
@@ -166,7 +175,8 @@ def optimal_Bayes_decisions_effective_applications(DTR, LTR, DVAL, LVAL, applica
         if logger:
             logger.log(f"π_T = {prior}, π_F = {1-prior:.1f}\nCfn = {Cfn}, Cfp = {Cfp}")
 
-        DCFs[t] = []
+        DCFs[t[0]] = {}
+        
         for m in range(6+1):
             if m!=0:
                 logger and logger.log_paragraph(f'PCA pre-processing - {m} directions\n')
@@ -179,52 +189,35 @@ def optimal_Bayes_decisions_effective_applications(DTR, LTR, DVAL, LVAL, applica
                 DTR_selected = DTR
                 DVAL_selected = DVAL
 
-            row = [f"{m}"]
+            dict_iter_name = f"PCA - {m} directions" if m!=0 else "No PCA"
+            DCFs[t[0]][dict_iter_name] = {}
 
             for model, func in models.items():
                 DCFu, actDCF, minDCF = train_model_DCF(DTR_selected, LTR, DVAL_selected, LVAL, prior, ML_func = func)
-                row.append(round(actDCF, 3))
-                row.append(round(minDCF, 3))
+                DCFs[t[0]][dict_iter_name][model] = [actDCF, minDCF]
             
                 logger and logger.log(f"{model:<20}Non-normalized DCF: {DCFu:.3f} - Normalized DCF: {actDCF:.3f} - minDCF: {minDCF:.3f}.")
 
-            DCFs[t].append(row)
-        
-        if args.save_tables:
-            h1 = [f"{t}", "MVG", "MVG", "Tied MVG", "Tied MVG", "Naive Bayes MVG", "Naive Bayes MVG"]
-            h2 = ["PCA Directions", "actDCF", "minDCF", "actDCF", "minDCF", "actDCF", "minDCF"]
-            header = [h1, h2]
-            name = str(t[0]).replace(".", "")
-
-            save_csv(row, header, logger, output_file=f"DCFs_{name}", output_dir=f"{args.output}L7_bayes_decisions_model_evaluation")
+    if args.save_tables:
+        header = ["App prior", "Mode", "Model", "actDCF", "minDCF"]
+        rows = getResults(DCFs)
+        save_csv(rows, header, logger, output_file=f"DCFs_MVG", output_dir=f"{args.output}/L7_bayes_decisions_model_evaluation")
     
     return DCFs
 
 
-def getResults(DCFs):
-    models = ["MVG", "Tied MVG", "Naive Bayes MVG"]
-    results = []
-    for key, values in DCFs.items():
-        for entry in values:
-            PCA_directions = entry[0]
-            for i, model in enumerate(models):
-                minDCF = entry[2*i + 2]
-                actDCF = entry[2*i + 1]
-                results.append((model, key[0], PCA_directions, minDCF, actDCF))
-    return results
-
 def find_best_models_minDCF(DCFs, n=None, logger=None):
     results = getResults(DCFs)
     
-    results.sort(key=lambda x: x[3])
+    results.sort(key=lambda x: x[4])
     top_models = results[:n] if n else results
 
     if logger:
-        logger.log(f"{'#':<5} {'Model':<20} {'Prior':<10} {'PCA Directions':<15} {'minDCF':<10}")
+        logger.log(f"{'#':<5} {'Prior':<10} {'Mode':<20} {'Model':<20} {'minDCF':<10}")
         logger.log("=" * 70)
 
         for i, model in enumerate(top_models):
-            logger.log(f"{i+1:<5} {model[0]:<20} {model[1]:<10} {model[2]:<15} {model[3]:<10.3f}")
+            logger.log(f"{i+1:<5} {model[0]:<10} {model[1]:<20} {model[2]:<20} {model[4]:<10.3f}")
 
 def find_best_calibrationLoss(DCFs, bound_percentage=10, logger=None):
     results = getResults(DCFs)
@@ -232,25 +225,26 @@ def find_best_calibrationLoss(DCFs, bound_percentage=10, logger=None):
     def getCalibrationLoss(actDCF, minDCF):
         return round( (actDCF - minDCF) / minDCF * 100, 2 )
 
-    results.sort(key=lambda x: getCalibrationLoss(x[4], x[3]))
-    top_models = [x for x in results if getCalibrationLoss(x[4], x[3]) <= bound_percentage]
+    results.sort(key=lambda x: getCalibrationLoss(x[3], x[4]))
+    top_models = [x for x in results if getCalibrationLoss(x[3], x[4]) <= bound_percentage]
 
     if logger:
-        logger.log(f"{'#':<5} {'Model':<20} {'Prior':<10} {'PCA Directions':<15} {'actDCF':<10} {'minDCF':<10} {'Calibration Loss':<15}")
+        logger.log(f"{'#':<5} {'Prior':<10} {'Mode':<20} {'Model':<20} {'actDCF':<10} {'minDCF':<10} {'Calibration Loss':<15}")
         logger.log("=" * 95)
 
         for i, model in enumerate(top_models):
-            logger.log(f"{i+1:<5} {model[0]:<20} {model[1]:<10} {str(model[2]):<15} {model[4]:<10.3f} {model[3]:<10.3f} {getCalibrationLoss(model[4], model[3]):<15.2f}")
+            logger.log(f"{i+1:<5} {model[0]:<10} {model[1]:<20} {str(model[2]):<20} {model[3]:<10.3f} {model[4]:<10.3f} {getCalibrationLoss(model[3], model[4]):<15.2f}")
 
 
 def visualize_Bayes_errors(DTR, LTR, DVAL, LVAL, DCFs, args):
     models = {'MVG': Gau_MVG_ML_estimates, 'Tied MVG': Gau_Tied_ML_estimates , 'Naive Bayes MVG':Gau_Naive_ML_estimates}
     
     #our_models = DCFs[(0.1, 1.0, 1.0)]
+    #DCFs = DCFs[0.1]
     results = getResults(DCFs)
-    results = [row for row in results if row[1] == 0.1 and int(row[2]) > 0]         # choose only the application with prior=0.1
-    best_PCA_model = sorted(results, key=lambda x: x[3])[0]        # choose the PCA configuration with the lower minDCF
-    m = int(best_PCA_model[2])
+    results = [row for row in results if row[0] == 0.1 and row[1] != "No PCA"]         # choose only the application with prior=0.1
+    best_PCA_model = sorted(results, key=lambda x: x[4])[0]                     # choose the PCA configuration with the lower minDCF
+    m = int(best_PCA_model[1].split()[2])
     DTR_pca, DVAL_pca = execute_PCA(DTR, m, None, DVAL)
 
     #mvg = best_PCA_model['MVG']
