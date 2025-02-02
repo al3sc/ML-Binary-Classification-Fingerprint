@@ -240,9 +240,25 @@ def main():
             logger = Logger("gaussian_mixture_models", resume=args.resume)
 
         nComponents = [ 2**i for i in range(6) ]
-        #nComponents = [2]
-        train_evaluate_GMM(DTR, LTR, DVAL, LVAL, nComponents, logger )
+        train_evaluate_GMM(DTR, LTR, DVAL, LVAL, nComponents, args, logger )
 
+
+        if args.log:
+            logger.__close__()
+
+    
+
+    ###################################################################################################
+    # 10.1) Best perfomring models
+
+    if should_execute(10, args.modules):
+        print("10.1 Best performing models...")
+
+        # Initialize logger
+        if args.log:
+            logger = Logger("best_performing_models", resume=args.resume)
+
+        
 
         if args.log:
             logger.__close__()

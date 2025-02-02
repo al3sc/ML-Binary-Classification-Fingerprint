@@ -2,8 +2,9 @@ import numpy
 import scipy.special
 
 from .data_visualization import compute_mu_C
-from .data_management import vcol, vrow
+from .data_management import vcol, vrow, save_csv
 from .gaussian_density_estimation import logpdf_GAU_ND
+from .bayes_decisions_model_evaluation import compute_empirical_Bayes_risk_binary, compute_minDCF_binary_fast, compute_model_DCFs
 
 import utils.plot as P
 
@@ -141,34 +142,59 @@ def train_GMM_LBG_EM(X, numComponents, covType = 'Full', psiEig = None, epsLLAve
     return gmm
 
 
-def train_evaluate_GMM(DTR, LTR, DVAL, LVAL, nComponents, logger=None):
+def train_evaluate_GMM(DTR, LTR, DVAL, LVAL, nComponents, args, logger=None):
     
     prior, Cfn, Cfp = 0.1, 1, 1
+    results = []
     for covType in ['full', 'diagonal', 'tied']:
         logger and logger.log_title(f"Training {covType} covariance GMM")
+
+        best_results = {"minDCF": [float("inf"), 0, 0], "err": [float("inf"), 0, 0]}
+
         for nC_0 in nComponents:
             for nC_1 in nComponents:
                 logger and logger.log_paragraph(f"Number of components: {nC_0} (class 0), {nC_1} (class 1)")
-                gmm0 = train_GMM_LBG_EM(DTR[:, LTR==0], nC_0, covType=covType, logger=logger)
-                gmm1 = train_GMM_LBG_EM(DTR[:, LTR==1], nC_1, covType=covType, logger=logger)
-
-                # logdens0 = logpdf_GMM(vrow(numpy.linspace(-4, 4, 1998)), gmm0)
-                # logdens1 = logpdf_GMM(vrow(numpy.linspace(-4, 4, 2002)), gmm1)
-
-                # P.plot_density(numpy.linspace(-4, 4, 1998), numpy.exp(logdens0), "GMM0", "X", "Y")
-                # P.plot_density(numpy.linspace(-4, 4, 2002), numpy.exp(logdens1), "GMM1", "X", "Y")
+                logger and logger.log_paragraph(f"Training GMM for class 0")
+                gmm0 = train_GMM_LBG_EM(DTR[:, LTR==0], nC_0, covType=covType, psiEig=1e-6, logger=logger)
+                logger and logger.log_paragraph(f"Training GMM for class 1")
+                gmm1 = train_GMM_LBG_EM(DTR[:, LTR==1], nC_1, covType=covType, psiEig=1e-6, logger=logger)
                 
                 S0 = logpdf_GMM(DVAL, gmm0) + numpy.log(prior)
                 S1 = logpdf_GMM(DVAL, gmm1) + numpy.log(1 - prior)
+                if logger:
+                    logger.log_paragraph("Compute scores for each class")
+                    logger.log(f"S0:\nSize: {S0.shape}\n{S0}")
+                    logger.log(f"S1:\nSize: {S1.shape}\n{S1}")
                 
                 SLLR = S1 - S0
 
                 SVAL = (SLLR > 0) * 1
                 acc, err = numpy.mean(SVAL == LVAL), 1 - numpy.mean(SVAL == LVAL)
-                print(acc*100)
-                print(err*100)
-                # _, actdcf = compute_bayes_risk_binary(llr, LVAL, pT, Cfn, Cfp)
-                # mindcf, _ = compute_minDCF_binary(llr, LVAL, pT, Cfn, Cfp)
-                
-                # logger and logger.log(f'comp: [{cl1}, {cl2}] \t- func: {model[:4]} - acc: {acc * 100:.2f}% - dcf: {actdcf:.3f}, mindcf: {mindcf:.3f}')
+                logger and logger.log(f"Error rate (nC_0: {nC_0}, nC_1: {nC_1}): {err*100}%")
+                _, actDCF, minDCF = compute_model_DCFs(SLLR, prior, Cfn, Cfp, LVAL)
 
+                # best minDCF
+                if minDCF < best_results["minDCF"][0]:
+                    best_results["minDCF"] = [minDCF, nC_0, nC_1]
+
+                # best error rate
+                if err < best_results["err"][0]:
+                    best_results["err"] = [err, nC_0, nC_1]
+
+                if logger:
+                    logger.log_paragraph(f"Computing DCF (nC_0: {nC_0}, nC_1: {nC_1})")
+                    logger.log(f"actDCF: {actDCF}")
+                    logger.log(f"minDCF: {minDCF}")
+                
+                if args.save_tables:
+                    header = ["Cov Type", "n components 0", "n components 1", "error rate", "actDCF", "minDCF"]
+                    results.append((covType, nC_0, nC_1, err*100, actDCF, minDCF))    
+                    save_csv(results, header, logger, "GMM_LBG_EM", f"{args.output}/L10_GMM")
+
+        if args.save_tables:
+            header = ["minDCF", "mD_nC_0", "mD_nC_1", "error rate", "er_nC_0", "er_nC_1"]
+            minDCF_best = best_results["minDCF"]
+            err_best = best_results["err"]
+            results = [round(minDCF_best[0], 3), minDCF_best[1], minDCF_best[2], round(err_best[0]*100, 3), err_best[1], err_best[2] ]
+            
+            save_csv(results, header, logger, f"best_results_GMM_{covType}", f"{args.output}/L10_GMM")
