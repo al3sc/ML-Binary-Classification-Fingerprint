@@ -192,12 +192,7 @@ def train_weighted_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, priors, args, lo
             if args.save_models:
                 parameters.append({'lambda': l, 'parameters': numpy.hstack([w, b])})
 
-        if logger:
-            log_train_results(actDCFs, minDCFs, error_rates, logger)
-            
-            logger.log_separator()
-            logger.log(f"Logistic Regression training (Weighted version) completed!")
-
+        logger and log_train_results(actDCFs, minDCFs, error_rates, logger)
      
         if args.save_models:        
             numpy.save(f'{args.output}/L8_LogReg/models/Weighted_P_0_{str(round(p,1)).replace('.','-')}.npy', parameters)
@@ -219,6 +214,10 @@ def train_weighted_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, priors, args, lo
         label0=labels0, label1=labels1,
         save_disk=args.save_plots, output_dir=f"{args.output}/L8_LogReg", output_name=f"DCF_Weighted_LogReg"
     )
+
+    if logger:
+        logger.log_separator()
+        logger.log(f"Logistic Regression training (Weighted version) completed!")
 
     if args.save_tables:
         save_csv(TABLE, HEADER, logger, output_dir=f"{args.output}/L8_LogReg", output_file=f"LogReg_Weighted")
@@ -252,11 +251,7 @@ def train_PCA_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, p, args, m=6, logger=
             if args.save_models:
                 parameters.append({'lambda': l, 'parameters': numpy.hstack([w, b])})
 
-        if logger:
-            log_train_results(actDCFs, minDCFs, error_rates, logger)
-            
-            logger.log_separator()
-            logger.log(f"Logistic Regression training (PCA version) completed!")    
+        logger and log_train_results(actDCFs, minDCFs, error_rates, logger)    
      
         if args.save_models:        
             numpy.save(f'{args.output}/L8_LogReg/models/PCA_{i+1}.npy', parameters)
@@ -278,6 +273,10 @@ def train_PCA_LogReg(DTR, LTR, DVAL, LVAL, lambdas, prior, p, args, m=6, logger=
         label0=labels0, label1=labels1,
         save_disk=args.save_plots, output_dir=f"{args.output}/L8_LogReg", output_name=f"DCF_PCA_LogReg"
     )
+
+    if logger:
+        logger.log_separator()
+        logger.log(f"Logistic Regression training (PCA version) completed!")
 
     if args.save_tables:
         save_csv(TABLE, HEADER, logger, output_dir=f"{args.output}/L8_LogReg", output_file=f"LogReg_PCA")

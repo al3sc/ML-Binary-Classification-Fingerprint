@@ -29,6 +29,11 @@ def compute_empirical_Bayes_risk_binary(predictedLabels, classLabels, prior, Cfn
         return bayesError / numpy.minimum(prior * Cfn, (1-prior)*Cfp)
     return bayesError
 
+# Compute empirical Bayes (DCF or actDCF) risk from llr with optimal Bayes decisions
+def compute_empirical_Bayes_risk_binary_llr_optimal_decisions(llr, classLabels, prior, Cfn, Cfp, normalize=True):
+    predictedLabels = compute_optimal_Bayes_binary_llr(llr, prior, Cfn, Cfp)
+    return compute_empirical_Bayes_risk_binary(predictedLabels, classLabels, prior, Cfn, Cfp, normalize=normalize)
+
 
 # Compute minDCF (fast version)
 # If we sort the scores, then, as we sweep the scores, we can have that at most one prediction changes everytime. We can then keep a running confusion matrix (or simply the number of false positives and false negatives) that is updated everytime we move the threshold

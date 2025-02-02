@@ -13,6 +13,7 @@ from modules.generative_models import apply_all_binary_MVG, analyze_C_MVG_models
 from modules.bayes_decisions_model_evaluation import analyze_applications, optimal_Bayes_decisions_effective_applications, \
         find_best_models_minDCF, find_best_calibrationLoss, visualize_Bayes_errors
 from modules.logistic_regression import train_basic_LogReg, train_weighted_LogReg, expand_features_quadratic, train_PCA_LogReg
+from modules.SVM import train_linear_SVM, train_polynomial_SVM, train_RBF_SVM
 from modules.GMM import train_evaluate_GMM
 
 
@@ -295,6 +296,42 @@ def main():
         if args.log:
             logger = Logger("SVM", resume=args.resume)
 
+        #Application prior
+        prior = 0.1
+        # SVM parameters: 15 values for C from a logarithmic scale
+        C = numpy.logspace(-5, 2, 15)
+        # Linear SVM parameter
+        K = 1
+        
+        # Train linear SVM with original data
+        logger and logger.log_title("Train Linear SVM")
+        train_linear_SVM(DTR, LTR, DVAL, LVAL, C, args, prior, K, logger)
+
+        # Train linear SVM with centered data
+        logger and logger.log_title("Train Linear SVM - with CENTERED DATA")
+        DTR_centered, DVAL_centered = center_data(DTR, DVAL)
+        train_linear_SVM(DTR_centered, LTR, DVAL_centered, LVAL, C, args, prior, K, logger)
+
+
+        # Train non-linear SVM - Polynomial (d=2) kernel
+        logger and logger.log_title("Train Non-Linear SVM - Polynomial (d=2) kernel")
+        eps = 0
+        degree = 2
+        c_kernel = 1
+        train_polynomial_SVM(DTR, LTR, DVAL, LVAL, C, degree, args, prior, eps, c_kernel, logger)
+
+        # Train non-linear SVM - RBF kernel
+        logger and logger.log_title("Train Non-Linear SVM - RBF kernels")
+        eps = 1
+        gammas = [ numpy.exp(-(n+1)) for n in range(4)]
+        train_RBF_SVM(DTR, LTR, DVAL, LVAL, C, gammas, args, prior, eps, logger)
+
+        # Train non-linear SVM - Polynomial (d=4) kernel
+        logger and logger.log_title("Train Non-Linear SVM - POLYNOMIAL kernel")
+        eps = 0
+        degree = 4
+        c_kernel = 1
+        train_polynomial_SVM(DTR, LTR, DVAL, LVAL, C, degree, args, prior, eps, c_kernel, logger)
         
 
         if args.log:
